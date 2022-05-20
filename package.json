@@ -1,0 +1,33 @@
+{
+  "name": "react-haiku",
+  "version": "1.0.0",
+  "description": "React Hook Library",
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "types": "./lib/index.d.ts",
+  "homepage": "https://davidhaz.com",
+  "author": "David Haz",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DavidHDev/react-haiku.git"
+  },
+  "keywords": [
+    "reactjs",
+    "react",
+    "javascript",
+    "hooks",
+    "state",
+    "frontend",
+    "react-hooks"
+  ],
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
