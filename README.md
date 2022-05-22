@@ -14,13 +14,15 @@
 	<hr>
 </div>
 
-[![NPM](https://img.shields.io/npm/l/react-haiku)](https://github.com/davidhzdev/react-haiku/LICENSE)
+[![NPM](https://img.shields.io/npm/l/react-haiku)](https://github.com/DavidHDev/react-haiku/blob/main/LICENSE.md)
 [![npm](https://img.shields.io/npm/v/react-haiku)](https://www.npmjs.com/package/react-haiku)
 [![npm](https://img.shields.io/npm/dm/react-haiku)](https://www.npmjs.com/package/react-haiku)
 
 ## Links
 
 - [Official Docs](https://reacthaiku.online/)
+
+## What is this?
 
 Haiku is a simple & lightweight React library with the goal of saving<br>
 you time by offering a large collection of hooks & utilities that will<br>
@@ -55,6 +57,8 @@ Please check the official [Documentation](https://reacthaiku.online/) for full u
 <br>
 
 ### Using Hooks
+<br>
+
 ```jsx
 import { useHover } from 'react-haiku';
 
@@ -72,6 +76,8 @@ export default Component;
 ```
 
 ### Using Utilities
+<br>
+
 ```jsx
 import { For } from 'react-haiku';
 
@@ -102,7 +108,7 @@ export default Component;
 
 ## Maintainers
 
-[David Haz](https://github.com/davidhzdev)
+[David Haz](https://github.com/DavidHDev)
 
 ## License
 
