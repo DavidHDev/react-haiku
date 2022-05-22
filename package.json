@@ -30,6 +30,8 @@
   "peerDependencies": {
     "react": ">=16.8.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "react": ">=16.8.0"
+  },
   "devDependencies": {}
 }

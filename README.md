@@ -3,7 +3,7 @@
 <div align="center">
 	<br>
 	<br>
-	<img src="./haiku.svg" alt="react-haiku" height="200">
+	<img src="./media/haiku.svg" alt="react-haiku" height="200">
 	<br>
 	<br>
 	<b>An awesome collection of React Hooks & Utilities!</b>
@@ -30,7 +30,7 @@ help you get the job done faster & with less lines of code!
 
 ## Install
 
-Installing Haiku is very easy!
+Installing Haiku is very easy! <br>
 *Requires React >=16.8.0*
 <br>
 
