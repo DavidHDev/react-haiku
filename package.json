@@ -1,12 +1,12 @@
 {
   "name": "react-haiku",
   "version": "1.0.0",
-  "description": "React Hook Library",
+  "description": "React Hook & Utility Library",
   "sideEffects": false,
   "main": "lib/index.js",
   "module": "lib/index.js",
   "types": "./lib/index.d.ts",
-  "homepage": "https://davidhaz.com",
+  "homepage": "https://reacthaiku.online",
   "author": "David Haz",
   "license": "MIT",
   "repository": {
@@ -16,6 +16,8 @@
   "keywords": [
     "reactjs",
     "react",
+    "utility",
+    "components",
     "javascript",
     "hooks",
     "state",
