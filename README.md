@@ -26,7 +26,7 @@
 
 Haiku is a simple & lightweight React library with the goal of saving<br>
 you time by offering a large collection of hooks & utilities that will<br>
-help you get the job done faster & with less lines of code!
+help you get the job done faster & more efficiently!
 
 ## Install
 
