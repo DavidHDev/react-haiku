@@ -26,8 +26,21 @@
 
 ## Install
 
+Installing Haiku is very straight-forward!
+<br>
+
+#### NPM
 ```sh
 npm install react-haiku
+```
+
+#### Yarn
+```sh
+yarn add react-haiku
+```
+#### PNPM
+```sh
+pnpm install react-haiku
 ```
 
 *Requires React >=16.8.0*
@@ -72,9 +85,8 @@ export default Component;
 
 ## PACKAGE CONTENTS
 
-Please check the official documentation for full usage examples.
-- [Documentation](https://reacthaiku.online/)
-
+Please check the official [Documentation](https://reacthaiku.online/) for full usage examples.
+<br>
 ### Hooks
 
 - [`useHover()`](https://reacthaiku.online/docs/hooks/useHover) - Quick way to detect if your mouse is over an element!
