@@ -6,7 +6,7 @@
 	<img src="./haiku.svg" alt="react-haiku" height="200">
 	<br>
 	<br>
-	<b>An awesome collection of React Hooks & Utilities</b>
+	<b>An awesome collection of React Hooks & Utilities!</b>
 	<br>
 	<br>
 	<br>
@@ -20,13 +20,16 @@
 
 ## Links
 
-- [Documentation](https://reacthaiku.online/)
+- [Official Docs](https://reacthaiku.online/)
 
-
+Haiku is a simple & lightweight React library with the goal of saving<br>
+you time by offering a large collection of hooks & utilities that will<br>
+help you get the job done faster & with less lines of code!
 
 ## Install
 
-Installing Haiku is very straight-forward!
+Installing Haiku is very easy!
+*Requires React >=16.8.0*
 <br>
 
 #### NPM
@@ -42,12 +45,16 @@ yarn add react-haiku
 ```sh
 pnpm install react-haiku
 ```
+<br>
 
-*Requires React >=16.8.0*
+## Usage Examples
+<br>
 
-## Usage
+Please check the official [Documentation](https://reacthaiku.online/) for full usage examples.
 
-### Hooks
+<br>
+
+### Using Hooks
 ```jsx
 import { useHover } from 'react-haiku';
 
@@ -64,7 +71,7 @@ const Component = () => {
 export default Component;
 ```
 
-### Utilities
+### Using Utilities
 ```jsx
 import { For } from 'react-haiku';
 
@@ -85,8 +92,6 @@ export default Component;
 
 ## PACKAGE CONTENTS
 
-Please check the official [Documentation](https://reacthaiku.online/) for full usage examples.
-<br>
 ### Hooks
 
 - [`useHover()`](https://reacthaiku.online/docs/hooks/useHover) - Quick way to detect if your mouse is over an element!
@@ -97,7 +102,7 @@ Please check the official [Documentation](https://reacthaiku.online/) for full u
 
 ## Maintainers
 
-- [David Haz](https://github.com/davidhzdev)
+[David Haz](https://github.com/davidhzdev)
 
 ## License
 
