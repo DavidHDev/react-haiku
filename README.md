@@ -100,10 +100,21 @@ export default Component;
 
 ### Hooks
 
+- [`useClipboard()`](https://reacthaiku.online/docs/hooks/useClipboard) - Copy data to the user's clipboard!
 - [`useHover()`](https://reacthaiku.online/docs/hooks/useHover) - Quick way to detect if your mouse is over an element!
+- [`useInputValue()`](https://reacthaiku.online/docs/hooks/useInputValue) - Manage input state with this simple hook!
+- [`useLeaveDetection()`](https://reacthaiku.online/docs/hooks/useLeaveDetection) - Detect when your user's cursor leaves the page!
+- [`useMediaQuery()`](https://reacthaiku.online/docs/hooks/useMediaQuery) - Manipulate your component using media queries!
+- [`useMousePosition()`](https://reacthaiku.online/docs/hooks/useMousePosition) - Detect the current position of the mouse relative to a target or the whole document!
+- [`usePrefersTheme()`](https://reacthaiku.online/docs/hooks/usePrefersTheme) - Detect the user's preferred system theme!
+- [`useScript()`](https://reacthaiku.online/docs/hooks/useScript) - Attach script tags to the document from your components!
+- [`useToggle()`](https://reacthaiku.online/docs/hooks/useToggle) - Toggle state values between two different options!
+- [`useUrgentUpdate()`](https://reacthaiku.online/docs/hooks/useUrgentUpdate) - Force render a component when calling this hook!
 
 ### Utilities
 
+- [`If`](https://reacthaiku.online/docs/utilities/if) - Component for simple conditional rendering!
+- [`Show`](https://reacthaiku.online/docs/utilities/show) - Component for complex conditional rendering!
 - [`For`](https://reacthaiku.online/docs/utilities/for) - Dynamic rendering component with automatic key assignment!
 
 ## Maintainers
