@@ -63,11 +63,11 @@ Please check the official [Documentation](https://reacthaiku.online/) for full u
 import { useHover } from 'react-haiku';
 
 const Component = () => {
-  const { isHovered, ref } = useHover();
+  const { hovered, ref } = useHover();
 
   return (
     <p ref={ref}>
-      {isHovered ? 'All mice on me' : 'No mice on me'}
+      {hovered ? 'All mice on me' : 'No mice on me'}
     </p>
   );
 }
@@ -86,7 +86,7 @@ const Component = () => {
 
     render(
         <>
-        	<For of={list} render={(item, index) =>
+        	<For each={list} render={(item, index) =>
 		        <p>{item.name}</p>
 	        }/>
         </>
