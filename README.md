@@ -109,13 +109,29 @@ export default Component;
 - [`usePrefersTheme()`](https://reacthaiku.online/docs/hooks/usePrefersTheme) - Detect the user's preferred system theme!
 - [`useScript()`](https://reacthaiku.online/docs/hooks/useScript) - Attach script tags to the document from your components!
 - [`useToggle()`](https://reacthaiku.online/docs/hooks/useToggle) - Toggle state values between two different options!
+- [`useBoolToggle()`](https://reacthaiku.online/docs/hooks/useToggle) - Toggle boolean state values!
 - [`useUrgentUpdate()`](https://reacthaiku.online/docs/hooks/useUrgentUpdate) - Force render a component when calling this hook!
+- [`useClickOutside()`](https://reacthaiku.online/docs/hooks/useClickOutside) - Detect clicks outside a target element!
+- [`useConfirmExit()`](https://reacthaiku.online/docs/hooks/useConfirmExit) - Prompt the user with a message before closing the tab if the state is set as dirty.
+- [`useDebounce()`](https://reacthaiku.online/docs/hooks/useDebounce) - Debounce state changes to react to updates after a delay!
+- [`useEventListener()`](https://reacthaiku.online/docs/hooks/useEventListener) - Set event listeners on the window object or a specific target element!
+- [`useFavicon()`](https://reacthaiku.online/docs/hooks/useFavicon) - Dynamically update the website's favicon from a component!
+- [`useFirstRender()`](https://reacthaiku.online/docs/hooks/useFirstRender) - Check whether or not a component is on its first render!
+- [`useHold()`](https://reacthaiku.online/docs/hooks/useHold) - Handle long presses on a target element and execute a handler after a set delay!
+- [`useIdle()`](https://reacthaiku.online/docs/hooks/useIdle) - Detect user activity/inactivity on the page based on events!
+- [`useIsomorphicLayoutEffect()`](https://reacthaiku.online/docs/hooks/useIsomorphicLayoutEffect) - Switch between useEffect and useLayoutEffect depending on the execution environment (SSR VS Browser)!
+- [`useLocalStorage()`](https://reacthaiku.online/docs/hooks/useLocalStorage) - Manage localStorage values dynamically
+- [`useScrollPosition()`](https://reacthaiku.online/docs/hooks/useScrollPosition) - Access the current scroll position on the page and modify it programatically.
+- [`useSingleEffect()`](https://reacthaiku.online/docs/hooks/useSingleEffect) - Run the useEffect hook strictly only once when the component is mounted!
+- [`useTitle()`](https://reacthaiku.online/docs/hooks/useTitle) - Update the document's title from your components!
+- [`useUpdateEffect()`](https://reacthaiku.online/docs/hooks/useUpdateEffect) - Similar to useEffect, but it skips the first render of a component, and only react to updates triggered by dependency values.
 
 ### Utilities
 
 - [`If`](https://reacthaiku.online/docs/utilities/if) - Component for simple conditional rendering!
 - [`Show`](https://reacthaiku.online/docs/utilities/show) - Component for complex conditional rendering!
 - [`For`](https://reacthaiku.online/docs/utilities/for) - Dynamic rendering component with automatic key assignment!
+- [`RenderAfter`](https://reacthaiku.online/docs/utilities/renderAfter) - Component that renders its children after a set delay.
 
 ## Maintainers
 
