@@ -1,6 +1,6 @@
 {
   "name": "react-haiku",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React Hook & Utility Library",
   "sideEffects": false,
   "main": "lib/index.js",
