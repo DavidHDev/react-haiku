@@ -1,6 +1,6 @@
 {
   "name": "react-haiku",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "React Hook & Utility Library",
   "sideEffects": false,
   "main": "lib/index.js",
@@ -9,6 +9,9 @@
   "homepage": "https://reacthaiku.online",
   "author": "David Haz",
   "license": "MIT",
+  "scripts": {
+    "publish": "npm publish --access-public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DavidHDev/react-haiku.git"
