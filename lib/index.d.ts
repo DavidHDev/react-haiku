@@ -27,6 +27,12 @@ export declare const useConfirmExit: (
   message?: string
 ) => void;
 
+export declare const useCookie: <T extends string | {}>(
+  key: string,
+  initialValue?: T,
+  expireDays?: number
+) => [value: T, setValue: (value: T) => void, deleteCookie: () => void];
+
 export declare const useCookieListener: <T extends string | {}>(
   effect: (cookieValue: T, key: string) => void,
   cookieDeps?: string[],
