@@ -27,6 +27,11 @@ export declare const useConfirmExit: (
   message?: string
 ) => void;
 
+export declare const useCookieListener: <T extends string | {}>(
+  effect: (cookieValue: T, key: string) => void,
+  cookieDeps?: string[],
+) => void;
+
 export declare const useDebounce: <T>(value: T, delay?: number) => T;
 
 export declare const useEventListener: (
