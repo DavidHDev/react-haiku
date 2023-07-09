@@ -1,6 +1,6 @@
-# Contributing to [Your Project Name]
+# Contributing to React Haiku
 
-Thank you for considering contributing to [Your Project Name]! We appreciate your interest in making this project better.
+Thank you for considering contributing to React Haiku! We appreciate your interest in making this project better.
 
 To ensure a smooth collaboration, please read the following guidelines before getting started.
 
