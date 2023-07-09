@@ -83,6 +83,14 @@ export declare const useInputValue: <T>(
   initialState: T
 ) => [value: T, setValue: (value: any) => void];
 
+export declare const useInterval: (
+  callback: () => void,
+  delay: number
+) => {
+  start: (delay?: number) => void;
+  stop: () => void;
+};
+
 export declare const useIsomorphicLayoutEffect: (
   effect: EffectCallback,
   deps?: DependencyList
