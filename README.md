@@ -6,7 +6,7 @@
 	<img src="./media/haiku.svg" alt="react-haiku" height="200">
 	<br>
 	<br>
-	<b>An awesome collection of React Hooks & Utilities!</b>
+	<b>A clean & lightweight collection of React Hooks & Utilities!</b>
 	<br>
 	<br>
 	<br>
