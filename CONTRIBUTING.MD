@@ -29,7 +29,7 @@ We welcome pull requests from everyone. To submit a pull request, please follow 
 
 ## Conclusion
 
-We appreciate your interest in contributing to [Your Project Name]. By following these guidelines, you can help us maintain a healthy and productive open-source community. We value your contributions and look forward to your pull requests!
+We appreciate your interest in contributing to React Haiku. By following these guidelines, you can help us maintain a healthy and productive open-source community. We value your contributions and look forward to your pull requests!
 
 If you have any questions or need further assistance, please don't hesitate to reach out to us through the issue tracker or other communication channels mentioned in the project's documentation.
 
