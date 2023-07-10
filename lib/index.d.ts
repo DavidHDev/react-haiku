@@ -152,10 +152,14 @@ export declare const useUpdateEffect: (
 
 export declare const useUrgentUpdate: () => () => void;
 
+<<<<<<< HEAD
 export declare const useBatteryStatus: () => {
   level: number;
   isCharging: boolean;
 };
+=======
+export declare const useDeviceOS: () => string;
+>>>>>>> efae97c (Adds useDeviceOSHook)
 
 // utils
 
