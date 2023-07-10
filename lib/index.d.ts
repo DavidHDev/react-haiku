@@ -1,10 +1,10 @@
 import {
-  MutableRefObject,
-  MouseEventHandler,
-  EffectCallback,
   DependencyList,
-  ReactNode,
+  EffectCallback,
   FC,
+  MouseEventHandler,
+  MutableRefObject,
+  ReactNode
 } from "react";
 
 // hooks
@@ -131,6 +131,8 @@ export declare const useScrollPosition: () => [
 ];
 
 export declare const useSingleEffect: (effect: () => void) => void;
+
+export declare const useSize : (ref : MutableRefObject<Element | null>) => {width : number , height : number}
 
 export declare const useTitle: (title: string) => void;
 
