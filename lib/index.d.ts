@@ -85,7 +85,7 @@ export declare const useInputValue: <T>(
 
 export declare const useInterval: (
   callback: () => void,
-  delay: number
+  initialDelay: number
 ) => {
   start: (delay?: number) => void;
   stop: () => void;
