@@ -150,6 +150,11 @@ export declare const useUpdateEffect: (
 
 export declare const useUrgentUpdate: () => () => void;
 
+export declare const useBatteryStatus: () => {
+  level: number;
+  isCharging: boolean;
+};
+
 // utils
 
 export declare const For: FC<{
