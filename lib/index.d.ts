@@ -150,6 +150,8 @@ export declare const useUpdateEffect: (
 
 export declare const useUrgentUpdate: () => () => void;
 
+export declare const useDeviceOS: () => string;
+
 // utils
 
 export declare const For: FC<{
