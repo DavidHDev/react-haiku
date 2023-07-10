@@ -156,6 +156,7 @@ export declare const useBatteryStatus: () => {
   level: number;
   isCharging: boolean;
 };
+export declare const useDeviceOS: () => string;
 
 // utils
 
