@@ -157,6 +157,8 @@ export declare const useBatteryStatus: () => {
   isCharging: boolean;
 };
 
+export declare const useNetwork: () => boolean;
+
 // utils
 
 export declare const For: FC<{
