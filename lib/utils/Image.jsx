@@ -1,6 +1,15 @@
 import React from "react";
 
-const Image = ({ src, loading, alt, fallback, style }) => {
+export const Image = ({
+  src,
+  loading,
+  alt,
+  fallback,
+  style,
+  width,
+  height,
+  className,
+}) => {
   const handleBrokenImage = (event) => (event.target.src = fallback);
 
   return (
@@ -10,8 +19,9 @@ const Image = ({ src, loading, alt, fallback, style }) => {
       alt={alt}
       onError={handleBrokenImage}
       style={style}
+      width={width}
+      height={height}
+      className={className}
     />
   );
 };
-
-export default Image;
