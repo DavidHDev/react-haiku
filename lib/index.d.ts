@@ -132,7 +132,7 @@ export declare const useScrollPosition: () => [
 
 export declare const useSingleEffect: (effect: () => void) => void;
 
-export declare const useSize : (ref : MutableRefObject<Element | null>) => {width : number , height : number}
+export declare const useSize: (ref: MutableRefObject<Element | null>) => { width: number, height: number }
 
 export declare const useTitle: (title: string) => void;
 
@@ -159,6 +159,11 @@ export declare const useBatteryStatus: () => {
 export declare const useDeviceOS: () => string;
 
 export declare const useNetwork: () => boolean;
+
+export declare const useFullscreen: (targetRef: MutableRefObject<Element | null>) => {
+  isFullscreen: boolean,
+  toggleFullscreen: () => void
+}
 
 // utils
 
