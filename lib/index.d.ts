@@ -4,7 +4,7 @@ import {
   FC,
   MouseEventHandler,
   MutableRefObject,
-  ReactNode
+  ReactNode,
 } from "react";
 
 // hooks
@@ -35,7 +35,7 @@ export declare const useCookie: <T extends string | {}>(
 
 export declare const useCookieListener: <T extends string | {}>(
   effect: (cookieValue: T, key: string) => void,
-  cookieDeps?: string[],
+  cookieDeps?: string[]
 ) => void;
 
 export declare const useDebounce: <T>(value: T, delay?: number) => T;
@@ -132,7 +132,10 @@ export declare const useScrollPosition: () => [
 
 export declare const useSingleEffect: (effect: () => void) => void;
 
-export declare const useSize : (ref : MutableRefObject<Element | null>) => {width : number , height : number}
+export declare const useSize: (ref: MutableRefObject<Element | null>) => {
+  width: number;
+  height: number;
+};
 
 export declare const useTitle: (title: string) => void;
 
@@ -186,3 +189,14 @@ export declare const Show: FC<{
     render?: () => ReactNode;
   }>;
 };
+
+export declare const Image: FC<{
+  src: string;
+  loading?: "eager" | "lazy";
+  alt?: string;
+  fallback?: string;
+  style?: React.CSSProperties;
+  width?: number;
+  height?: number;
+  className?: string;
+}>;
