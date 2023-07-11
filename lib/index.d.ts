@@ -158,6 +158,8 @@ export declare const useBatteryStatus: () => {
 };
 export declare const useDeviceOS: () => string;
 
+export declare const useNetwork: () => boolean;
+
 export declare const useFullscreen: (targetRef: MutableRefObject<Element | null>) => {
   isFullscreen: boolean,
   toggleFullscreen: () => void
