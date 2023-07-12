@@ -1,25 +1,27 @@
-import { useCallback, useRef } from 'react';
+import { type MouseEvent, useCallback, useRef, type TouchEvent } from 'react';
+type EventType = MouseEvent | TouchEvent;
+const isTouchEvent = (e: EventType): e is TouchEvent => 'touches' in e;
 
-const isTouchEvent = (e) => 'touches' in e;
-
-const on = (obj, ...args) => {
+const on = <T extends EventTarget, A extends any[]>(obj: T, ...args: A) => {
+    // @ts-ignore
     if (obj && obj.addEventListener) obj.addEventListener(...(args));
 }
 
-const off = (obj, ...args) => {
+const off = <T extends EventTarget, A extends any[]>(obj: T, ...args: A) => {
+    // @ts-ignore
     if (obj && obj.removeEventListener) obj.removeEventListener(...(args));
 }
 
-const preventDefault = (e) => {
+const preventDefault = (e: EventType) => {
     if (!isTouchEvent(e)) return;
     if (e.touches.length < 2 && e.preventDefault) e.preventDefault();
 };
 
-export const useHold = (callback, { doPreventDefault = true, delay = 1000 } = {}) => {
-    const timeout = useRef();
-    const target = useRef();
+export const useHold = (callback: (e: EventType) => any, { doPreventDefault = true, delay = 1000 } = {}) => {
+    const timeout = useRef<number | undefined>();
+    const target = useRef<EventTarget | undefined>();
 
-    const start = useCallback((event) => {
+    const start = useCallback((event: EventType) => {
         if (doPreventDefault && event.target) {
             on(event.target, 'touchend', preventDefault, { passive: false });
             target.current = event.target;
@@ -33,8 +35,8 @@ export const useHold = (callback, { doPreventDefault = true, delay = 1000 } = {}
     }, [doPreventDefault]);
 
     return {
-        onMouseDown: (e) => start(e),
-        onTouchStart: (e) => start(e),
+        onMouseDown: (e: MouseEvent) => start(e),
+        onTouchStart: (e: TouchEvent) => start(e),
         onMouseUp: clear,
         onMouseLeave: clear,
         onTouchEnd: clear,

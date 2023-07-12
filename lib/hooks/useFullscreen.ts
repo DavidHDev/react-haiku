@@ -1,6 +1,8 @@
-import { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 
-export function useFullscreen(targetRef) {
+type DocumentWith<T> = Document & T;
+
+export function useFullscreen(targetRef: React.MutableRefObject<Document & {} | any>) {
   const [isFullscreen, setFullscreen] = useState(false);
 
   const toggleFullscreen = useCallback(() => {
@@ -10,13 +12,19 @@ export function useFullscreen(targetRef) {
           document.exitFullscreen();
           break;
         case 'mozCancelFullScreen' in document:
-          document.mozCancelFullScreen();
+          (document as DocumentWith<{
+            mozCancelFullScreen: () => void;
+          }>).mozCancelFullScreen();
           break;
         case 'webkitExitFullscreen' in document:
-          document.webkitExitFullscreen();
+          (document as DocumentWith<{
+            webkitExitFullscreen: () => void;
+          }>).webkitExitFullscreen();
           break;
         case 'msExitFullscreen' in document:
-          document.msExitFullscreen();
+          (document as DocumentWith<{
+            msExitFullscreen: () => void;
+          }>).msExitFullscreen();
           break;
         default:
           console.log('Fullscreen API is not supported.');
@@ -60,4 +68,4 @@ export function useFullscreen(targetRef) {
   }, [handleFullscreenChange]);
 
   return { isFullscreen, toggleFullscreen };
-}
+};

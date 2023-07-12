@@ -1,5 +1,13 @@
 import { useEffect, useState } from 'react'
 
+// https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getBattery, but because getBattery | BatteryManager is not on the Navigator type, we have to create our own type
+type NavigatorType = Navigator & {
+  getBattery: () => Promise<{
+    charging: boolean
+    level: number
+  } & EventTarget>
+}
+
 export function useBatteryStatus() {
     const [batteryStatus, setBatteryStatus] = useState({
         level : 0,
@@ -7,10 +15,10 @@ export function useBatteryStatus() {
     })
 
     useEffect(()=>{
-      if(navigator.getBattery){
-        navigator.getBattery().then((battery) => {
-          let batteryLevel = parseInt(battery.level * 100)
-          let betteryCharging = battery.charging
+      if((navigator as NavigatorType).getBattery){
+        (navigator as NavigatorType).getBattery().then((battery) => {
+          const batteryLevel = parseInt((battery.level * 100).toString())
+          const betteryCharging = battery.charging
           setBatteryStatus({ 
             level : batteryLevel,
             isCharging: betteryCharging
@@ -19,22 +27,22 @@ export function useBatteryStatus() {
       }
 
       const handleBatteryLevelChange = () => {
-        navigator.getBattery().then((battery) => {
-          let batteryLevel = parseInt(battery.level * 100)
-          let betteryCharging = battery.charging
+        (navigator as NavigatorType).getBattery().then((battery) => {
+          const batteryLevel = parseInt((battery.level * 100).toString())
+          const betteryCharging = battery.charging
           setBatteryStatus({ 
             level : batteryLevel,
             isCharging: betteryCharging
           })
         })
       }
-      navigator.getBattery().then((battery) => {
+      (navigator as NavigatorType).getBattery().then((battery) => {
         battery.addEventListener("chargingchange", handleBatteryLevelChange)
         battery.addEventListener("levelchange", handleBatteryLevelChange)
       })
 
       return () => {
-        navigator.getBattery().then((battery) => {
+        (navigator as NavigatorType).getBattery().then((battery) => {
           battery.removeEventListener("chargingchange", handleBatteryLevelChange)
           battery.removeEventListener("levelchange", handleBatteryLevelChange)
         })
