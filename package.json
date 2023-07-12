@@ -10,7 +10,8 @@
   "author": "David Haz",
   "license": "MIT",
   "scripts": {
-    "publish": "npm publish --access-public"
+    "publish": "npm publish --access-public",
+    "build": "tsc ./lib"
   },
   "repository": {
     "type": "git",
@@ -36,5 +37,9 @@
   "dependencies": {
     "react": ">=16.8.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "typescript": "^5.1.6"
+  }
 }

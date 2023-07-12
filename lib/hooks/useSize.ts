@@ -1,4 +1,6 @@
-export const useSize = (ref) => {
+import { useEffect, useState } from "react";
+
+export const useSize = (ref: any) => {
   const [dimensions, setDimensions] = useState({
     width: 0,
     height: 0,
