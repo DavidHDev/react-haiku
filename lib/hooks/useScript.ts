@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 
 
-export function useScript(src) {
-    const [status, setStatus] = useState(src ? 'loading' : 'idle')
+export function useScript(src: string) {
+    const [status, setStatus] = useState<string | null>(src ? 'loading' : 'idle')
 
     useEffect(
         () => {
@@ -11,7 +11,7 @@ export function useScript(src) {
                 return
             }
 
-            let script = document.querySelector(`script[src="${src}"]`)
+            let script: HTMLScriptElement | null = document.querySelector(`script[src="${src}"]`)
 
             if (!script) {
                 script = document.createElement('script')
@@ -19,7 +19,7 @@ export function useScript(src) {
                 script.async = true
                 script.setAttribute('data-status', 'loading')
                 document.body.appendChild(script)
-                const setAttributeFromEvent = (event) => {
+                const setAttributeFromEvent = (event: Event) => {
                     script?.setAttribute('data-status', event.type === 'load' ? 'ready' : 'error')
                 }
 
@@ -29,7 +29,7 @@ export function useScript(src) {
                 setStatus(script.getAttribute('data-status'))
             }
 
-            const setStateFromEvent = (event) => setStatus(event.type === 'load' ? 'ready' : 'error')
+            const setStateFromEvent = (event: Event) => setStatus(event.type === 'load' ? 'ready' : 'error')
 
             script.addEventListener('load', setStateFromEvent)
             script.addEventListener('error', setStateFromEvent)

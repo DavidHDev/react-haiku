@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 
-import { parseToCookieType, parseToDataType, getCookies } from '../helpers/cookie';
+import { parseToCookieType, getCookies } from '../helpers/cookie';
 
 export const useCookieListener = (effect, cookies) => {
   const cookieValues = useRef(getCookies(cookies));

@@ -1,16 +1,7 @@
+import { off, on } from 'lib/helpers/event';
 import { type MouseEvent, useCallback, useRef, type TouchEvent } from 'react';
 type EventType = MouseEvent | TouchEvent;
 const isTouchEvent = (e: EventType): e is TouchEvent => 'touches' in e;
-
-const on = <T extends EventTarget, A extends any[]>(obj: T, ...args: A) => {
-    // @ts-ignore
-    if (obj && obj.addEventListener) obj.addEventListener(...(args));
-}
-
-const off = <T extends EventTarget, A extends any[]>(obj: T, ...args: A) => {
-    // @ts-ignore
-    if (obj && obj.removeEventListener) obj.removeEventListener(...(args));
-}
 
 const preventDefault = (e: EventType) => {
     if (!isTouchEvent(e)) return;

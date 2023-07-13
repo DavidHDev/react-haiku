@@ -1,19 +1,14 @@
+import { off, on } from 'lib/helpers/event';
 import { useCallback, useEffect } from 'react';
 
-const on = (obj, ...args) => {
-    if (obj && obj.addEventListener) obj.addEventListener(...(args));
-}
-
-const off = (obj, ...args) => {
-    if (obj && obj.removeEventListener) obj.removeEventListener(...(args));
-}
-
-export function useConfirmExit(enabled, message = 'Are you sure you want to exit?') {
-    const handler = useCallback((e) => {
+export function useConfirmExit(enabled: boolean | (() => boolean), message = 'Are you sure you want to exit?') {
+    const handler = useCallback((e: Event) => {
         const finalEnabled = typeof enabled === 'function' ? enabled() : true;
         if (!finalEnabled) return;
         e.preventDefault();
 
+        // @ts-ignore
+        // NOTE: modern browsers no longer support custom messages with .returnValue
         if (message) e.returnValue = message;
 
         return message;

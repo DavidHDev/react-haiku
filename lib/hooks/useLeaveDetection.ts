@@ -5,4 +5,4 @@ export function useLeaveDetection(onLeave: (this: HTMLElement, ev: MouseEvent) =
     document.documentElement.addEventListener('mouseleave', onLeave);
     return () => document.documentElement.removeEventListener('mouseleave', onLeave);
   }, []);
-}
+};

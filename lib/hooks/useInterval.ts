@@ -22,7 +22,7 @@ import { useEffect, useRef, useState } from "react";
  * 
  * @returns {{start: (delay?: number) => void, stop: () => void}}
  */
-export function useInterval(callback, initialDelay) {
+export function useInterval(callback: (() => any), initialDelay: number) {
   if (typeof callback !== 'function') {
     throw new Error(`Invalid parameter type. 'callback' should be a function but received ${callback}`)
   }
@@ -31,9 +31,9 @@ export function useInterval(callback, initialDelay) {
     throw new Error(`Invalid parameter type. 'initialDelay should be a number but received ${initialDelay}'`)
   }
 
-  const savedCallback = useRef();
+  const savedCallback = useRef<(() => any) | undefined>();
 
-  const [delay, setDelay] = useState(initialDelay);
+  const [delay, setDelay] = useState<number | null | undefined>(initialDelay);
 
   // Remember the latest callback.
   useEffect(() => {
@@ -56,7 +56,7 @@ export function useInterval(callback, initialDelay) {
   }, [delay]);
 
   // if delay is not set, start it with initialDelay
-  const start = (delay) => { setDelay(delay || initialDelay); };
+  const start = (delay: number) => { setDelay(delay || initialDelay); };
 
   const stop = () => { setDelay(null) };
 

@@ -5,9 +5,10 @@ export function useMousePosition() {
     const { max } = Math;
     const target = useRef();
 
-    const setMousePosition = (event) => {
+    const setMousePosition = (event: MouseEvent) => {
         if (target.current) {
-            const r = event.currentTarget.getBoundingClientRect();
+            // @ts-ignore
+            const r = event?.currentTarget?.getBoundingClientRect();
             const x = max(0, Math.round(event.pageX - r.left - (window.pageXOffset || window.scrollX)));
             const y = max(0, Math.round(event.pageY - r.top - (window.pageYOffset || window.scrollY)));
             setPosition({ x, y });
@@ -22,4 +23,4 @@ export function useMousePosition() {
     }, [target.current]);
 
     return { target, ...position };
-}
+};
