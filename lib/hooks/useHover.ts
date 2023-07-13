@@ -2,7 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 
 export function useHover() {
   const [hovered, setHovered] = useState(false);
-  const ref = useRef(null);
+  const ref = useRef<EventTarget | null>(null);
   const onMouseEnter = useCallback(() => setHovered(true), []);
   const onMouseLeave = useCallback(() => setHovered(false), []);
 
@@ -21,4 +21,4 @@ export function useHover() {
   }, []);
 
   return { ref, hovered };
-}
+};

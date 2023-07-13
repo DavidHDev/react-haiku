@@ -16,7 +16,6 @@ export const useSize = (ref: any) => {
       setDimensions({ width: clientWidth, height: clientHeight });
     };
 
-    
     const resizeObserver = new ResizeObserver(updateDimensions);
 
     updateDimensions();
@@ -29,5 +28,3 @@ export const useSize = (ref: any) => {
 
   return dimensions;
 };
-
-
