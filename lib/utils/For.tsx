@@ -1,3 +1,6 @@
-import { Children } from 'react';
+import { Children, type ReactNode } from 'react';
 
-export const For = ({render, each}) => Children.toArray(each.map((item, index) => render(item, index)));
+export const For = <T,>({render, each}: {
+    render: (item: T, index?: number) => ReactNode;
+    each: T[];
+}) => Children.toArray(each.map((item, index) => render(item, index)));

@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "publish": "npm publish --access-public",
-    "build": "tsc ./lib"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
