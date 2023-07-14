@@ -2,6 +2,7 @@ import {
   DependencyList,
   EffectCallback,
   FC,
+  ImgHTMLAttributes,
   MouseEventHandler,
   MutableRefObject,
   ReactNode
@@ -200,8 +201,5 @@ export declare const Image: FC<{
   loading?: "eager" | "lazy";
   alt?: string;
   fallback?: string;
-  style?: React.CSSProperties;
-  width?: number;
-  height?: number;
-  className?: string;
-}>;
+  } & ImgHTMLAttributes<HTMLImageElement>
+  >;
