@@ -57,17 +57,17 @@ export default function Tooltip({
             {children}
         </div>
         <div
-            style={{ ...styles, position: 'absolute' }}
+            style={{ ...styles, position: 'fixed' }}
             ref={tooltipRef}
             onAnimationEnd={handleAnimationFinishing}
         >
             {isShown
                 &&
                 <div
-                    style={{ position: 'fixed', zIndex: 9999 }}
+                    style={{, zIndex: 9999 }}
                     className={className}
                 >
-                    {text}
+                <p style={{ wordBreak: 'break-word' }}>{text}</p>
 
                 </div>
             }
