@@ -20,7 +20,7 @@
 
 ## Links
 
-- [Official Docs](https://reacthaiku.online/)
+- [Official Docs](https://haiku-docs-davidhdev.vercel.app/)
 
 ## What is this?
 
@@ -52,7 +52,7 @@ pnpm install react-haiku
 ## Usage Examples
 <br>
 
-Please check the official [Documentation](https://reacthaiku.online/) for full usage examples.
+Please check the official [Documentation](https://haiku-docs-davidhdev.vercel.app/)for full usage examples.
 
 <br>
 
