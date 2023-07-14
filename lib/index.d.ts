@@ -194,3 +194,11 @@ export declare const Show: FC<{
     render?: () => ReactNode;
   }>;
 };
+
+export declare const Class: FC<{
+  className: string;
+  toggleClass?: string;
+  isActive?: boolean;
+  children: ReactNode;
+}>;
+
