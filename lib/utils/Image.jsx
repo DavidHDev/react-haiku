@@ -5,10 +5,7 @@ export const Image = ({
   loading,
   alt,
   fallback,
-  style,
-  width,
-  height,
-  className,
+  ...props
 }) => {
   const handleBrokenImage = (event) => (event.target.src = fallback);
 
@@ -18,10 +15,7 @@ export const Image = ({
       loading={loading}
       alt={alt}
       onError={handleBrokenImage}
-      style={style}
-      width={width}
-      height={height}
-      className={className}
+      {...props}
     />
   );
 };
