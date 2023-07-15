@@ -8,6 +8,8 @@ import {
   ReactNode
 } from "react";
 
+import type { UseNotificationOptions, UseNotificationReturnType } from './hooks/useNotification';
+
 // hooks
 
 export declare const useClickOutside: (
@@ -165,6 +167,8 @@ export declare const useFullscreen: (targetRef: MutableRefObject<Element | null>
   isFullscreen: boolean,
   toggleFullscreen: () => void
 }
+
+export declare const useNotification:(options: UseNotificationOptions) => UseNotificationReturnType
 
 // utils
 
