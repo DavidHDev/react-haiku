@@ -3,9 +3,8 @@
   "version": "2.0.3",
   "description": "React Hook & Utility Library",
   "sideEffects": false,
-  "main": "lib/index.js",
-  "module": "lib/index.js",
-  "types": "./lib/index.d.ts",
+  "main": "lib/dist/index.js",
+  "module": "lib/dist/index.js",
   "homepage": "https://reacthaiku.online",
   "author": "David Haz",
   "license": "MIT",
@@ -29,7 +28,7 @@
     "react-hooks"
   ],
   "exports": {
-    ".": "./lib/index.js"
+    ".": "./dist/lib/index.js"
   },
   "peerDependencies": {
     "react": ">=16.8.0"
