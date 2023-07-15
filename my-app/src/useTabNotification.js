@@ -39,10 +39,6 @@ export function useTabNotification(
     }, [showFaviconDot, favicon, faviconDotColor, isShown])
 
     useEffect(() => {
-        document.querySelector("link[rel$=icon]").setAttribute('href', notificationFavicon)
-    }, [notificationFavicon])
-
-    useEffect(() => {
         if (!isShown) {
             setModifiedTitle(originalTitle)
         } else {
@@ -56,16 +52,20 @@ export function useTabNotification(
     }, [titlePrefix, originalTitle, customTitle, isShown])
 
     useEffect(() => {
-        document.title = modifiedTitle
-    }, [modifiedTitle])
-
-    useEffect(() => {
         if (isShown && flashMessage) {
             setFlashIsStarted(true)
         } else {
             setFlashIsStarted(false)
         }
     }, [isShown, flashMessage])
+
+    useEffect(() => {
+        document.querySelector("link[rel$=icon]").setAttribute('href', notificationFavicon)
+    }, [notificationFavicon])
+
+    useEffect(() => {
+        document.title = modifiedTitle
+    }, [modifiedTitle])
 
     useEffect(() => {
         let interval = null
