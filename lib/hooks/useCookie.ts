@@ -5,21 +5,21 @@ import { useSingleEffect } from './useSingleEffect';
 
 import { parseToCookieType, parseToDataType, getCookie, setCookie, deleteCookie } from '../helpers/cookie';
 
-export const useCookie = (key, initialValue, expireDays = 365) => {
-  const [cookieValue, setCookieValue] = useState(getCookie(key) ?? parseToDataType(parseToCookieType(initialValue)));
+export const useCookie = <T>(key: string, initialValue: T, expireDays = 365) => {
+  const [cookieValue, setCookieValue] = useState<T>(getCookie(key) ?? parseToDataType(parseToCookieType(initialValue)));
 
   useSingleEffect(() => {
     if (typeof getCookie(key) === 'undefined') setCookie(key, initialValue, expireDays);
   });
 
   useCookieListener(
-    (value) => {
+    (value: T) => {
       setCookieValue(value);
     },
     [key],
   );
 
-  const setValue = (value) => {
+  const setValue = (value: T) => {
     setCookieValue(value);
     setCookie(key, value, expireDays);
   };
