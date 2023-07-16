@@ -1,7 +1,10 @@
 import { useCallback, useRef, useState } from "react";
 import { useEventListener } from "./useEventListener";
 
-interface UseNotificationOptions {
+/**
+ * The useNotification hook allows usage of the browser's built-in notification system.
+ */
+export function useNotification(options: {
   /** Title for the notification, which is shown at the top of the notification window. */
   title: string;
   /**
@@ -59,9 +62,7 @@ interface UseNotificationOptions {
    * with the notification. If specified, `silent` must not be true.
    */
   vibrate?: number[];
-}
-
-interface UseNotificationReturnType {
+}): {
   /** Status of access to the user's notification system. */
   status: "denied" | "granted" | "default" | "unsupported";
   /** Shows notification on the user's device. */
@@ -76,15 +77,10 @@ interface UseNotificationReturnType {
   onError: (cb: (event: Event) => void) => void;
   /** Executes callback when a notification is displayed. */
   onShow: (cb: (event: Event) => void) => void;
-}
-
-/**
- * The useNotification hook allows usage of the browser's built-in notification system.
- */
-export function useNotification(options: UseNotificationOptions): UseNotificationReturnType {
+} {
   const { title, description, closeWhenViewed, ...rest } = options;
   const [notification, setNotification] = useState<Notification>();
-  const [status, setStatus] = useState<UseNotificationReturnType["status"]>("default");
+  const [status, setStatus] = useState<"denied" | "granted" | "default" | "unsupported">("default");
   const documentRef = useRef(document);
   const notificationOptions = {
     ...rest,
