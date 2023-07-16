@@ -4,24 +4,24 @@ export function useTabNotification(
     flashDelayInSeconds = 2
 ) {
     const [originalTitle] = useState(document.title)
-    let defaultFavicon = document.querySelector("link[rel$=icon]").getAttribute('href')
+    let defaultFavicon = document.querySelector("link[rel$=icon]")?.getAttribute('href')
     const [favicon] = useState(defaultFavicon)
     const [notificationFavicon, setNotificationFavicon] = useState(defaultFavicon)
-    const [titlePrefix, setTitlePrefix] = useState('')
-    const [customTitle, setCustomTitle] = useState('')
-    const [modifiedTitle, setModifiedTitle] = useState('')
-    const [flashMessage, setFlashMessage] = useState('')
+    const [titlePrefix, setTitlePrefix] = useState<string|null>(null)
+    const [customTitle, setCustomTitle] = useState<string|null>(null)
+    const [modifiedTitle, setModifiedTitle] = useState<string>('')
+    const [flashMessage, setFlashMessage] = useState<string|null>(null)
     const [isShown, setIsShown] = useState(false)
     const [showFaviconDot, setShowFaviconDot] = useState(true)
     const [faviconDotColor, setFaviconDotColor] = useState('#f00000')
 
     useEffect(() => {
-        if (showFaviconDot && isShown) {
+        if (showFaviconDot && isShown && favicon) {
             const img = document.createElement('img')
             img.src = favicon
             img.onload = () => {
                 const canvas = document.createElement('canvas')
-                const context = canvas.getContext('2d')
+                const context = canvas.getContext('2d')!
                 canvas.width = img.width
                 canvas.height = img.height
                 context.drawImage(img, 0, 0, img.width, img.height)
@@ -38,7 +38,8 @@ export function useTabNotification(
     }, [showFaviconDot, favicon, faviconDotColor, isShown])
 
     useEffect(() => {
-        document.querySelector("link[rel$=icon]").setAttribute('href', notificationFavicon)
+        if (notificationFavicon)
+            document.querySelector("link[rel$=icon]")?.setAttribute('href', notificationFavicon)
     }, [notificationFavicon])
 
     useEffect(() => {
@@ -59,7 +60,7 @@ export function useTabNotification(
     }, [modifiedTitle])
 
     useEffect(() => {
-        let interval = null
+        let interval: NodeJS.Timer|null = null;
         if (flashMessage && isShown) {
             interval = setInterval(() => {
                 document.title = (document.title === flashMessage ? modifiedTitle : flashMessage)
@@ -67,7 +68,8 @@ export function useTabNotification(
         }
 
         return () => {
-            clearInterval(interval)
+            if (interval)
+                clearInterval(interval)
         }
     }, [flashMessage, modifiedTitle, isShown, flashDelayInSeconds])
 
