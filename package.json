@@ -5,8 +5,8 @@
   "sideEffects": false,
   "main": "lib/dist/index.js",
   "module": "lib/dist/index.js",
-  "homepage": "https://reacthaiku.online",
-  "author": "David Haz",
+  "homepage": "https://haiku-docs-davidhdev.vercel.app/",
+  "author": "David Haz, Contributors @ github.com/DavidHDev/react-haiku",
   "license": "MIT",
   "scripts": {
     "publish": "npm publish --access-public",
