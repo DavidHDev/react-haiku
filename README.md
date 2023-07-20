@@ -125,6 +125,7 @@ export default Component;
 - [`useSingleEffect()`](https://reacthaiku.online/docs/hooks/useSingleEffect) - Run the useEffect hook strictly only once when the component is mounted!
 - [`useTitle()`](https://reacthaiku.online/docs/hooks/useTitle) - Update the document's title from your components!
 - [`useUpdateEffect()`](https://reacthaiku.online/docs/hooks/useUpdateEffect) - Similar to useEffect, but it skips the first render of a component, and only react to updates triggered by dependency values.
+- [`useFetch()](https://reacthaiku.online/docs/hooks/useFetch) - Fetch data from an API endpoint and returns data, error, loading state and a function to refetch the data.
 
 ### Utilities
 
