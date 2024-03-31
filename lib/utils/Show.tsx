@@ -1,32 +1,35 @@
-
 import { Children } from 'react';
 import { If } from './If';
 
-import {type ReactNode} from 'react';
+import { type ReactNode } from 'react';
 
-export const Show = (props: {
-    children: ReactNode & {
-        props: {
-            isTrue?: boolean;
-        }
+type Props = {
+  children: ReactNode & {
+    props: {
+      isTrue?: boolean;
+    };
+  };
+};
+
+type ElseProps = {
+  render?: () => ReactNode;
+  children?: ReactNode;
+};
+
+export const Show = ({ children }: Props) => {
+  let when: ReactNode | null = null;
+  let otherwise: ReactNode | null = null;
+
+  Children.forEach(children, (child) => {
+    if (child.props.isTrue === undefined) {
+      otherwise = child;
+    } else if (!when && child.props.isTrue === true) {
+      when = child;
     }
-}) => {
-    let when: ReactNode | null = null;
-    let otherwise: ReactNode | null = null;
+  });
 
-    Children.forEach(props.children, (children) => {
-        if (children.props.isTrue === undefined) {
-            otherwise = children;
-        } else if (!when && children.props.isTrue === true) {
-            when = children;
-        }
-    });
-
-    return (when || otherwise) as ReactNode;
+  return (when || otherwise) as ReactNode;
 };
 
 Show.When = If;
-Show.Else = ({ render, children }: {
-    render?: () => ReactNode;
-    children?: ReactNode;
-}) => render ? render() : children;
+Show.Else = ({ render, children }: ElseProps) => (render ? render() : children);
