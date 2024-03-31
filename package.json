@@ -37,6 +37,7 @@
     "react": ">=16.8.0"
   },
   "devDependencies": {
+    "@types/node": "^20.12.2",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "typescript": "^5.1.6"
