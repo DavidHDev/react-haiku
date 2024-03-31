@@ -22,10 +22,10 @@ We welcome pull requests from everyone. To submit a pull request, please follow 
 
 1. Clone the repository and create a new branch based on the branch naming convention mentioned above.
 2. Make your changes in the new branch.
-4. Write tests if applicable, and ensure that existing tests pass.
-5. Update the documentation if necessary.
-6. Submit a pull request to the main repository's `main` branch.
-7. Provide a clear and descriptive title for your pull request, along with a detailed description of the changes you have made.
+3. Write tests if applicable, and ensure that existing tests pass.
+4. Update the documentation if necessary.
+5. Submit a pull request to the main repository's `main` branch.
+6. Provide a clear and descriptive title for your pull request, along with a detailed description of the changes you have made.
 
 ## Conclusion
 
