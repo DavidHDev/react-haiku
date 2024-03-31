@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 export const useSize = (ref: any) => {
   const [dimensions, setDimensions] = useState({
@@ -19,6 +19,7 @@ export const useSize = (ref: any) => {
     const resizeObserver = new ResizeObserver(updateDimensions);
 
     updateDimensions();
+
     resizeObserver.observe(ref.current);
 
     return () => {

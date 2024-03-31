@@ -1,5 +1,5 @@
-import { useState, useCallback } from "react";
-import { useEventListener } from "./useEventListener";
+import { useState, useCallback } from 'react';
+import { useEventListener } from './useEventListener';
 
 export function useNetwork() {
   const [isOnline, setIsOnline] = useState<boolean>(navigator?.onLine || true);
