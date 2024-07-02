@@ -1,4 +1,4 @@
-import { off, on } from 'lib/helpers/event';
+import { off, on } from '../helpers/event';
 import { useCallback, useEffect } from 'react';
 
 export function useConfirmExit(enabled: boolean | (() => boolean), message = 'Are you sure you want to exit?') {

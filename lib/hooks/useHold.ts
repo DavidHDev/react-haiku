@@ -1,4 +1,4 @@
-import { off, on } from 'lib/helpers/event';
+import { off, on } from '../helpers/event';
 import { type MouseEvent, useCallback, useRef, type TouchEvent } from 'react';
 type EventType = MouseEvent | TouchEvent;
 const isTouchEvent = (e: EventType): e is TouchEvent => 'touches' in e;
