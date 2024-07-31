@@ -31,25 +31,31 @@ help you get the job done faster & more efficiently!
 ## Install
 
 Installing Haiku is very easy! <br>
-*Requires React >=16.8.0*
+_Requires React >=16.8.0_
 <br>
 
 #### NPM
+
 ```sh
 npm install react-haiku
 ```
 
 #### Yarn
+
 ```sh
 yarn add react-haiku
 ```
+
 #### PNPM
+
 ```sh
 pnpm install react-haiku
 ```
+
 <br>
 
 ## Usage Examples
+
 <br>
 
 Please check the official [Documentation](https://haiku-docs-davidhdev.vercel.app/)for full usage examples.
@@ -57,6 +63,7 @@ Please check the official [Documentation](https://haiku-docs-davidhdev.vercel.ap
 <br>
 
 ### Using Hooks
+
 <br>
 
 ```jsx
@@ -65,33 +72,28 @@ import { useHover } from 'react-haiku';
 const Component = () => {
   const { hovered, ref } = useHover();
 
-  return (
-    <p ref={ref}>
-      {hovered ? 'All mice on me' : 'No mice on me'}
-    </p>
-  );
-}
+  return <p ref={ref}>{hovered ? 'All mice on me' : 'No mice on me'}</p>;
+};
 
 export default Component;
 ```
 
 ### Using Utilities
+
 <br>
 
 ```jsx
 import { For } from 'react-haiku';
 
 const Component = () => {
-    const list = [{ name: 'React' }, { name: 'Haiku' }]
+  const list = [{ name: 'React' }, { name: 'Haiku' }];
 
-    render(
-        <>
-        	<For each={list} render={(item, index) =>
-		        <p>{item.name}</p>
-	        }/>
-        </>
-    )
-}
+  render(
+    <>
+      <For each={list} render={(item, index) => <p>{item.name}</p>} />
+    </>,
+  );
+};
 
 export default Component;
 ```

@@ -1,48 +1,53 @@
-import { useEffect, useState } from 'react'
-
+import { useEffect, useState } from 'react';
 
 export function useScript(src: string) {
-    const [status, setStatus] = useState<string | null>(src ? 'loading' : 'idle')
+  const [status, setStatus] = useState<string | null>(src ? 'loading' : 'idle');
 
-    useEffect(
-        () => {
-            if (!src) {
-                setStatus('idle')
-                return
-            }
+  useEffect(() => {
+    if (!src) {
+      setStatus('idle');
 
-            let script: HTMLScriptElement | null = document.querySelector(`script[src="${src}"]`)
+      return;
+    }
 
-            if (!script) {
-                script = document.createElement('script')
-                script.src = src
-                script.async = true
-                script.setAttribute('data-status', 'loading')
-                document.body.appendChild(script)
-                const setAttributeFromEvent = (event: Event) => {
-                    script?.setAttribute('data-status', event.type === 'load' ? 'ready' : 'error')
-                }
+    let script: HTMLScriptElement | null = document.querySelector(
+      `script[src="${src}"]`,
+    );
 
-                script.addEventListener('load', setAttributeFromEvent)
-                script.addEventListener('error', setAttributeFromEvent)
-            } else {
-                setStatus(script.getAttribute('data-status'))
-            }
+    if (!script) {
+      script = document.createElement('script');
+      script.src = src;
+      script.async = true;
+      script.setAttribute('data-status', 'loading');
 
-            const setStateFromEvent = (event: Event) => setStatus(event.type === 'load' ? 'ready' : 'error')
+      document.body.appendChild(script);
 
-            script.addEventListener('load', setStateFromEvent)
-            script.addEventListener('error', setStateFromEvent)
+      const setAttributeFromEvent = (event: Event) => {
+        script?.setAttribute(
+          'data-status',
+          event.type === 'load' ? 'ready' : 'error',
+        );
+      };
 
-            return () => {
-                if (script) {
-                    script.removeEventListener('load', setStateFromEvent)
-                    script.removeEventListener('error', setStateFromEvent)
-                }
-            }
-        },
-        [src],
-    )
+      script.addEventListener('load', setAttributeFromEvent);
+      script.addEventListener('error', setAttributeFromEvent);
+    } else {
+      setStatus(script.getAttribute('data-status'));
+    }
 
-    return status
-};
+    const setStateFromEvent = (event: Event) =>
+      setStatus(event.type === 'load' ? 'ready' : 'error');
+
+    script.addEventListener('load', setStateFromEvent);
+    script.addEventListener('error', setStateFromEvent);
+
+    return () => {
+      if (script) {
+        script.removeEventListener('load', setStateFromEvent);
+        script.removeEventListener('error', setStateFromEvent);
+      }
+    };
+  }, [src]);
+
+  return status;
+}

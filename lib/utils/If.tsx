@@ -1,6 +1,8 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
 
-export const If = ({isTrue, children}: {
-    isTrue: boolean;
-    children: ReactNode;  
-}) => isTrue ? children : null;
+type Props = {
+  isTrue: boolean;
+  children: ReactNode;
+};
+
+export const If = ({ isTrue, children }: Props) => (isTrue ? children : null);

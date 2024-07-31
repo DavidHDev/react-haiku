@@ -2,21 +2,32 @@ import { useRef, useEffect } from 'react';
 
 import { parseToCookieType, getCookies } from '../helpers/cookie';
 
-export const useCookieListener = (effect: ((a: any, b: string) => void), cookies: string[]) => {
+export const useCookieListener = (
+  effect: (a: any, b: string) => void,
+  cookies: string[],
+) => {
   const cookieValues = useRef(getCookies(cookies));
 
   useEffect(() => {
     const cookieOnChange = () => {
       const currentCookiesValues = getCookies(cookies);
 
-      Object.entries(cookieValues.current).forEach(([cookieKey, cookieValue]) => {
-        const currentCookie = currentCookiesValues[cookieKey];
+      Object.entries(cookieValues.current).forEach(
+        ([cookieKey, cookieValue]) => {
+          const currentCookie = currentCookiesValues[cookieKey];
 
-        if (parseToCookieType(currentCookie) !== parseToCookieType(cookieValue)) {
-          cookieValues.current = { ...cookieValues.current, [cookieKey]: currentCookie };
-          effect(currentCookie, cookieKey);
-        }
-      });
+          if (
+            parseToCookieType(currentCookie) !== parseToCookieType(cookieValue)
+          ) {
+            cookieValues.current = {
+              ...cookieValues.current,
+              [cookieKey]: currentCookie,
+            };
+
+            effect(currentCookie, cookieKey);
+          }
+        },
+      );
     };
 
     const cookieInterval = setInterval(cookieOnChange, 1000);

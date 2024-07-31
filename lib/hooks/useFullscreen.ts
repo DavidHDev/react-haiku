@@ -2,7 +2,9 @@ import React, { useState, useEffect, useCallback } from 'react';
 
 type DocumentWith<T> = Document & T;
 
-export function useFullscreen(targetRef: React.MutableRefObject<Document & {} | any>) {
+export function useFullscreen(
+  targetRef: React.MutableRefObject<(Document & {}) | any>,
+) {
   const [isFullscreen, setFullscreen] = useState(false);
 
   const toggleFullscreen = useCallback(() => {
@@ -12,19 +14,25 @@ export function useFullscreen(targetRef: React.MutableRefObject<Document & {} | 
           document.exitFullscreen();
           break;
         case 'mozCancelFullScreen' in document:
-          (document as DocumentWith<{
-            mozCancelFullScreen: () => void;
-          }>).mozCancelFullScreen();
+          (
+            document as DocumentWith<{
+              mozCancelFullScreen: () => void;
+            }>
+          ).mozCancelFullScreen();
           break;
         case 'webkitExitFullscreen' in document:
-          (document as DocumentWith<{
-            webkitExitFullscreen: () => void;
-          }>).webkitExitFullscreen();
+          (
+            document as DocumentWith<{
+              webkitExitFullscreen: () => void;
+            }>
+          ).webkitExitFullscreen();
           break;
         case 'msExitFullscreen' in document:
-          (document as DocumentWith<{
-            msExitFullscreen: () => void;
-          }>).msExitFullscreen();
+          (
+            document as DocumentWith<{
+              msExitFullscreen: () => void;
+            }>
+          ).msExitFullscreen();
           break;
         default:
           console.log('Fullscreen API is not supported.');
@@ -52,7 +60,7 @@ export function useFullscreen(targetRef: React.MutableRefObject<Document & {} | 
       }
     }
 
-    setFullscreen(prevState => !prevState);
+    setFullscreen((prevState) => !prevState);
   }, [isFullscreen, targetRef]);
 
   const handleFullscreenChange = useCallback(() => {
@@ -68,4 +76,4 @@ export function useFullscreen(targetRef: React.MutableRefObject<Document & {} | 
   }, [handleFullscreenChange]);
 
   return { isFullscreen, toggleFullscreen };
-};
+}

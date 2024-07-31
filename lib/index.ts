@@ -31,10 +31,10 @@ export { useBatteryStatus } from './hooks/useBatteryStatus';
 export { useFullscreen } from './hooks/useFullscreen';
 export { useDeviceOS } from './hooks/useDeviceOS';
 export { useNetwork } from './hooks/useNetwork';
-export { useTabNotification } from './hooks/useTabNotification'
+export { useTabNotification } from './hooks/useTabNotification';
 
 export { If } from './utils/If';
 export { Show } from './utils/Show';
 export { For } from './utils/For';
 export { RenderAfter } from './utils/RenderAfter';
-export { Image } from "./utils/Image";
+export { Image } from './utils/Image';

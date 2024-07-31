@@ -1,23 +1,38 @@
 import { off, on } from '../helpers/event';
 import { useCallback, useEffect } from 'react';
 
-export function useConfirmExit(enabled: boolean | (() => boolean), message = 'Are you sure you want to exit?') {
-    const handler = useCallback((e: Event) => {
-        const finalEnabled = typeof enabled === 'function' ? enabled() : true;
-        if (!finalEnabled) return;
-        e.preventDefault();
+export function useConfirmExit(
+  enabled: boolean | (() => boolean),
+  message = 'Are you sure you want to exit?',
+) {
+  const handler = useCallback(
+    (e: Event) => {
+      const finalEnabled = typeof enabled === 'function' ? enabled() : true;
 
-        // @ts-ignore
-        // NOTE: modern browsers no longer support custom messages with .returnValue
-        if (message) e.returnValue = message;
+      if (!finalEnabled) {
+        return;
+      }
 
-        return message;
-    }, [enabled, message]);
+      e.preventDefault();
 
-    useEffect(() => {
-        if (!enabled) return;
-        on(window, 'beforeunload', handler);
+      // @ts-ignore
+      // NOTE: modern browsers no longer support custom messages with .returnValue
+      if (message) {
+        e.returnValue = message;
+      }
 
-        return () => off(window, 'beforeunload', handler);
-    }, [enabled, handler]);
-};
+      return message;
+    },
+    [enabled, message],
+  );
+
+  useEffect(() => {
+    if (!enabled) {
+      return;
+    }
+
+    on(window, 'beforeunload', handler);
+
+    return () => off(window, 'beforeunload', handler);
+  }, [enabled, handler]);
+}

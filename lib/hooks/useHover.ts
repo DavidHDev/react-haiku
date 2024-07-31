@@ -21,4 +21,4 @@ export function useHover() {
   }, []);
 
   return { ref, hovered };
-};
+}

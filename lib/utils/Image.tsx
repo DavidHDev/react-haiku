@@ -1,18 +1,8 @@
-import React from "react";
+import { ImgHTMLAttributes } from 'react';
 
-export const Image = ({
-  src,
-  loading,
-  alt,
-  fallback,
-  ...props
-}: {
-  src: string;
-  loading?: "lazy" | "eager";
-  alt: string;
-  fallback: string;
-  [key: string]: any;
-}) => {
+type Props = ImgHTMLAttributes<HTMLImageElement> & { fallback: string };
+
+export const Image = ({ src, loading, alt, fallback, ...props }: Props) => {
   const handleBrokenImage = (event: any) => (event.target.src = fallback);
 
   return (

@@ -1,17 +1,27 @@
-export const parseToDataType = (value: string | undefined, isItRetry = false): any => {
+export const parseToDataType = (
+  value: string | undefined,
+  isItRetry = false,
+): any => {
   try {
-    return value === 'undefined' || value === undefined ? undefined : JSON.parse(value);
+    return value === 'undefined' || value === undefined
+      ? undefined
+      : JSON.parse(value);
   } catch (e) {
-    if (!isItRetry) return parseToDataType(`"${value?.replaceAll?.('"', '')}"`, true);
+    if (!isItRetry) {
+      return parseToDataType(`"${value?.replaceAll?.('"', '')}"`, true);
+    }
+
     return undefined;
   }
 };
 
 export const parseToCookieType = <T>(value: T) => {
-  if(typeof value === 'string') return value;
+  if (typeof value === 'string') {
+    return value;
+  }
 
   return JSON.stringify(value);
-}
+};
 
 export const getCookie = (name: string) => {
   const value = `; ${document.cookie}`;
@@ -22,12 +32,19 @@ export const getCookie = (name: string) => {
 };
 
 export const getCookies = (cookies: string[] = []) => {
-  if (cookies.length) return cookies.reduce((result, cookie) => ({ ...result, [cookie]: getCookie(cookie) }), {});
+  if (cookies.length)
+    return cookies.reduce(
+      (result, cookie) => ({ ...result, [cookie]: getCookie(cookie) }),
+      {},
+    );
 
-  return Object.fromEntries(document.cookie.split('; ').map((c) => {
-    const [key, value] = c.split('=');
-    return [key, parseToDataType(value)]
-  }));
+  return Object.fromEntries(
+    document.cookie.split('; ').map((c) => {
+      const [key, value] = c.split('=');
+
+      return [key, parseToDataType(value)];
+    }),
+  );
 };
 
 export const setCookie = <T>(name: string, value: T, expireDays: number) => {
