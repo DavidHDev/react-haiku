@@ -1,0 +1,33 @@
+# useScript()
+
+The `useScript()` hook allows appending script tags to your document from inside React components. The state variable returns a status that can have one of the following values: `idle`, `loading`, `ready`, `error`.
+
+### Import
+
+```jsx
+import { useScript } from 'react-haiku';
+```
+
+### Usage
+
+import { UseScriptDemo } from '../../demo/UseScriptDemo.jsx';
+
+<UseScriptDemo />
+
+```jsx
+import { useScript } from 'react-haiku';
+
+export const Component = () => {
+    // GSAP
+    const script = useScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js');
+
+    return (
+        <>
+            <b>Check the bottom of the body tag!</b>
+            <button>
+                {`Script Status: ${script}`}
+            </button>
+        </>
+    );
+}
+```

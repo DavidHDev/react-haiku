@@ -1,0 +1,80 @@
+.demo-button {
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    padding: .5em 1.2em;
+    border-radius: 1rem;
+    display: flex;
+    font-weight: 500;
+    align-items: center;
+    color: #f5f5f5 !important;
+    border: 1px solid #555;
+    background-color: #222;
+    user-select: none;
+    transition: box-shadow .2s ease, border .2s ease;
+}
+
+.demo-button:hover {
+    border: 1px solid #ff005da5;
+    box-shadow: 0 0 0 3px rgba(255, 0, 93, 0.25);
+    transition: box-shadow .2s ease, border .2s ease;
+}
+
+.green-button {
+    margin-top: .5em;
+    border: 1px solid #3fef3f;
+    color: #3fef3f;
+}
+
+.red-button {
+    margin-top: .5em;
+    border: 1px solid #FF005C;
+    color: #FF005C;
+}
+
+input {
+    position: relative;
+    font-size: 16px;
+    color: #f5f5f5 !important;
+    caret-color: #FF005C;
+    padding: .7em 1em;
+    border-radius: 1rem;
+    font-weight: 500;
+    border: 1px solid #555;
+    background-color: #222;
+    margin-bottom: .5em;
+    width: 100%;
+    transition: box-shadow .2s ease, border .2s ease;
+}
+
+input:hover, input:focus {
+    outline: none !important;
+    border: 1px solid #ff005da5 !important;
+    box-shadow: 0 0 0 3px rgba(255, 0, 93, 0.25);
+    transition: box-shadow .2s ease, border .2s ease;
+}
+
+.demo-container-center {
+    position: relative;
+    margin-bottom: 2em;
+    min-height: 150px;
+    border: 1px solid #555;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+}
+
+.demo-container-start {
+    padding:1em;
+    position: relative;
+    margin-bottom: 2em;
+    min-height: 100px;
+    border: 1px solid #555;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    border-radius: 1rem;
+}

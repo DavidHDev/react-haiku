@@ -1,0 +1,47 @@
+# useDebounce()
+
+The useDebounce() hook lets you debounce value changes inside your components. Use this when you want to perform a heavy operation based on state
+
+### Import
+
+```jsx
+import { useDebounce } from 'react-haiku';
+```
+
+### Usage
+
+import { UseDebounceDemo } from '../../demo/UseDebounceDemo.jsx';
+
+<UseDebounceDemo />
+
+```jsx
+import { useState, useEffect } from 'react'
+import { useDebounce } from "react-haiku"
+
+export const Component = () => {
+    const [value, setValue] = useState('')
+    const debouncedValue = useDebounce(value, 1000)
+
+    const handleChange = (event) => setValue(event.target.value)
+
+    // Handle Change After Debounce
+    useEffect(() => {
+        console.log(debouncedValue);
+    }, [debouncedValue])
+
+    return (
+        <>
+            <b>Real-Time Value: {value}</b>
+            <b>Debounced value: {debouncedValue}</b>
+
+            <input type="text" value={value} onChange={handleChange} />
+        </>
+    );
+}
+```
+
+### API
+
+This hook accepts the following arguments:
+- `value` - the state value that you want to debounce on changes
+- `timeout` - the amount of time in milliseconds to wait until the debounce is triggered, `500ms` by default

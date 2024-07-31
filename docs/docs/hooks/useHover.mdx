@@ -1,0 +1,29 @@
+# useHover()
+
+The useHover() hook lets you detect if the user's mouse is hovering over an element
+
+### Import
+
+```jsx
+import { useHover } from 'react-haiku';
+```
+
+### Usage
+
+import { UseHoverDemo } from '../../demo/UseHoverDemo.jsx';
+
+<UseHoverDemo />
+
+```jsx
+import { useHover } from 'react-haiku';
+
+export const Component = () => {
+    const { hovered, ref } = useHover();
+
+    return(
+        <button ref={ref}>
+            {hovered ? 'All mice on me!' : 'No mice on me!'}
+        </button>
+    );
+}
+```

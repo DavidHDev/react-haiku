@@ -1,0 +1,52 @@
+# useMousePosition()
+
+The `useMousePosition()` hook lets you track the mouse position when hovering over a specific container or the entire page, so if a target container is not provided through the `ref`, it will track the mouse position relative to the entire document.
+
+### Import
+
+```jsx
+import { useMousePosition } from 'react-haiku';
+```
+
+### Usage
+
+import { UseMousePositionDemo } from '../../demo/UseMousePositionDemo.jsx';
+
+#### Targeted Container
+
+<UseMousePositionDemo />
+
+```jsx
+import { useMousePosition } from 'react-haiku';
+
+export const Component = () => {
+    const { target, x, y } = useMousePosition();
+
+    return (
+        <div ref={target}>
+            <b>Hover This Container</b>
+            <p>{`X: ${x} | Y: ${y}`}</p>
+        </div>
+    );
+}
+```
+
+#### Entire Document
+
+import { UseMousePositionFullDemo } from '../../demo/UseMousePositionDemo.jsx';
+
+<UseMousePositionFullDemo />
+
+```jsx
+import { useMousePosition } from 'react-haiku';
+
+export const Component = () => {
+    const { x, y } = useMousePosition();
+
+    return (
+        <div>
+            <p>{`X: ${x} | Y: ${y}`}</p>
+        </div>
+    );
+}
+```

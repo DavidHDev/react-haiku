@@ -1,0 +1,27 @@
+# useTitle()
+
+The `useTitle()` hook allows the dynamic update of the document's title from your React components! The title passed to this hook can be attached to a piece of state, updating the state will therefore also update the title.
+
+### Import
+
+```jsx
+import { useTitle } from 'react-haiku';
+```
+
+### Usage
+
+import { UseTitleDemo } from '../../demo/UseTitleDemo.jsx';
+
+<UseTitleDemo />
+
+```jsx
+import { useState } from 'react';
+import { useTitle } from 'react-haiku';
+
+export const Component = () => {
+    const [title, setTitle] = useState('');
+    useTitle(title);
+
+    return <button onClick={() => setTitle('It works!')}>Update Title</button>
+}
+```

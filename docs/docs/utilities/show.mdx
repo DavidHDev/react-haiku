@@ -1,0 +1,50 @@
+# Show
+
+The `Show` component can be used for complex conditional rendering. The component can be extended by multiple `When` components and an `Else` component to render their contents based on the conditions you provide. 
+
+### Import
+
+```jsx
+import { Show } from 'react-haiku';
+```
+
+### Usage
+
+import { ShowDemo } from '../../demo/ShowDemo.jsx';
+
+<ShowDemo />
+
+```jsx
+import { useState } from 'react';
+import { Show } from 'react-haiku';
+
+export const Component = () => {
+    const [number, setNumber] = useState(6);
+
+    return (
+        <Show>
+            <Show.When isTrue={number === 6}>
+                <b>Number is 6!</b>
+                <button onClick={() => setNumber(number + 1)}>Increment</button>
+            </Show.When>
+
+            <Show.When isTrue={number === 7}>
+                <b>Number is 7!</b>
+                <button onClick={() => setNumber(number + 1)}>Increment</button>
+            </Show.When>
+
+            <Show.Else>
+                <b>No valid number found!</b>
+                <button onClick={() => setNumber(6)}>Reset</button>
+            </Show.Else>
+        </Show>
+    );
+}
+```
+
+### API
+
+The `Show` component accepts two types of child components:
+
+- `When` - this component can be used multiple times. It renders its contents when the condition passed inside its `isTrue` prop is evaluated as truthy
+- `Else` - this component can only be used once and will render its contents when none of the `When` components have met their conditions.

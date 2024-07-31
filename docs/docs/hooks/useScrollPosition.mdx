@@ -1,0 +1,37 @@
+# useScrollPosition()
+
+The `useScrollPosition()` hook allows you to fetch the window's scroll height/width in real time and to programatically set them by using the provided method.
+
+### Import
+
+```jsx
+import { useScrollPosition } from 'react-haiku';
+```
+
+### Usage
+
+import { UseScrollPositionDemo } from '../../demo/UseScrollPositionDemo.jsx';
+
+<UseScrollPositionDemo />
+
+```jsx
+import { useScrollPosition } from 'react-haiku';
+
+export const Component = () => {
+    const [scroll, setScroll] = useScrollPosition();
+
+    return (
+        <>
+            <b>Current Position: {`X: ${scroll.x}, Y: ${scroll.y}`}!</b>
+            <button onClick={() => setScroll({ y: document.body.scrollHeight })}>
+                Scroll To Bottom
+            </button>
+        </>
+    );
+}
+```
+
+### API
+
+- `scroll` – contains the x and y values of the window's scroll position
+- `setScroll` - used for programatically scrolling inside the active viewport

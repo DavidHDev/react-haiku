@@ -1,0 +1,40 @@
+# useMediaQuery()
+
+The `useMediaQuery()` hook allows you to react to media queries inside of your React components. It accepts a `media query` argument and returns `true` or `false` when the query is a match or not with your current browser's properties.
+
+### Import
+
+```jsx
+import { useMediaQuery } from 'react-haiku';
+```
+
+### Usage
+
+import { UseMediaQueryDemo } from '../../demo/UseMediaQueryDemo.jsx';
+
+<UseMediaQueryDemo />
+
+```jsx
+import { useMediaQuery } from 'react-haiku';
+
+export const Component = () => {
+    const breakpoint = useMediaQuery('(max-width: 1200px)');
+
+    return (
+        <>
+            <p>Resize your window!</p>
+            <button className={breakpoint ? 'green-button' : 'red-button'}>
+                {breakpoint ? "It's a match for 1200px!" : "Not a match for 1200px!"}
+            </button>
+        </>
+    );
+}
+```
+
+### API
+
+- `initialValue` – Boolean value to specify the initial value of the query matches result
+
+```jsx
+    const breakpoint = useMediaQuery('(max-width: 1000px)', false);
+```

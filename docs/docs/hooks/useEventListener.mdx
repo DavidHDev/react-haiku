@@ -1,0 +1,53 @@
+# useEventListener()
+
+The useEventListener() hook lets you quickly add an event to a certain `ref` or the app's `window` if no `ref` is specified
+
+### Import
+
+```jsx
+import { useEventListener } from 'react-haiku';
+```
+
+### Usage
+
+import { UseEventListenerDemo } from '../../demo/UseEventListenerDemo.jsx';
+
+<UseEventListenerDemo />
+
+```jsx
+import { useState, useRef } from 'react'
+import { useEventListener } from "react-haiku"
+
+export const Component = () => {
+    const [countWindow, setCountWindow] = useState(0);
+    const [countRef, setCountRef] = useState(0);
+
+    // Button Ref
+    const buttonRef = useRef(null)
+
+    // Event Handlers
+    const countW = () => setCountWindow(countWindow + 1);
+    const countR = () => setCountRef(countRef + 1);
+
+    // Example 1: Window Event
+    useEventListener('scroll', countW);
+
+    // Example 2: Element Event
+    useEventListener('click', countR, buttonRef);
+
+    return (
+        <>
+            <b>Window Event Triggered {countWindow} Times!</b>
+            <b>Ref Event Triggered {countRef} Times!</b>
+            <button ref={buttonRef}>Click Me</button>
+        </>
+    );
+}
+```
+
+### API
+
+This hook accepts the following arguments:
+- `eventName` - the event string value that you want to set to your ref/window
+- `handler` - the handler function for your event
+- `element` - the ref you can provide for targetting elements for your event

@@ -1,0 +1,79 @@
+---
+sidebar_position: 1
+---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+# Introduction
+
+<div align="center">
+	<br />
+	<br />
+	<img src={useBaseUrl('/img/haiku.svg')} alt="react-haiku" width="400" />
+	<br />
+	<br />
+	<b>An awesome collection of React Hooks & Utilities!</b>
+	<br />
+	<br />
+	<br />
+	<br />
+	<hr />
+</div>
+
+[![NPM](https://img.shields.io/npm/l/react-haiku)](https://github.com/DavidHDev/react-haiku/blob/main/LICENSE.md)
+[![npm](https://img.shields.io/npm/v/react-haiku)](https://www.npmjs.com/package/react-haiku)
+[![npm](https://img.shields.io/npm/dm/react-haiku)](https://www.npmjs.com/package/react-haiku)
+
+## What is this?
+
+Haiku is a `simple` & `lightweight` React library with the goal of saving
+you time by offering a large collection of `hooks` & `utilities` that will
+help you get the job done faster & more efficiently!
+
+<br />
+<hr />
+
+
+## Install
+
+Installing Haiku is very easy! <br />
+*Requires React >=16.8.0*
+
+#### NPM
+```sh
+npm install react-haiku
+```
+
+#### Yarn
+```sh
+yarn add react-haiku
+```
+#### PNPM
+```sh
+pnpm install react-haiku
+```
+<br />
+
+
+## Using Haiku with NextJS
+
+Because Haiku uses ES6 modules, it is not transpiled by NextJS automatically since it's an external dependency, so you may have to follow a few extra steps to set it up correctly:
+
+1. Add the `next-transpile-modules` package to your project:<br/>
+
+```sh
+npm install next-transpile-modules
+```
+
+2. Configure your project's `next.config.js` file to transpile Haiku:
+
+```js
+const withTM = require('next-transpile-modules')(['react-haiku']);
+module.exports = withTM({});
+```
+
+After following these two steps, importing features from `react-haiku` into your project should work as expected! <br/><br/><br/><hr />
+
+<div align="center">
+	<i>I hope you will have as much fun using Haiku as I had creating it!</i>
+</div>

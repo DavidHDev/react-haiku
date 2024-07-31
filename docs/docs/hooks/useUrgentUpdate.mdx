@@ -1,0 +1,31 @@
+# useUrgentUpdate()
+
+The `useUrgentUpdate()` hook forces a component to re-render when it gets called from anywhere inside it.
+
+### Import
+
+```jsx
+import { useUrgentUpdate } from 'react-haiku';
+```
+
+### Usage
+
+import { UseUrgentUpdateDemo } from '../../demo/UseUrgentUpdateDemo.jsx';
+
+<UseUrgentUpdateDemo />
+
+```jsx
+import { useUrgentUpdate } from 'react-haiku';
+
+export const Component = () => {
+    const randomNo = Math.floor(Math.random() * 100);
+    const update = useUrgentUpdate();
+
+    return (
+        <>
+            <b>{`Number: ${randomNo}`}</b>
+            <button onClick={update}>Force Render</button>
+        </>
+    );
+}
+```

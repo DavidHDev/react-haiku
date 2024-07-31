@@ -1,0 +1,45 @@
+# useHold()
+
+The `useHold()` hook lets you detect long presses (holds) on target elements and trigger a handler after a set timeout is elapsed while the user is still holding down (click/touch) the element. 
+
+### Import
+
+```jsx
+import { useHold } from 'react-haiku';
+```
+
+### Usage
+
+import { UseHoldDemo } from '../../demo/UseHoldDemo.jsx';
+
+<UseHoldDemo />
+
+```jsx
+import { useState } from 'react'
+import { useHold } from "react-haiku"
+
+export const Component = () => {
+    const [count, setCount] = useState(0)
+    const handleHold = () => setCount(count + 1);
+
+    const buttonHold = useHold(handleHold, { delay: 2000 });
+
+    return (
+        <>
+            <b>Successful Holds: {count}</b>
+            <button {...buttonHold}>
+                Press & Hold!
+            </button>
+        </>
+    );
+}
+```
+
+### API
+
+This hook accepts the following arguments:
+
+- `callback` - the handler function to execute on successful holds
+- `options` - the options object you can pass in
+- - `doPreventDefault` - boolean, whether or not to prevent the default event
+- - `delay` - number, a value in milliseconds, the amount of time the user needs to hold an element to trigger an event 

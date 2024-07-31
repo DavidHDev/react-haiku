@@ -1,0 +1,31 @@
+# useFirstRender()
+
+The `useFirstRender()` hook lets you detect whether or not the component you use it on is on its initial render, it returns a boolean value with the result.
+
+### Import
+
+```jsx
+import { useFirstRender } from 'react-haiku';
+```
+
+### Usage
+
+import { UseFirstRenderDemo } from '../../demo/UseFirstRenderDemo.jsx';
+
+<UseFirstRenderDemo />
+
+```jsx
+import { useFirstRender, useUrgentUpdate } from "react-haiku"
+
+export const Component = () => {
+    const isFirst = useFirstRender()
+    const update = useUrgentUpdate();
+
+    return (
+        <>
+            <b>First Render? - {isFirst ? 'Yes' : 'No'}</b>
+            <button onClick={update}>Trigger Re-Render</button>
+        </>
+    );
+}
+```

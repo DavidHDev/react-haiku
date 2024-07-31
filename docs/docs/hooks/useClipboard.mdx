@@ -1,0 +1,38 @@
+# useClipboard()
+
+The useClipboard() hook will help you interact with the browser's navigator.clipboard property in order to copy text to the user's clipboard.
+
+### Import
+
+```jsx
+import { useClipboard } from 'react-haiku';
+```
+
+### Usage
+
+import { UseClipboardDemo } from '../../demo/UseClipboardDemo.jsx';
+
+<UseClipboardDemo />
+
+```jsx
+import { useClipboard } from 'react-haiku';
+
+const Component = () => {
+  const clipboard = useClipboard({ timeout: 2000 });
+
+  return (
+    <button onClick={() => clipboard.copy('Haiku Rocks!')}>
+      {clipboard.copied ? 'Copied' : 'Copy'}
+    </button>
+  );
+}
+```
+
+### API
+
+The useClipboard hook takes an argument `options` where you can set the timeout duration for a successful copy operation
+
+- `copy` – method use to copy a string to the clipboard
+- `copied` – boolean value that indicates a successful copy
+- `reset` – method that can clear any timeout and reset the `copied` value
+- `error` – error handling object returned if any potential errors occur

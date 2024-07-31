@@ -1,0 +1,30 @@
+# useSingleEffect()
+
+The `useSingleEffect()` hook works exactly like useEffect, except it is called only a single time when the component mounts. This helps with React's recent update to the useEffect hook which is being called twice on mount.
+
+### Import
+
+```jsx
+import { useSingleEffect } from 'react-haiku';
+```
+
+### Usage
+
+import { UseSingleEffectDemo } from '../../demo/UseSingleEffectDemo.jsx';
+
+<UseSingleEffectDemo />
+
+```jsx
+import { useState } from 'react';
+import { useSingleEffect } from 'react-haiku';
+
+export const Component = () => {
+    const [renderCount, setRenderCount] = useState(0);
+
+    useSingleEffect(() => {
+        setRenderCount(renderCount + 1);
+    }) // no dependency array needed
+
+    return <b>Effect executed only {renderCount} time!</b>
+}
+```

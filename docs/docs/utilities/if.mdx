@@ -1,0 +1,42 @@
+# If
+
+The `If` component can be used for simple conditional rendering. It will render its children whenever the condition passed to the `isTrue` prop is truthy. For more complex rendering logic, you can use the `Show` component
+
+### Import
+
+```jsx
+import { If } from 'react-haiku';
+```
+
+### Usage
+
+import { IfDemo } from '../../demo/IfDemo.jsx';
+
+<IfDemo />
+
+```jsx
+import { useState } from 'react';
+import { If } from 'react-haiku';
+
+export const Component = () => {
+    const [number, setNumber] = useState(6);
+
+    return(
+        <>
+            <b>Click to update state!</b>
+            <If isTrue={number === 6}>
+                <button onClick={() => setNumber(7)}>I like the number 6!</button>
+            </If>
+            <If isTrue={number === 7}>
+                <button onClick={() => setNumber(6)}>7 is way better!</button>
+            </If>
+        </>
+    );
+}
+```
+
+### API
+
+The `If` component accepts the following props:
+
+- `isTrue` - the condition to evaluate when rendering the component's contents

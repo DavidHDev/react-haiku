@@ -1,0 +1,39 @@
+# useConfirmExit()
+
+The useConfirmExit() hook lets you display a prompt to the user before he closes the current tab depending on whether the tab is declared to be dirty or not.
+
+### Import
+
+```jsx
+import { useConfirmExit } from 'react-haiku';
+```
+
+### Usage
+
+import { UseConfirmExitDemo } from '../../demo/UseConfirmExitDemo.jsx';
+
+<UseConfirmExitDemo />
+
+```jsx
+import { useConfirmExit, useBoolToggle } from "react-haiku"
+
+export const Component = () => {
+    const [dirty, toggleDirty] = useBoolToggle();
+
+    useConfirmExit(dirty);
+
+    return (
+        <>
+            <b>Try to close this tab with the window dirty!</b>
+            <p>Dirty: {`${dirty}`}</p>
+            <button onClick={() => toggleDirty()}>{dirty ? 'Set Clean' : 'Set Dirty'}</button>
+        </>
+    );
+}
+```
+
+### API
+
+This hook accepts the following arguments:
+- `dirty` - the value to check when activating/deactivating the exit confirmation message
+- `message` - while this is availabe, using it currently has no effect since most browsers have disabled the feature of adding custom confirmation messages on this type of event

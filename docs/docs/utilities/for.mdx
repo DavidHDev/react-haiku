@@ -1,0 +1,36 @@
+# For
+
+The `For` component can iterate over arrays and render JSX for each available item. Keys are automatically assigned.
+
+### Import
+
+```jsx
+import { For } from 'react-haiku';
+```
+
+### Usage
+
+import { ForDemo } from '../../demo/ForDemo.jsx';
+
+<ForDemo />
+
+```jsx
+import { For } from 'react-haiku';
+
+export const Component = () => {
+    const data = [{name: 'React'}, {name: 'Haiku'}];
+
+    return(
+        <For each={data} render={(item, index) => 
+            <b>{`${index}: ${item.name}`}</b>
+        }/>
+    );
+}
+```
+
+### API
+
+The component accepts the following props:
+
+- `each` - the array to iterate over when rendering
+- `render` - the render method that can return JSX

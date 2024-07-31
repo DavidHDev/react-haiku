@@ -1,0 +1,34 @@
+# useInputValue()
+
+The useInputValue() hook lets you easily manage states for inputs in your components
+
+### Import
+
+```jsx
+import { useInputValue } from 'react-haiku';
+```
+
+### Usage
+
+import { UseInputValueDemo } from '../../demo/UseInputValueDemo.jsx';
+
+<UseInputValueDemo />
+
+```jsx
+import { useInputValue } from 'react-haiku';
+
+export const Component = () => {
+    const [nameValue, setNameValue] = useInputValue('');
+
+    return (
+        <>
+            <input
+                placeholder="Type something.."
+                type="text" value={nameValue}
+                onChange={setNameValue}
+            />
+            <p>{`Value - ${nameValue ? nameValue : 'None'}`}</p>
+        </>
+    );
+}
+```

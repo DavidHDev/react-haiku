@@ -1,0 +1,31 @@
+# useLeaveDetection()
+
+The useLeaveDetection() hook allows you to detect when a user's cursor leaves the document's boundaries
+
+### Import
+
+```jsx
+import { useLeaveDetection } from 'react-haiku';
+```
+
+### Usage
+
+import { UseLeaveDetectionDemo } from '../../demo/UseLeaveDetectionDemo.jsx';
+
+<UseLeaveDetectionDemo />
+
+```jsx
+import { useLeaveDetection } from 'react-haiku';
+import { useState } from 'react';
+
+export const Component = () => {
+    const [leaveCount, setLeaveCount] = useState(0);
+    useLeaveDetection(() => setLeaveCount((s) => s + 1));
+
+    return (
+        <button>
+            {`You have left the page ${leaveCount} times!`}
+        </button>
+    );
+}
+```

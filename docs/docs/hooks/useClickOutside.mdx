@@ -1,0 +1,42 @@
+# useClickOutside()
+
+The useClickOutside() hook lets you trigger a callback whenever the user clicks outside of a target element
+
+### Import
+
+```jsx
+import { useClickOutside } from 'react-haiku';
+```
+
+### Usage
+
+import { UseClickOutsideDemo } from '../../demo/UseClickOutsideDemo.jsx';
+
+<UseClickOutsideDemo />
+
+```jsx
+import { useState, useRef } from 'react'
+import { useClickOutside } from "react-haiku"
+
+export const Component = () => {
+    const [count, setCount] = useState(0);
+    const ref = useRef(null)
+
+    const handleClickOutside = () => setCount(count + 1);
+
+    useClickOutside(ref, handleClickOutside);
+
+    return (
+        <>
+            <b>Clicked Outside {count} Times!</b>
+            <button ref={ref}>Click Outside Of Me!</button>
+        </>
+    );
+}
+```
+
+### API
+
+This hook accepts the following arguments:
+- `ref` - the target element, clicking outside of this element will trigger the handler
+- `handler` - the handler for what happens when you click outside of the target

@@ -1,0 +1,60 @@
+# useIdle()
+
+The `useIdle()` hook lets you detect current user activity or inactivity on a web page, returning a boolean value that represents whether or not the user is currently active. The user is set as inactive when no events are triggered after a specified delay.
+
+### Import
+
+```jsx
+import { useIdle } from 'react-haiku';
+```
+
+### Usage
+
+#### Default Options
+
+import { UseIdleDemo } from '../../demo/UseIdleDemo.jsx';
+
+<UseIdleDemo />
+
+
+```jsx
+import { useIdle } from "react-haiku"
+
+export const Component = () => {
+    const idle = useIdle(3000);
+
+    return <b>Current Status: {idle ? 'Idle' : 'Active'}</b>
+}
+```
+
+#### Custom Options
+
+import { UseIdleCustomDemo } from '../../demo/UseIdleDemo.jsx';
+
+<UseIdleCustomDemo />
+
+
+```jsx
+import { useIdle } from "react-haiku"
+
+export const Component = () => {
+    const idle = useIdle(1000, { events: ['click', 'touchstart'], initialState: false });
+
+    return (
+        <>
+            <b>Works only with click/touch events!</b>
+            <b>Current Status: {idle ? 'Idle' : 'Active'}</b>
+        </>
+    );
+}
+```
+
+
+### API
+
+This hook accepts the following arguments:
+
+- `timeout` - the time until the state is set as inactive
+- `options` - the options object you can pass in
+  - `events` - string array, the collection of events that will trigger activity signals, by default: `['keypress', 'mousemove', 'touchmove', 'click', 'scroll']`
+  - `initialState` - boolean, the initial activity state

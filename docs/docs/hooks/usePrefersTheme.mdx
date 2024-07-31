@@ -1,0 +1,32 @@
+# usePrefersTheme()
+
+The `usePrefersTheme()` hook allows the detection of the user's preferred system theme
+
+### Import
+
+```jsx
+import { usePrefersTheme } from 'react-haiku';
+```
+
+### Usage
+
+import { UsePrefersThemeDemo } from '../../demo/UsePrefersThemeDemo.jsx';
+
+<UsePrefersThemeDemo />
+
+```jsx
+import { usePrefersTheme } from 'react-haiku';
+
+export const Component = () => {
+    const theme = usePrefersTheme();
+
+    return (
+        <button>
+            {
+                `You prefer the ${theme} theme,
+                ${theme === 'light' ? 'ew!' : 'great!'}`
+            }
+        </button>
+    );
+}
+```

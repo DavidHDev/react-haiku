@@ -1,0 +1,32 @@
+# useIsomorphicLayoutEffect()
+
+The `useIsomorphicLayoutEffect()` hook lets switch between using `useEffect` and `useLayoutEffect` depending on the execution environment. If your app uses server side rendering, the hook will run `useEffect`, otherwise it will run `useLayoutEffect`.
+
+### Import
+
+```jsx
+import { useIsomorphicLayoutEffect } from 'react-haiku';
+```
+
+### Usage
+
+import { UseIsomorphicLayoutEffectDemo } from '../../demo/UseIsomorphicLayoutEffectDemo.jsx';
+
+<UseIsomorphicLayoutEffectDemo />
+
+```jsx
+import { useIsomorphicLayoutEffect } from "react-haiku"
+
+export const Component = () => {
+    useIsomorphicLayoutEffect(() => {
+        // do whatever
+    }, [])
+
+    return (
+        <>
+            <b>SSR will run useEffect</b>
+            <b>Browser will run useLayoutEffect</b>
+        </>
+    );
+}
+```

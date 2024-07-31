@@ -1,0 +1,25 @@
+# useFavicon()
+
+The `useFavicon()` hook lets change the website's favicon dynamically from your components! The favicon changes back to the default one on refresh!
+
+### Import
+
+```jsx
+import { useFavicon } from 'react-haiku';
+```
+
+### Usage
+
+import { UseFaviconDemo } from '../../demo/UseFaviconDemo.jsx';
+
+<UseFaviconDemo />
+
+```jsx
+import { useFavicon } from "react-haiku"
+
+export const Component = () => {
+    const { setFavicon } = useFavicon();
+
+    return <button onClick={() => setFavicon('https://bit.ly/3NEz8Sj')}>Update Favicon</button>
+}
+```

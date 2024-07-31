@@ -1,0 +1,42 @@
+# useLocalStorage()
+
+The `useLocalStorage()` hook is a quick way to set, read, and manage `localStorage` values. It comes with automatic JSON serialization/deserialization.
+
+### Import
+
+```jsx
+import { useLocalStorage } from 'react-haiku';
+```
+
+### Usage
+
+import { UseLocalStorageDemo } from '../../demo/UseLocalStorageDemo.jsx';
+
+<UseLocalStorageDemo />
+
+```jsx
+import { useEffect } from 'react'
+import { useLocalStorage } from "react-haiku"
+
+export const Component = () => {
+    const [value, setValue] = useLocalStorage('message');
+
+    useEffect(() => {
+        setValue({ message: 'Hello!' })
+    }, [])
+    
+    return (
+        <>
+            <b>Storage Value: {value.message}</b>
+            <button onClick={() => setValue({ message: 'Woah!' })}>Update Storage</button>
+        </>
+    );
+}
+```
+
+### API
+
+This hook accetps the following arguments:
+
+- `key` - the key to use for a localStorage entry
+- `value` - the value corresponding to a certain key, can be a a simple string value or an object

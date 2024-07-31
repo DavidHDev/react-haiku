@@ -1,0 +1,36 @@
+# useUpdateEffect()
+
+The `useUpdateEffect()` hook will work exactly like a `useEffect()` hook, except it will skip the first render and only react to changes for values passed inside its dependency array after the initial render.
+
+### Import
+
+```jsx
+import { useUpdateEffect } from 'react-haiku';
+```
+
+### Usage
+
+import { UseUpdateEffectDemo } from '../../demo/UseUpdateEffectDemo.jsx';
+
+<UseUpdateEffectDemo />
+
+```jsx
+import { useState } from 'react';
+import { useUpdateEffect } from 'react-haiku';
+
+export const Component = () => {
+    const [count, setCount] = useState(0);
+    const [triggerCount, setTriggerCount] = useState(0);
+
+    useUpdateEffect(() => {
+        setTriggerCount(triggerCount + 1);
+    }, [count])
+
+    return (
+        <>
+            <b>Updates Detected: {triggerCount}</b>
+            <button onClick={() => setCount(count + 1)}>Update State</button>
+        </>
+    );
+}
+```

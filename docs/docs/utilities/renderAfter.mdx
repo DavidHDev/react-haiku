@@ -1,0 +1,27 @@
+# RenderAfter
+
+The `RenderAfter` component can be used to render components or JSX code wrapped inside of it after a set delay.
+
+### Import
+
+```jsx
+import { RenderAfter } from 'react-haiku';
+```
+
+### Usage
+
+import { RenderAfterDemo } from '../../demo/RenderAfterDemo.jsx';
+
+<RenderAfterDemo />
+
+```jsx
+import { RenderAfter } from 'react-haiku';
+
+export const Component = () => {
+    return(
+        <RenderAfter delay={5000}>
+            <b>Wait 5 seconds and I'll show up!</b>
+        </RenderAfter>
+    );
+}
+```
