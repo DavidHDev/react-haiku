@@ -20,7 +20,7 @@
 
 ## Links
 
-- [Official Docs](https://haiku-docs-davidhdev.vercel.app/)
+- [Official Docs](https://reacthaiku.dev/)
 
 ## What is this?
 
@@ -58,7 +58,7 @@ pnpm install react-haiku
 
 <br>
 
-Please check the official [Documentation](https://haiku-docs-davidhdev.vercel.app/)for full usage examples.
+Please check the official [Documentation](https://reacthaiku.dev/)for full usage examples.
 
 <br>
 
@@ -102,39 +102,39 @@ export default Component;
 
 ### Hooks
 
-- [`useClipboard()`](https://reacthaiku.online/docs/hooks/useClipboard) - Copy data to the user's clipboard!
-- [`useHover()`](https://reacthaiku.online/docs/hooks/useHover) - Quick way to detect if your mouse is over an element!
-- [`useInputValue()`](https://reacthaiku.online/docs/hooks/useInputValue) - Manage input state with this simple hook!
-- [`useLeaveDetection()`](https://reacthaiku.online/docs/hooks/useLeaveDetection) - Detect when your user's cursor leaves the page!
-- [`useMediaQuery()`](https://reacthaiku.online/docs/hooks/useMediaQuery) - Manipulate your component using media queries!
-- [`useMousePosition()`](https://reacthaiku.online/docs/hooks/useMousePosition) - Detect the current position of the mouse relative to a target or the whole document!
-- [`usePrefersTheme()`](https://reacthaiku.online/docs/hooks/usePrefersTheme) - Detect the user's preferred system theme!
-- [`useScript()`](https://reacthaiku.online/docs/hooks/useScript) - Attach script tags to the document from your components!
-- [`useToggle()`](https://reacthaiku.online/docs/hooks/useToggle) - Toggle state values between two different options!
-- [`useBoolToggle()`](https://reacthaiku.online/docs/hooks/useToggle) - Toggle boolean state values!
-- [`useUrgentUpdate()`](https://reacthaiku.online/docs/hooks/useUrgentUpdate) - Force render a component when calling this hook!
-- [`useClickOutside()`](https://reacthaiku.online/docs/hooks/useClickOutside) - Detect clicks outside a target element!
-- [`useConfirmExit()`](https://reacthaiku.online/docs/hooks/useConfirmExit) - Prompt the user with a message before closing the tab if the state is set as dirty.
-- [`useDebounce()`](https://reacthaiku.online/docs/hooks/useDebounce) - Debounce state changes to react to updates after a delay!
-- [`useEventListener()`](https://reacthaiku.online/docs/hooks/useEventListener) - Set event listeners on the window object or a specific target element!
-- [`useFavicon()`](https://reacthaiku.online/docs/hooks/useFavicon) - Dynamically update the website's favicon from a component!
-- [`useFirstRender()`](https://reacthaiku.online/docs/hooks/useFirstRender) - Check whether or not a component is on its first render!
-- [`useHold()`](https://reacthaiku.online/docs/hooks/useHold) - Handle long presses on a target element and execute a handler after a set delay!
-- [`useIdle()`](https://reacthaiku.online/docs/hooks/useIdle) - Detect user activity/inactivity on the page based on events!
-- [`useIsomorphicLayoutEffect()`](https://reacthaiku.online/docs/hooks/useIsomorphicLayoutEffect) - Switch between useEffect and useLayoutEffect depending on the execution environment (SSR VS Browser)!
-- [`useLocalStorage()`](https://reacthaiku.online/docs/hooks/useLocalStorage) - Manage localStorage values dynamically
-- [`useScrollPosition()`](https://reacthaiku.online/docs/hooks/useScrollPosition) - Access the current scroll position on the page and modify it programatically.
-- [`useSingleEffect()`](https://reacthaiku.online/docs/hooks/useSingleEffect) - Run the useEffect hook strictly only once when the component is mounted!
-- [`useTitle()`](https://reacthaiku.online/docs/hooks/useTitle) - Update the document's title from your components!
-- [`useUpdateEffect()`](https://reacthaiku.online/docs/hooks/useUpdateEffect) - Similar to useEffect, but it skips the first render of a component, and only react to updates triggered by dependency values.
+- [`useClipboard()`](https://reacthaiku.dev/docs/hooks/useClipboard) - Copy data to the user's clipboard!
+- [`useHover()`](https://reacthaiku.dev/docs/hooks/useHover) - Quick way to detect if your mouse is over an element!
+- [`useInputValue()`](https://reacthaiku.dev/docs/hooks/useInputValue) - Manage input state with this simple hook!
+- [`useLeaveDetection()`](https://reacthaiku.dev/docs/hooks/useLeaveDetection) - Detect when your user's cursor leaves the page!
+- [`useMediaQuery()`](https://reacthaiku.dev/docs/hooks/useMediaQuery) - Manipulate your component using media queries!
+- [`useMousePosition()`](https://reacthaiku.dev/docs/hooks/useMousePosition) - Detect the current position of the mouse relative to a target or the whole document!
+- [`usePrefersTheme()`](https://reacthaiku.dev/docs/hooks/usePrefersTheme) - Detect the user's preferred system theme!
+- [`useScript()`](https://reacthaiku.dev/docs/hooks/useScript) - Attach script tags to the document from your components!
+- [`useToggle()`](https://reacthaiku.dev/docs/hooks/useToggle) - Toggle state values between two different options!
+- [`useBoolToggle()`](https://reacthaiku.dev/docs/hooks/useToggle) - Toggle boolean state values!
+- [`useUrgentUpdate()`](https://reacthaiku.dev/docs/hooks/useUrgentUpdate) - Force render a component when calling this hook!
+- [`useClickOutside()`](https://reacthaiku.dev/docs/hooks/useClickOutside) - Detect clicks outside a target element!
+- [`useConfirmExit()`](https://reacthaiku.dev/docs/hooks/useConfirmExit) - Prompt the user with a message before closing the tab if the state is set as dirty.
+- [`useDebounce()`](https://reacthaiku.dev/docs/hooks/useDebounce) - Debounce state changes to react to updates after a delay!
+- [`useEventListener()`](https://reacthaiku.dev/docs/hooks/useEventListener) - Set event listeners on the window object or a specific target element!
+- [`useFavicon()`](https://reacthaiku.dev/docs/hooks/useFavicon) - Dynamically update the website's favicon from a component!
+- [`useFirstRender()`](https://reacthaiku.dev/docs/hooks/useFirstRender) - Check whether or not a component is on its first render!
+- [`useHold()`](https://reacthaiku.dev/docs/hooks/useHold) - Handle long presses on a target element and execute a handler after a set delay!
+- [`useIdle()`](https://reacthaiku.dev/docs/hooks/useIdle) - Detect user activity/inactivity on the page based on events!
+- [`useIsomorphicLayoutEffect()`](https://reacthaiku.dev/docs/hooks/useIsomorphicLayoutEffect) - Switch between useEffect and useLayoutEffect depending on the execution environment (SSR VS Browser)!
+- [`useLocalStorage()`](https://reacthaiku.dev/docs/hooks/useLocalStorage) - Manage localStorage values dynamically
+- [`useScrollPosition()`](https://reacthaiku.dev/docs/hooks/useScrollPosition) - Access the current scroll position on the page and modify it programatically.
+- [`useSingleEffect()`](https://reacthaiku.dev/docs/hooks/useSingleEffect) - Run the useEffect hook strictly only once when the component is mounted!
+- [`useTitle()`](https://reacthaiku.dev/docs/hooks/useTitle) - Update the document's title from your components!
+- [`useUpdateEffect()`](https://reacthaiku.dev/docs/hooks/useUpdateEffect) - Similar to useEffect, but it skips the first render of a component, and only react to updates triggered by dependency values.
 
 ### Utilities
 
-- [`If`](https://reacthaiku.online/docs/utilities/if) - Component for simple conditional rendering!
-- [`Show`](https://reacthaiku.online/docs/utilities/show) - Component for complex conditional rendering!
-- [`For`](https://reacthaiku.online/docs/utilities/for) - Dynamic rendering component with automatic key assignment!
-- [`RenderAfter`](https://reacthaiku.online/docs/utilities/renderAfter) - Component that renders its children after a set delay.
-- [`Image`](https://reacthaiku.online/docs/utilities/image) - Component that simplifies the process of rendering images.
+- [`If`](https://reacthaiku.dev/docs/utilities/if) - Component for simple conditional rendering!
+- [`Show`](https://reacthaiku.dev/docs/utilities/show) - Component for complex conditional rendering!
+- [`For`](https://reacthaiku.dev/docs/utilities/for) - Dynamic rendering component with automatic key assignment!
+- [`RenderAfter`](https://reacthaiku.dev/docs/utilities/renderAfter) - Component that renders its children after a set delay.
+- [`Image`](https://reacthaiku.dev/docs/utilities/image) - Component that simplifies the process of rendering images.
 
 ## Maintainers
 

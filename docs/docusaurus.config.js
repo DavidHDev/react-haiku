@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const config = {
   title: 'React Haiku',
   tagline: 'React Hooks that save you time & lines of code.',
-  url: 'https://reacthaiku.online',
+  url: 'https://reacthaiku.dev',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
