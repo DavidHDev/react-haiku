@@ -201,5 +201,5 @@ export declare const Image: FC<{
   loading?: "eager" | "lazy";
   alt?: string;
   fallback?: string;
-  } & ImgHTMLAttributes<HTMLImageElement>
-  >;
+} & ImgHTMLAttributes<HTMLImageElement>
+>;

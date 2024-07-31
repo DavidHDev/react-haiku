@@ -60,7 +60,7 @@ export function useTabNotification(
     }, [modifiedTitle])
 
     useEffect(() => {
-        let interval: NodeJS.Timer|null = null;
+        let interval: ReturnType<typeof setInterval>|null = null;
         if (flashMessage && isShown) {
             interval = setInterval(() => {
                 document.title = (document.title === flashMessage ? modifiedTitle : flashMessage)
