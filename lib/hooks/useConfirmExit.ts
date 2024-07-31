@@ -15,9 +15,9 @@ export function useConfirmExit(
 
       e.preventDefault();
 
-      // @ts-ignore
       // NOTE: modern browsers no longer support custom messages with .returnValue
       if (message) {
+        // @ts-ignore
         e.returnValue = message;
       }
 
