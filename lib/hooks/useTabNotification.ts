@@ -69,7 +69,7 @@ export function useTabNotification(flashDelayInSeconds = 2) {
   }, [modifiedTitle]);
 
   useEffect(() => {
-    let interval: NodeJS.Timer | null = null;
+    let interval: ReturnType<typeof setInterval>|null = null;
 
     if (flashMessage && isShown) {
       interval = setInterval(() => {
