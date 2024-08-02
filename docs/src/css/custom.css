@@ -19,6 +19,12 @@ html {
   font-family: 'DM Sans', sans-serif;
 }
 
+a {
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
 :root {
   --ifm-color-primary: #E46B39;
   --ifm-color-primary-dark: #E46B39;
