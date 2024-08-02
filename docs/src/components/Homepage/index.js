@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import './home.css';
 import { SplitText } from '../Animations/SplitText';
 import { AnimatedContainer } from '../Animations/AnimatedContainer';
 import { Swiper, SwiperSlide } from 'swiper/react';
