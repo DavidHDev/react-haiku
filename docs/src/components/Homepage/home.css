@@ -715,6 +715,15 @@
   top: 0;
 }
 
+.radial-gradient-bg {
+  background-image: radial-gradient(transparent 0%, var(--landing-bg-color) 60%);
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
 @media only screen and (max-width: 1185px) {
   .landing-cards {
     flex-wrap: wrap;

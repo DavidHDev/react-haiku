@@ -97,18 +97,6 @@ html {
   opacity: 1;
   background-image: linear-gradient(#e46c3924 1.6px, transparent 1.6px), linear-gradient(to right, #e46c392a 1.6px, var(--landing-bg-color) 1.6px);
   background-size: 32px 32px;
-  /* opacity: 1;
-  background-image: radial-gradient(#e46c3959 2px, var(--landing-bg-color) 2px);
-  background-size: 32px 32px; */
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(transparent 0%, var(--landing-bg-color) 60%);
-    z-index: -1;
-  }
 }
 
 .no-scroll {

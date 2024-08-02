@@ -83,6 +83,7 @@ export default function Homepage() {
   return (
     <section className='haiku'>
       <GrainOverlay />
+      <div className='radial-gradient-bg'></div>
       <Toaster position="bottom-right" />
       <header className={collapsed ? 'landing-header header-bg' : 'landing-header'}>
         <AnimatedContainer direction="vertical" reverse>
