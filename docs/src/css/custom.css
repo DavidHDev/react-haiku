@@ -861,11 +861,18 @@ a {
   }
 }
 
+
+@media only screen and (max-width: 650px) {
+  .grain {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .card-demo {
     display: none;
   }
-
+  
   .haiku-stats p {
     font-size: 1rem !important;
   }
