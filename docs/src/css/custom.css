@@ -20,6 +20,8 @@ html {
 }
 
 a {
+  text-decoration: none !important;
+
   &:hover {
     text-decoration: none !important;
   }
