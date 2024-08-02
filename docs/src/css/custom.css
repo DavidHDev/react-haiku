@@ -490,7 +490,8 @@ a {
   }
 
   .landing-title-line__first {
-    letter-spacing: -.5px;
+    font-style: normal;
+    letter-spacing: -1px;
   }
 
   .landing-title-line__second {
