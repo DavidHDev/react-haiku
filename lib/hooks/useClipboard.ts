@@ -24,6 +24,8 @@ export function useClipboard({ timeout = 500 } = {}) {
     } else {
       setError(new Error('Error: navigator.clipboard is not supported'));
     }
+    writing some fake copiedbecause this video needs to 
+    be cinematic
   };
 
   const reset = () => {

@@ -6,41 +6,84 @@
 
 /* You can override the default Infima variables here. */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box !important;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 html {
   scroll-behavior: smooth;
+  font-family: 'DM Sans', sans-serif;
 }
 
 :root {
-  --ifm-color-primary: #FF005C;
-  --ifm-color-primary-dark: #FF005C;
-  --ifm-color-primary-darker: #FF005C;
-  --ifm-color-primary-darkest: #FF005C;
-  --ifm-color-primary-light: #FF005C;
-  --ifm-color-primary-lighter: #FF005C;
-  --ifm-color-primary-lightest: #FF005C;
+  --ifm-color-primary: #E46B39;
+  --ifm-color-primary-dark: #E46B39;
+  --ifm-color-primary-darker: #E46B39;
+  --ifm-color-primary-darkest: #E46B39;
+  --ifm-color-primary-light: #E46B39;
+  --ifm-color-primary-lighter: #E46B39;
+  --ifm-color-primary-lightest: #E46B39;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --landing-text-color: #F6F6F6;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #FF005C;
-  --ifm-color-primary-dark: #FF005C;
-  --ifm-color-primary-darker: #FF005C;
-  --ifm-color-primary-darkest: #FF005C;
-  --ifm-color-primary-light: #FF005C;
-  --ifm-color-primary-lighter: #FF005C;
-  --ifm-color-primary-lightest: #FF005C;
+  --ifm-color-primary: #E46B39;
+  --ifm-color-primary-dark: #E46B39;
+  --ifm-color-primary-darker: #E46B39;
+  --ifm-color-primary-darkest: #E46B39;
+  --ifm-color-primary-light: #E46B39;
+  --ifm-color-primary-lighter: #E46B39;
+  --ifm-color-primary-lightest: #E46B39;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --landing-text-color: #F6F6F6;
+  --landing-bg-color: #272828;
 }
 
-[data-theme='light'] .navbar__logo img {
+[data-theme='light'] {
+  --ifm-color-primary: #E46B39;
+  --ifm-color-primary-dark: #E46B39;
+  --ifm-color-primary-darker: #E46B39;
+  --ifm-color-primary-darkest: #E46B39;
+  --ifm-color-primary-light: #E46B39;
+  --ifm-color-primary-lighter: #E46B39;
+  --ifm-color-primary-lightest: #E46B39;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --landing-text-color: #272828;
+  --landing-bg-color: #F6F6F6;
+}
+
+[data-theme='dark'] .landing-title-line__third img {
   filter: invert(100%);
 }
 
-.navbar__logo img {
-  width: 90px;
-  transform: translateY(-1.5px);
+[data-theme='light'] .landing-logo {
+  background-image: url('../../static/img/haiku-logo-dark.svg');
+}
+
+[data-theme='dark'] .landing-logo.invertedLogo {
+  background-image: url('../../static/img/haiku-logo-dark.svg');
+}
+
+[data-theme='light'] .landing-logo.invertedLogo {
+  background-image: url('../../static/img/haiku-logo.svg');
+}
+
+[data-theme='light'] .navbar__logo {
+  filter: invert(80%);
+}
+
+[data-theme='light'] .docs-logo img {
+  filter: invert(100%) !important;
 }
 
 .home {
@@ -50,5 +93,38 @@ html {
   width: 100%;
   min-height: 100vh;
   z-index: 99999999;
-  background-color: #111;
+  background-color: var(--landing-bg-color);
+  opacity: 1;
+  background-image: linear-gradient(#e46c3924 1.6px, transparent 1.6px), linear-gradient(to right, #e46c392a 1.6px, var(--landing-bg-color) 1.6px);
+  background-size: 32px 32px;
+  /* opacity: 1;
+  background-image: radial-gradient(#e46c3959 2px, var(--landing-bg-color) 2px);
+  background-size: 32px 32px; */
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(transparent 0%, var(--landing-bg-color) 60%);
+    z-index: -1;
+  }
+}
+
+.no-scroll {
+  overflow: hidden !important;
+}
+
+/* SplitText.css */
+.letter {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.split-parent {
+  display: inline;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #272828 !important;
 }

@@ -15,7 +15,7 @@
 }
 
 .demo-button:hover {
-    border: 1px solid #ff005da5;
+    border: 1px solid #ff8000a5;
     box-shadow: 0 0 0 3px rgba(255, 0, 93, 0.25);
     transition: box-shadow .2s ease, border .2s ease;
 }
@@ -28,20 +28,20 @@
 
 .red-button {
     margin-top: .5em;
-    border: 1px solid #FF005C;
-    color: #FF005C;
+    border: 1px solid #E46B39;
+    color: #E46B39;
 }
 
 input {
     position: relative;
     font-size: 16px;
     color: #f5f5f5 !important;
-    caret-color: #FF005C;
+    caret-color: #E46B39;
     padding: .7em 1em;
     border-radius: 1rem;
     font-weight: 500;
     border: 1px solid #555;
-    background-color: #222;
+    background-color: #272828;
     margin-bottom: .5em;
     width: 100%;
     transition: box-shadow .2s ease, border .2s ease;
@@ -49,7 +49,7 @@ input {
 
 input:hover, input:focus {
     outline: none !important;
-    border: 1px solid #ff005da5 !important;
+    border: 1px solid #ff7b00a5 !important;
     box-shadow: 0 0 0 3px rgba(255, 0, 93, 0.25);
     transition: box-shadow .2s ease, border .2s ease;
 }

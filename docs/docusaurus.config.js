@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/favicon.svg',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -57,21 +57,15 @@ const config = {
     ({
       colorMode: {
         defaultMode: 'dark',
-        disableSwitch: true,
+        disableSwitch: false,
         respectPrefersColorScheme: false,
       },
       navbar: {
         logo: {
           alt: 'React Haiku Logo',
-          src: 'img/logo.svg',
+          src: 'img/haiku-logo.svg'
         },
         items: [
-          {
-            type: 'doc',
-            docId: 'intro',
-            position: 'left',
-            label: 'Docs',
-          },
           {
             to: 'https://github.com/DavidHDev/react-haiku',
             label: 'GitHub',
@@ -84,7 +78,7 @@ const config = {
           },
           {
             position: 'right',
-            label: 'v2.0.1',
+            label: 'v2.1.2',
             to: 'https://www.npmjs.com/package/react-haiku',
           }
         ],
@@ -92,6 +86,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        lightTheme: lightCodeTheme
       },
     }),
 };
