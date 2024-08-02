@@ -83,6 +83,7 @@ export default function Homepage() {
     <section className='haiku'>
       <GrainOverlay />
       <div className='radial-gradient-bg'></div>
+      <a href="https://www.producthunt.com/posts/haiku-6?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-haiku&#0045;6" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=476133&theme=dark" alt="Haiku - Lightweight&#0032;React&#0032;Hook&#0032;&#0038;&#0032;Utility&#0032;Library | Product Hunt" className='product-hunt-badge' width="250" height="54" /></a>
       <Toaster position="bottom-right" />
       <header className={collapsed ? 'landing-header header-bg' : 'landing-header'}>
         <AnimatedContainer direction="vertical" reverse>

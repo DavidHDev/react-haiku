@@ -735,6 +735,7 @@ a {
   font-size: 2rem;
   transition: .3s ease;
   display: none;
+  margin-bottom: 2em;
 
   &:hover {
     text-decoration: none;
@@ -872,7 +873,7 @@ a {
   .card-demo {
     display: none;
   }
-  
+
   .haiku-stats p {
     font-size: 1rem !important;
   }
@@ -894,6 +895,20 @@ a {
 
   .read-the-docs {
     display: flex;
+  }
+}
+
+.product-hunt-badge {
+  position: fixed;
+  z-index: 10;
+  left: 1em;
+  bottom: 1em;
+  opacity: 0.6;
+  transition: opacity .3s ease;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity .3s ease;
   }
 }
 
