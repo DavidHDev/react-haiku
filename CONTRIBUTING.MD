@@ -1,6 +1,6 @@
 # Contributing to React Haiku
 
-Thank you for considering contributing to React Haiku! We appreciate your interest in making this project better.
+Thank you for considering contributing to React Haiku! I appreciate your interest in making this project better.
 
 To ensure a smooth collaboration, please read the following guidelines before getting started.
 
@@ -14,22 +14,26 @@ When creating branches for your contributions, please follow the following namin
 
 `feat/<issue-number>-<short-description>`
 
-For example, if the issue number on GitHub is 23 and you are working on a feature related to adding user authentication, your branch name could be `feat/23-add-user-authentication`. This naming convention helps us to easily track and associate contributions with their respective issues.
+For example, if the issue number on GitHub is 23 and you are working on a feature related to adding a new hook, your branch name could be `feat/23-add-...-hook`. This naming convention helps us to easily track and associate contributions with their respective issues.
+
+## Documentation
+
+Each new feature or update added should be documented in our `/docs` project where applicable. See the `README.md` inside the folder to set it up. It should only require `npm i` and `npm run start`.
 
 ## Pull Requests
 
 We welcome pull requests from everyone. To submit a pull request, please follow these steps:
 
-1. Clone the repository and create a new branch based on the branch naming convention mentioned above.
+1. Fork the repository and create a new branch based on the branch naming convention mentioned above.
 2. Make your changes in the new branch.
-3. Write tests if applicable, and ensure that existing tests pass.
+3. Write tests if applicable, and ensure that existing tests pass (currently no tests)
 4. Update the documentation if necessary.
 5. Submit a pull request to the main repository's `main` branch.
-6. Provide a clear and descriptive title for your pull request, along with a detailed description of the changes you have made.
+6. Provide a clear and descriptive title for your pull request, along with a detailed description of the changes you have made, and screenshots/videos where possible.
 
 ## Conclusion
 
-We appreciate your interest in contributing to React Haiku. By following these guidelines, you can help us maintain a healthy and productive open-source community. We value your contributions and look forward to your pull requests!
+I appreciate your interest in contributing to React Haiku. By following these guidelines, you can help us maintain a healthy and productive open-source community. I value your contributions and look forward to your pull requests!
 
 If you have any questions or need further assistance, please don't hesitate to reach out to us through the issue tracker or other communication channels mentioned in the project's documentation.
 
