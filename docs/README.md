@@ -3,7 +3,7 @@
 <div align="center">
 	<br>
 	<br>
-	<img src="./media/haiku.svg" alt="react-haiku" height="200">
+	<img src="./media/haiku-logo-orange.svg" alt="react-haiku" height="200">
 	<br>
 	<br>
 	<b>An awesome collection of React Hooks & Utilities!</b>
