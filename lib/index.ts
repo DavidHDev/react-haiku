@@ -32,6 +32,7 @@ export { useFullscreen } from './hooks/useFullscreen';
 export { useDeviceOS } from './hooks/useDeviceOS';
 export { useNetwork } from './hooks/useNetwork';
 export { useTabNotification } from './hooks/useTabNotification';
+export { useIntersectionObserver } from './hooks/useIntersectionObserver';
 
 export { If } from './utils/If';
 export { Show } from './utils/Show';
