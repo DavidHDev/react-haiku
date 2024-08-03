@@ -33,6 +33,8 @@ export { useDeviceOS } from './hooks/useDeviceOS';
 export { useNetwork } from './hooks/useNetwork';
 export { useTabNotification } from './hooks/useTabNotification';
 export { useOrientation } from './hooks/useOrientation';
+export { useWindowSize } from './hooks/useWindowSize';
+
 
 export { If } from './utils/If';
 export { Show } from './utils/Show';
