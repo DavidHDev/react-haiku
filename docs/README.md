@@ -125,8 +125,8 @@ export default Component;
 - [`useSingleEffect()`](https://reacthaiku.dev/docs/hooks/useSingleEffect) - Run the useEffect hook strictly only once when the component is mounted!
 - [`useTitle()`](https://reacthaiku.dev/docs/hooks/useTitle) - Update the document's title from your components!
 - [`useUpdateEffect()`](https://reacthaiku.dev/docs/hooks/useUpdateEffect) - Similar to useEffect, but it skips the first render of a component, and only react to updates triggered by dependency values.
+- [`useOrientation()`](https://reacthaiku.dev/docs/hooks/useOrientation) - Detect when device is in portrait or landscape mode.
 - [`useWindowSize()`](https://reacthaiku.dev/docs/hooks/useWindowSize) - Use hook to get width and height of window. Values update upon window resizing.
-
 
 ### Utilities
 
