@@ -10,10 +10,15 @@ type UseIntersectionObserverProps = {
   options?: IntersectionObserverOptions;
 };
 
+type IntersectionObserverResult = {
+  observeRef: React.MutableRefObject<Element | null>;
+  isVisible: boolean;
+}
+
 export const useIntersectionObserver = ({
   animateOnce = false,
   options = {}
-}: UseIntersectionObserverProps = {}) => {
+}: UseIntersectionObserverProps = {}): IntersectionObserverResult => {
   const observeRef = useRef<Element | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
