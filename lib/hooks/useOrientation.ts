@@ -1,21 +1,15 @@
 import { useState, useEffect } from "react";
 
-type Orientation = {
-  orientation: "portrait" | "landscape";
-};
+type Orientation = "portrait" | "landscape";
 
-export const useOrientation = () => {
-  const [orientation, setOrientation] = useState<Orientation>({
-    orientation: window.matchMedia("(orientation: portrait)").matches
-      ? "portrait"
-      : "landscape",
-  });
+export const useOrientation = (): Orientation => {
+  const [orientation, setOrientation] = useState<Orientation>(window.matchMedia("(orientation: portrait)").matches
+    ? "portrait"
+    : "landscape");
 
   useEffect(() => {
     const handleOrientationChange = (e: MediaQueryListEvent) => {
-      setOrientation({
-        orientation: e.matches ? "portrait" : "landscape",
-      });
+      setOrientation(e.matches ? "portrait" : "landscape");
     };
 
     const portraitMediaQuery = window.matchMedia("(orientation: portrait)");
