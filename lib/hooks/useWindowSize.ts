@@ -5,7 +5,7 @@ type WindowSizeProps = {
   height: number;
 };
 
-export const useWindowSize = () => {
+export const useWindowSize = (): WindowSizeProps => {
   const [windowSize, setWindowSize] = useState<WindowSizeProps>({
     width: window.innerWidth, 
     height: window.innerHeight
