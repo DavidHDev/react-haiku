@@ -32,6 +32,8 @@ export { useFullscreen } from './hooks/useFullscreen';
 export { useDeviceOS } from './hooks/useDeviceOS';
 export { useNetwork } from './hooks/useNetwork';
 export { useTabNotification } from './hooks/useTabNotification';
+export { useOrientation } from './hooks/useOrientation';
+export { useWindowSize } from './hooks/useWindowSize';
 export { useIntersectionObserver } from './hooks/useIntersectionObserver';
 
 export { If } from './utils/If';
