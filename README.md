@@ -98,6 +98,9 @@ const Component = () => {
 export default Component;
 ```
 
+## Contributing
+Haiku is always open to improvements and contributions, you can check the [Open Issues](https://github.com/DavidHDev/react-haiku/issues) if you want to contribute, and it's also possible to request to add your own improvements/ideas using the [Feature Request](https://github.com/DavidHDev/react-haiku/issues/new/choose) template. Before contributing, please read the [Contribution Guide](https://github.com/DavidHDev/react-haiku/blob/main/CONTRIBUTING.MD) and make sure to respect the standards! Thank you for your time!
+
 ## PACKAGE CONTENTS
 
 ### Hooks
