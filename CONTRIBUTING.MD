@@ -20,6 +20,17 @@ For example, if the issue number on GitHub is 23 and you are working on a featur
 
 Each new feature or update added should be documented in our `/docs` project where applicable. See the `README.md` inside the folder to set it up. It should only require `npm i` and `npm run start`.
 
+If you want to help writing documentation for hooks that have not yet been included in a release, you'll have to link the package locally:
+
+1. In the `root` folder of the repo:
+- `npm run build` to build the hook library locally
+- `npm link` to link the local version of the library to your global environment
+
+2. In the `docs` folder:
+- Delete the existing `react-haiku` folder from the `node_modules` directory
+- `npm link react-haiku` to activate the link with the local version of the library
+- Now you can check the linked `react-haiku` package in the `node_modules` directory (it should have a little arrow pointing up to the right of the package name) and see that it includes the hooks/utilities that are not yet released.
+
 ## Pull Requests
 
 We welcome pull requests from everyone. To submit a pull request, please follow these steps:
