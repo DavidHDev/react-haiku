@@ -58,7 +58,7 @@ pnpm install react-haiku
 
 <br>
 
-Please check the official [Documentation](https://reacthaiku.dev/)for full usage examples.
+Please check the official [Documentation](https://reacthaiku.dev/) for full usage examples.
 
 <br>
 
