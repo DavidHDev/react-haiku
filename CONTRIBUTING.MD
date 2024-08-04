@@ -29,7 +29,7 @@ If you want to help writing documentation for hooks that have not yet been inclu
 2. In the `docs` folder:
 - Delete the existing `react-haiku` folder from the `node_modules` directory
 - `npm link react-haiku` to activate the link with the local version of the library
-- Now you can check the linked `react-haiku` package in the `node_modules` directory (it should have a little arrow pointing up to the right of the package name) and see that it includes the hooks/utilities that are not yet released.
+- Now you can check the linked `react-haiku` package in the `node_modules` directory (it should have a little arrow to the right of the package name) and see that it includes the hooks/utilities that are not yet released.
 
 ## Pull Requests
 
