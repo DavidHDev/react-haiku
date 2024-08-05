@@ -127,6 +127,7 @@ export default Component;
 - [`useUpdateEffect()`](https://reacthaiku.dev/docs/hooks/useUpdateEffect) - Similar to useEffect, but it skips the first render of a component, and only react to updates triggered by dependency values.
 - [`useOrientation()`](https://reacthaiku.dev/docs/hooks/useOrientation) - Detect when device is in portrait or landscape mode.
 - [`useWindowSize()`](https://reacthaiku.dev/docs/hooks/useWindowSize) - Use hook to get width and height of window. Values update upon window resizing.
+- [`useIntersectionObserver()`](https://reacthaiku.dev/docs/hooks/useIntersectionObserver) - Provides a way to detect when an element enters or exits the viewport, with options for configuring intersection thresholds, margins, and one-time animation triggers.
 
 ### Utilities
 
