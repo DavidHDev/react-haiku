@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 
 type IntersectionObserverOptions = {
-  threshold?: number;
+  threshold?: number | number[];
   rootMargin?: string;
 };
 
@@ -21,6 +21,11 @@ export const useIntersectionObserver = ({
 }: UseIntersectionObserverProps = {}): IntersectionObserverResult => {
   const observeRef = useRef<Element | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+
+  if (typeof IntersectionObserver === "undefined") {
+    console.warn("IntersectionObserver is not supported in this browser.");
+    return { observeRef, isVisible: true };
+  }
 
   useEffect(() => {
     const currentRef = observeRef.current;
@@ -42,7 +47,7 @@ export const useIntersectionObserver = ({
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [observeRef, animateOnce, options]);
 
   return { observeRef, isVisible };
 };
