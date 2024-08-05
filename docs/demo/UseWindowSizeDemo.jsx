@@ -1,4 +1,4 @@
-import { useWindowSize} from "react-haiku"
+import { useWindowSize } from 'react-haiku';
 import React from 'react';
 import './demo.css';
 

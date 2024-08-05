@@ -1,6 +1,6 @@
 # useWindowSize()
 
-The `useWindowSize()` hook forces a component to re-render when it gets called from anywhere inside it.
+The `useWindowSize()` hook provides the current window `width` and `height` dimensions.
 
 ### Import
 
@@ -10,35 +10,26 @@ import { useWindowSize } from 'react-haiku';
 
 ### Usage
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { UseWindowSizeDemo } from '../../demo/UseWindowSizeDemo.jsx';
 
-<UseWindowSizeDemo />
+<BrowserOnly fallback={<div>Loading...</div>}>
+  {() => <UseWindowSizeDemo />}
+</BrowserOnly>
 
 ```jsx
-import { useState, useEffect } from "react";
+import { useWindowSize } from 'react-haiku';
 
-type WindowSizeProps = {
-  width: number;
-  height: number;
+export const Component = () => {
+  const { height, width } = useWindowSize();
+
+  return (
+    <div>
+      <b>Resize Your Window!</b>
+
+      <p>Window Height: <span>{height}</span></p>
+      <p>Window Width: <span>{width}</span></p>
+    </div>
+  );
 };
-
-export const useWindowSize = (): WindowSizeProps => {
-  const [windowSize, setWindowSize] = useState<WindowSizeProps>({
-    width: window.innerWidth, 
-    height: window.innerHeight
-  });
-
-  useEffect(() =>{
-    const handleResize = () => {
-    setWindowSize({ 
-      width: window.innerWidth, 
-      height: window.innerHeight
-    })
-  }
-
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-  }, [])
-  return windowSize;
-} 
 ```
