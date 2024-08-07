@@ -1,9 +1,10 @@
-import { ImgHTMLAttributes } from 'react';
+import { ImgHTMLAttributes, SyntheticEvent } from 'react';
 
 type Props = ImgHTMLAttributes<HTMLImageElement> & { fallback: string };
 
 export const Image = ({ src, loading, alt, fallback, ...props }: Props) => {
-  const handleBrokenImage = (event: any) => (event.target.src = fallback);
+  const handleBrokenImage = (event: SyntheticEvent<HTMLImageElement, Event>) =>
+    (event.currentTarget.src = fallback);
 
   return (
     <img
