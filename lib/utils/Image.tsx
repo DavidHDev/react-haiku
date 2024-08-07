@@ -1,4 +1,3 @@
-import React from 'react';
 import { ImgHTMLAttributes } from 'react';
 
 type Props = ImgHTMLAttributes<HTMLImageElement> & { fallback: string };

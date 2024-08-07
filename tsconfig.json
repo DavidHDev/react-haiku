@@ -3,7 +3,7 @@
     "target": "ES2022",
     "module": "ESNext",
     "moduleResolution": "node",
-    "jsx": "react",
+    "jsx": "react-jsx",
     "rootDir": "./lib",
     "baseUrl": "./",
     "allowJs": true,
@@ -20,8 +20,9 @@
     "noUncheckedIndexedAccess": true,
     "allowUnusedLabels": false,
     "allowUnreachableCode": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["vitest", "@testing-library/jest-dom"]
   },
-  "include": ["lib/**/*"],
+  "include": ["lib/**/*", "../vitest.config.ts"],
   "exclude": ["node_modules", "dist", "docs"]
 }

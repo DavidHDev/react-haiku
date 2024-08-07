@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`If > renders the If component 1`] = `
+<DocumentFragment>
+  Hello
+</DocumentFragment>
+`;
