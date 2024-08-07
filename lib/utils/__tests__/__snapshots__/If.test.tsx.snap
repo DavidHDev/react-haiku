@@ -2,6 +2,6 @@
 
 exports[`If > renders the If component 1`] = `
 <DocumentFragment>
-  Hello
+  Hello world!
 </DocumentFragment>
 `;
