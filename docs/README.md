@@ -128,6 +128,7 @@ export default Component;
 - [`useOrientation()`](https://reacthaiku.dev/docs/hooks/useOrientation) - Detect when device is in portrait or landscape mode.
 - [`useWindowSize()`](https://reacthaiku.dev/docs/hooks/useWindowSize) - Use hook to get width and height of window. Values update upon window resizing.
 - [`useIntersectionObserver()`](https://reacthaiku.dev/docs/hooks/useIntersectionObserver) - Provides a way to detect when an element enters or exits the viewport, with options for configuring intersection thresholds, margins, and one-time animation triggers.
+- [`useSize()`](https://reacthaiku.dev/docs/hooks/useSize) - hook observes a referenced DOM element and returns its current width and height, updating the values whenever the element is resized. This is useful for dynamically tracking size changes of any resizable component.
 
 ### Utilities
 
