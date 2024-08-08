@@ -127,6 +127,7 @@ export default Component;
 - [`useUpdateEffect()`](https://reacthaiku.dev/docs/hooks/useUpdateEffect) - Similar to useEffect, but it skips the first render of a component, and only react to updates triggered by dependency values.
 - [`useOrientation()`](https://reacthaiku.dev/docs/hooks/useOrientation) - Detect when device is in portrait or landscape mode.
 - [`useWindowSize()`](https://reacthaiku.dev/docs/hooks/useWindowSize) - Use hook to get width and height of window. Values update upon window resizing.
+- [`useSize()`](https://reacthaiku.dev/docs/hooks/useSize) - hook observes a referenced DOM element and returns its current width and height, updating the values whenever the element is resized. This is useful for dynamically tracking size changes of any resizable component.
 
 ### Utilities
 

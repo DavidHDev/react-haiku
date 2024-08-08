@@ -1,0 +1,39 @@
+# useSize()
+
+The `useSize` hook observes a referenced DOM element and returns its current width and height, updating the values whenever the element is resized. This is useful for dynamically tracking size changes of any resizable component.
+
+### Import
+
+```jsx
+import { useSize } from 'react-haiku';
+```
+
+### Usage
+
+import { UseSizeDemo } from '../../demo/UseSizeDemo.jsx';
+
+<UseSizeDemo />
+
+```jsx
+
+import { useRef } from "react"
+import { useSize } from "react-haiku"
+
+export const Component = () => {
+  const elementRef = useRef(null);
+  const { width, height } = useSize(elementRef);
+
+  return (
+      <div ref={elementRef}>
+          <p>Window Height: {height}</p>
+          <p>Window Width: {width}</p>
+      </div>
+  );
+}
+
+```
+
+### API
+This hook accepts the following arguments:
+
+- `ref` - a reference to the DOM element you want to observe for size changes.
