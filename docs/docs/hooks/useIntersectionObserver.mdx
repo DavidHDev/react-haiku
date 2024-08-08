@@ -1,0 +1,50 @@
+# useIntersectionObserver()
+
+The `useIntersectionObserver` hook provides a way to detect when an element enters or exits the viewport. It offers options for configuring intersection thresholds, margins, and one-time animation triggers.
+
+### Import
+
+```jsx
+import { useIntersectionObserver } from 'react-haiku';
+```
+
+### Usage
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import { UseIntersectionObserverDemo } from '../../demo/UseIntersectionObserverDemo.jsx';
+
+<BrowserOnly fallback={<div>Loading...</div>}>
+  {() => <UseIntersectionObserverDemo />}
+</BrowserOnly>
+
+```jsx
+
+import { useIntersectionObserver } from 'react-haiku';
+
+export const Component = () => {
+  const {observeRef, isVisible} = useIntersectionObserver({
+    animateOnce: false,
+    options:{
+      threshold: .5, 
+      rootMargin: '-40% 0px -40% 0px'
+    }
+  })
+    return (
+        <div ref={observeRef}>
+          <p>
+            I'm being observed!
+          </p>
+        </div>
+    );
+}
+
+```
+
+### API
+
+This hook accepts the following arguments:
+
+- `animateOnce` (optional) - boolean indicating whether the element should be observed only once (`true`) or continuously (`false`), the default value for this argument is `false`.
+- `options` - an object containing IntersectionObserver options:
+   - `threshold` (optional) - a single number or an array of numbers representing the percentage of the target's visibility the observer's callback should trigger.
+   - `rootMargin` (optional) - a string which defines a margin around the root. This can be used to grow or shrink the area used for intersection detection.
