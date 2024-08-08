@@ -117,6 +117,7 @@ export default Component;
 - [`useEventListener()`](https://reacthaiku.dev/docs/hooks/useEventListener) - Set event listeners on the window object or a specific target element!
 - [`useFavicon()`](https://reacthaiku.dev/docs/hooks/useFavicon) - Dynamically update the website's favicon from a component!
 - [`useFirstRender()`](https://reacthaiku.dev/docs/hooks/useFirstRender) - Check whether or not a component is on its first render!
+- [`useFullscreen()`](https://reacthaiku.dev/docs/hooks/useFullscreen) - Toggle between entering fullscreen mode and exiting fullscreen mode!
 - [`useHold()`](https://reacthaiku.dev/docs/hooks/useHold) - Handle long presses on a target element and execute a handler after a set delay!
 - [`useIdle()`](https://reacthaiku.dev/docs/hooks/useIdle) - Detect user activity/inactivity on the page based on events!
 - [`useIsomorphicLayoutEffect()`](https://reacthaiku.dev/docs/hooks/useIsomorphicLayoutEffect) - Switch between useEffect and useLayoutEffect depending on the execution environment (SSR VS Browser)!
