@@ -7,20 +7,23 @@ type WindowSizeProps = {
 
 export const useWindowSize = (): WindowSizeProps => {
   const [windowSize, setWindowSize] = useState<WindowSizeProps>({
-    width: window.innerWidth, 
-    height: window.innerHeight
+    width: window?.innerWidth || 0,
+    height: window?.innerHeight || 0
   });
 
-  useEffect(() =>{
+  useEffect(() => {
     const handleResize = () => {
-    setWindowSize({ 
-      width: window.innerWidth, 
-      height: window.innerHeight
-    })
-  }
+      if (typeof window !== "undefined") {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight
+        })
+      }
+    }
 
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [])
+
   return windowSize;
 } 
