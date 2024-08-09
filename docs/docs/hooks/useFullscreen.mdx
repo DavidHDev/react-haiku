@@ -1,0 +1,65 @@
+# useFullscreen()
+
+The `useFullscreen()` hook can toggle between entering fullscreen mode and exiting fullscreen mode.
+
+### Import
+
+```jsx
+import { useFullscreen } from 'react-haiku';
+```
+
+### Usage
+
+import { UseFullscreenDemo } from '../../demo/UseFullscreenDemo.jsx';
+
+<UseFullscreenDemo />
+
+#### For Overall Document
+
+```jsx
+
+import { useEffect, useRef } from 'react'
+import { useFullscreen } from 'react-haiku';
+
+export const Component = () => {
+  const documentRef = useRef(null);
+
+  useEffect(() => {
+    documentRef.current = document.documentElement;
+  }, []);
+
+  const {isFullscreen, toggleFullscreen } = useFullscreen(documentRef);
+  return (
+      <div>
+        <b>Is in Fullscreen Mode: {isFullscreen ? "True" : "False"}</b>
+        <button onClick={toggleFullscreen}>Toggle Fullscreen!</button>
+      </div>
+  );
+}
+
+```
+
+#### For Specific Element
+
+```jsx
+
+import { useEffect } from 'react'
+import { useFullscreen } from 'react-haiku';
+
+export const Component = () => {
+  const elementRef = useRef(null);
+  const {isFullscreen, toggleFullscreen } = useFullscreen(elementRef);
+  return (
+      <div ref={elementRef}>
+        <b>Is in Fullscreen Mode: {isFullscreen ? "True" : "False"}</b>
+        <button onClick={toggleFullscreen}>Toggle Fullscreen!</button>
+      </div>
+  );
+}
+
+```
+
+### API
+
+This hook accepts the following arguments:
+- `targetRef` - a reference to the DOM element you want to toggle fullscreen for.

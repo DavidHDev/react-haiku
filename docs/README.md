@@ -117,6 +117,7 @@ export default Component;
 - [`useEventListener()`](https://reacthaiku.dev/docs/hooks/useEventListener) - Set event listeners on the window object or a specific target element!
 - [`useFavicon()`](https://reacthaiku.dev/docs/hooks/useFavicon) - Dynamically update the website's favicon from a component!
 - [`useFirstRender()`](https://reacthaiku.dev/docs/hooks/useFirstRender) - Check whether or not a component is on its first render!
+- [`useFullscreen()`](https://reacthaiku.dev/docs/hooks/useFullscreen) - Toggle between entering fullscreen mode and exiting fullscreen mode!
 - [`useHold()`](https://reacthaiku.dev/docs/hooks/useHold) - Handle long presses on a target element and execute a handler after a set delay!
 - [`useIdle()`](https://reacthaiku.dev/docs/hooks/useIdle) - Detect user activity/inactivity on the page based on events!
 - [`useIsomorphicLayoutEffect()`](https://reacthaiku.dev/docs/hooks/useIsomorphicLayoutEffect) - Switch between useEffect and useLayoutEffect depending on the execution environment (SSR VS Browser)!
@@ -128,6 +129,7 @@ export default Component;
 - [`useOrientation()`](https://reacthaiku.dev/docs/hooks/useOrientation) - Detect when device is in portrait or landscape mode.
 - [`useWindowSize()`](https://reacthaiku.dev/docs/hooks/useWindowSize) - Use hook to get width and height of window. Values update upon window resizing.
 - [`useIntersectionObserver()`](https://reacthaiku.dev/docs/hooks/useIntersectionObserver) - Provides a way to detect when an element enters or exits the viewport, with options for configuring intersection thresholds, margins, and one-time animation triggers.
+- [`useSize()`](https://reacthaiku.dev/docs/hooks/useSize) - hook observes a referenced DOM element and returns its current width and height, updating the values whenever the element is resized. This is useful for dynamically tracking size changes of any resizable component.
 - [`useDeviceOS()`](https://reacthaiku.dev/docs/hooks/useDeviceOS) - Detects the user's operating system, including mobile emulators, and uses string manipulation for identifying unique or new OS versions.
 
 ### Utilities
