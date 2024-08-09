@@ -1,0 +1,35 @@
+# useDeviceOS()
+
+The `useDeviceOS()` hook detects the user's operating system, including mobile emulators, and uses string manipulation for identifying unique or new OS versions.
+
+### Import
+
+```jsx
+import { useDeviceOS } from 'react-haiku';
+```
+
+### Usage
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import { UseDeviceOSDemo } from '../../demo/UseDeviceOSDemo.jsx';
+
+<BrowserOnly fallback={<div>Loading...</div>}>
+  {() => <UseDeviceOSDemo />}
+</BrowserOnly>
+
+```jsx
+
+import { useDeviceOS } from 'react-haiku';
+
+export const Component = () => {
+  const deviceOS = useDeviceOS();
+
+  return (
+      <div>
+        <b>Check Your Device OS!</b>
+          <p>OS: {deviceOS}</p>
+      </div>
+  );
+}
+
+```
