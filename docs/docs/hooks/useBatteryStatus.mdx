@@ -1,0 +1,35 @@
+# useBatteryStatus()
+
+The `useBatteryStatus()` hook provides real-time information about the device's battery level and charging status, automatically updating as these values change.
+
+### Import
+
+```jsx
+import { useBatteryStatus } from 'react-haiku';
+```
+
+### Usage
+
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import { UseBatteryStatusDemo } from '../../demo/UseBatteryStatusDemo.jsx';
+
+<BrowserOnly fallback={<div>Loading...</div>}>
+  {() => <UseBatteryStatusDemo />}
+</BrowserOnly>
+
+```jsx
+
+import { useBatteryStatus } from 'react-haiku';
+
+export const Component = () => {
+  const {level, isCharging} = useBatteryStatus();
+  
+  return (
+      <div>
+        <p>Battery Level: {level}</p>
+        <p>Is Battery Charging: {isCharging ? "True" : "False"}</p>
+      </div>
+  );
+}
+
+```

@@ -128,6 +128,7 @@ export default Component;
 - [`useOrientation()`](https://reacthaiku.dev/docs/hooks/useOrientation) - Detect when device is in portrait or landscape mode.
 - [`useWindowSize()`](https://reacthaiku.dev/docs/hooks/useWindowSize) - Use hook to get width and height of window. Values update upon window resizing.
 - [`useIntersectionObserver()`](https://reacthaiku.dev/docs/hooks/useIntersectionObserver) - Provides a way to detect when an element enters or exits the viewport, with options for configuring intersection thresholds, margins, and one-time animation triggers.
+- [`useBatteryStatus()`](https://reacthaiku.dev/docs/hooks/useBatteryStatus) - Provides real-time information about the device's battery level and charging status, automatically updating as these values change.
 
 ### Utilities
 
