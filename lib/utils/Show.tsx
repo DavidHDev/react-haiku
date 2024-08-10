@@ -1,14 +1,8 @@
-import { Children } from 'react';
+import { Children, isValidElement, ReactNode } from 'react';
 import { If } from './If';
 
-import { type ReactNode } from 'react';
-
 type Props = {
-  children: ReactNode & {
-    props: {
-      isTrue?: boolean;
-    };
-  };
+  children: ReactNode;
 };
 
 type ElseProps = {
@@ -21,14 +15,14 @@ export const Show = ({ children }: Props) => {
   let otherwise: ReactNode | null = null;
 
   Children.forEach(children, (child) => {
-    if (child.props.isTrue === undefined) {
-      otherwise = child;
-    } else if (!when && child.props.isTrue === true) {
-      when = child;
+    if (isValidElement(child)) {
+      if ('isTrue' in child.props) {
+        if (!when && child.props.isTrue) when = child;
+      } else otherwise = child;
     }
   });
 
-  return (when || otherwise) as ReactNode;
+  return when || otherwise;
 };
 
 Show.When = If;
