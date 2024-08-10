@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`RederAfter > renders the RenderAfter component correctly after delay 1`] = `
+<DocumentFragment>
+  Delayed Content
+</DocumentFragment>
+`;

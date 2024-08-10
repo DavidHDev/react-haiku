@@ -5,7 +5,7 @@ type Props = {
   children: ReactNode;
 };
 
-export function RenderAfter({ delay = 1000, children }: Props) {
+export const RenderAfter = ({ delay = 1000, children }: Props) => {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
@@ -14,4 +14,4 @@ export function RenderAfter({ delay = 1000, children }: Props) {
   }, [ready]);
 
   return ready ? children : null;
-}
+};
