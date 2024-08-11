@@ -1,19 +1,19 @@
-import { RefObject } from "react";
-import { useEventListener } from "./useEventListener";
+import { RefObject } from 'react';
+import { useEventListener } from './useEventListener';
 
 type EventType =
-  | "mousedown"
-  | "mouseup"
-  | "touchstart"
-  | "touchend"
-  | "focusin"
-  | "focusout";
+  | 'mousedown'
+  | 'mouseup'
+  | 'touchstart'
+  | 'touchend'
+  | 'focusin'
+  | 'focusout';
 
 export function useClickOutside<T extends HTMLElement = HTMLElement>(
   ref: RefObject<T> | RefObject<T>[],
   handler: (event: MouseEvent | TouchEvent | FocusEvent) => void,
-  eventType: EventType = "mousedown",
-  eventListenerOptions: AddEventListenerOptions = {}
+  eventType: EventType = 'mousedown',
+  eventListenerOptions: AddEventListenerOptions = {},
 ): void {
   useEventListener(
     eventType,
@@ -33,6 +33,6 @@ export function useClickOutside<T extends HTMLElement = HTMLElement>(
       }
     },
     undefined,
-    eventListenerOptions
+    eventListenerOptions,
   );
 }

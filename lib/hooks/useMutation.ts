@@ -7,7 +7,7 @@ const useMutation = (
   headers: Record<string, string> = {},
   options: { method?: string; timeout?: number } = {},
   onSuccess?: (data: any) => void,
-  onError?: (error: string) => void
+  onError?: (error: string) => void,
 ) => {
   const [loading, setLoading] = useState<boolean>(false); // Track loading state of the mutation request
   const [response, setResponse] = useState<any | null>(null); // Store the response data from the server
@@ -15,12 +15,14 @@ const useMutation = (
 
   useEffect(() => {
     let isMounted = true; // Flag to track if the component is still mounted
-    const timeoutId = options.timeout ? setTimeout(() => {
-      if (isMounted) {
-        setLoading(false);
-        setError('Request timed out'); // Handle request timeout
-      }
-    }, options.timeout) : undefined;
+    const timeoutId = options.timeout
+      ? setTimeout(() => {
+          if (isMounted) {
+            setLoading(false);
+            setError('Request timed out'); // Handle request timeout
+          }
+        }, options.timeout)
+      : undefined;
 
     setLoading(true); // Set loading to true when the mutation request starts
     setError(null); // Reset the error state when the mutation request starts
@@ -32,7 +34,6 @@ const useMutation = (
         ...headers,
       },
       body: JSON.stringify(payload), // Customize the request payload and headers
-
     })
       .then((response) => {
         clearTimeout(timeoutId); // Clear the timeout when the response is received

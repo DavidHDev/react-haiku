@@ -1,18 +1,18 @@
-import { fireEvent, renderHook } from "@testing-library/react";
-import { useEventListener } from "../useEventListener";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { fireEvent, renderHook } from '@testing-library/react';
+import { useEventListener } from '../useEventListener';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 
-describe("useEventListener", () => {
-  const ref = { current: document.createElement("div") };
-  const windowAddEventListenerSpy = vi.spyOn(window, "addEventListener");
-  const windowRemoveEventListenerSpy = vi.spyOn(window, "removeEventListener");
+describe('useEventListener', () => {
+  const ref = { current: document.createElement('div') };
+  const windowAddEventListenerSpy = vi.spyOn(window, 'addEventListener');
+  const windowRemoveEventListenerSpy = vi.spyOn(window, 'removeEventListener');
 
   afterEach(() => {
     vi.clearAllMocks();
   });
 
-  it("should bind/unbind the event listener to the window when element is not provided", () => {
-    const eventName = "click";
+  it('should bind/unbind the event listener to the window when element is not provided', () => {
+    const eventName = 'click';
     const handler = vi.fn();
     const options = undefined;
 
@@ -23,7 +23,7 @@ describe("useEventListener", () => {
     expect(windowAddEventListenerSpy).toHaveBeenCalledWith(
       eventName,
       expect.any(Function),
-      options
+      options,
     );
 
     unmount();
@@ -31,12 +31,12 @@ describe("useEventListener", () => {
     expect(windowRemoveEventListenerSpy).toHaveBeenCalledWith(
       eventName,
       expect.any(Function),
-      options
+      options,
     );
   });
 
-  it("should call the event listener handler when the event is triggered", () => {
-    const eventName = "click";
+  it('should call the event listener handler when the event is triggered', () => {
+    const eventName = 'click';
     const handler = vi.fn();
 
     renderHook(() => {
@@ -48,15 +48,15 @@ describe("useEventListener", () => {
     expect(handler).toHaveBeenCalledTimes(1);
   });
 
-  it("should have the correct event type", () => {
+  it('should have the correct event type', () => {
     const clickHandler = vi.fn();
     const keydownHandler = vi.fn();
 
     renderHook(() => {
-      useEventListener("click", clickHandler, ref);
+      useEventListener('click', clickHandler, ref);
     });
     renderHook(() => {
-      useEventListener("keydown", keydownHandler, ref);
+      useEventListener('keydown', keydownHandler, ref);
     });
 
     fireEvent.click(ref.current);

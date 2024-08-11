@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from 'react';
 
 type IntersectionObserverOptions = {
   threshold?: number | number[];
@@ -13,17 +13,17 @@ type UseIntersectionObserverProps = {
 type IntersectionObserverResult = {
   observeRef: React.MutableRefObject<Element | null>;
   isVisible: boolean;
-}
+};
 
 export const useIntersectionObserver = ({
   animateOnce = false,
-  options = {}
+  options = {},
 }: UseIntersectionObserverProps = {}): IntersectionObserverResult => {
   const observeRef = useRef<Element | null>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-  if (typeof IntersectionObserver === "undefined") {
-    console.warn("IntersectionObserver is not supported in this browser.");
+  if (typeof IntersectionObserver === 'undefined') {
+    console.warn('IntersectionObserver is not supported in this browser.');
     return { observeRef, isVisible: true };
   }
 

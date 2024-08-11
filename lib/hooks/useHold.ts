@@ -1,5 +1,5 @@
-import { off, on } from "../helpers/event";
-import { useCallback, useRef } from "react";
+import { off, on } from '../helpers/event';
+import { useCallback, useRef } from 'react';
 
 type EventType = MouseEvent | TouchEvent;
 const isTouchEvent = (e: Event) => e instanceof TouchEvent;
@@ -14,7 +14,7 @@ const preventDefault = (e: Event) => {
 
 export const useHold = <Callback = void>(
   callback: (e: EventType) => Callback,
-  { doPreventDefault = true, delay = 1000 } = {}
+  { doPreventDefault = true, delay = 1000 } = {},
 ) => {
   const timeout = useRef<number | undefined>();
   const target = useRef<EventTarget | undefined>();
@@ -22,23 +22,23 @@ export const useHold = <Callback = void>(
   const start = useCallback(
     (event: EventType) => {
       if (doPreventDefault && event.target) {
-        on(event.target, "touchend", preventDefault, { passive: false });
+        on(event.target, 'touchend', preventDefault, { passive: false });
         target.current = event.target;
       }
 
       timeout.current = setTimeout(
         () => callback(event),
-        delay
+        delay,
       ) as unknown as number;
     },
-    [callback, delay, doPreventDefault]
+    [callback, delay, doPreventDefault],
   );
 
   const clear = useCallback(() => {
     timeout.current && clearTimeout(timeout.current);
 
     if (doPreventDefault && target.current) {
-      off(target.current, "touchend", preventDefault);
+      off(target.current, 'touchend', preventDefault);
     }
   }, [doPreventDefault]);
 

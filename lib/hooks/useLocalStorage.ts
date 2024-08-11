@@ -1,15 +1,15 @@
-import { useCallback, useEffect, useRef, useState } from "react";
-import { useEventListener } from "./useEventListener";
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEventListener } from './useEventListener';
 
 declare global {
   interface WindowEventMap {
-    "local-storage": CustomEvent;
+    'local-storage': CustomEvent;
   }
 }
 
 const parseJSON = (value: string) => {
   try {
-    return value === "undefined" ? undefined : JSON.parse(value ?? "");
+    return value === 'undefined' ? undefined : JSON.parse(value ?? '');
   } catch {
     return undefined;
   }
@@ -17,7 +17,7 @@ const parseJSON = (value: string) => {
 
 export function useLocalStorage<T>(key: string, initialValue: T) {
   const readValue = useCallback(() => {
-    if (typeof window === "undefined") return initialValue;
+    if (typeof window === 'undefined') return initialValue;
 
     try {
       const item = window.localStorage.getItem(key);
@@ -39,7 +39,7 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
       window.localStorage.setItem(key, JSON.stringify(newValue));
 
       setStoredValue(newValue);
-      window.dispatchEvent(new Event("local-storage"));
+      window.dispatchEvent(new Event('local-storage'));
     } catch (error) {
       console.warn(`Error adding "${key}" to storage:`, error);
     }
@@ -53,11 +53,11 @@ export function useLocalStorage<T>(key: string, initialValue: T) {
 
   const handleStorageChange = useCallback(
     () => setStoredValue(readValue()),
-    [readValue]
+    [readValue],
   );
 
-  useEventListener("storage", handleStorageChange);
-  useEventListener("local-storage", handleStorageChange);
+  useEventListener('storage', handleStorageChange);
+  useEventListener('local-storage', handleStorageChange);
 
   return [storedValue, setValue] as const;
 }
