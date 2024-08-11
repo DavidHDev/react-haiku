@@ -1,15 +1,19 @@
-export const on = <T extends EventTarget, A extends any[]>(
-  obj: T,
-  ...args: A
+export const on = <T extends EventTarget>(
+  target: T,
+  type: string,
+  callback: EventListenerOrEventListenerObject | null,
+  options?: AddEventListenerOptions | boolean
 ) => {
-  // @ts-ignore
-  if (obj && obj.addEventListener) obj.addEventListener(...args);
+  if (target && target.addEventListener)
+    target.addEventListener(type, callback, options);
 };
 
-export const off = <T extends EventTarget, A extends any[]>(
-  obj: T,
-  ...args: A
+export const off = <T extends EventTarget>(
+  target: T,
+  type: string,
+  callback: EventListenerOrEventListenerObject | null,
+  options?: AddEventListenerOptions | boolean
 ) => {
-  // @ts-ignore
-  if (obj && obj.addEventListener) obj.removeEventListener(...args);
+  if (target && target.removeEventListener)
+    target.removeEventListener(type, callback, options);
 };
