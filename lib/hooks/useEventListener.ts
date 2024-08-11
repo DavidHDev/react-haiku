@@ -1,10 +1,23 @@
-import React, { useEffect, useRef } from 'react';
-import { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
+import { RefObject, useEffect, useRef } from "react";
+import { useIsomorphicLayoutEffect } from "./useIsomorphicLayoutEffect";
 
-export function useEventListener(
-  eventName: string,
-  handler: (e: Event) => any,
-  element?: React.RefObject<any>,
+export function useEventListener<
+  KW extends keyof WindowEventMap,
+  KH extends keyof HTMLElementEventMap & keyof SVGElementEventMap,
+  KM extends keyof MediaQueryListEventMap,
+  T extends HTMLElement | SVGAElement | MediaQueryList = HTMLElement
+>(
+  eventName: KW | KH | KM,
+  handler: (
+    event:
+      | WindowEventMap[KW]
+      | HTMLElementEventMap[KH]
+      | SVGElementEventMap[KH]
+      | MediaQueryListEventMap[KM]
+      | Event
+  ) => void,
+  element?: RefObject<T>,
+  options?: boolean | AddEventListenerOptions
 ) {
   const savedHandler = useRef(handler);
 
@@ -13,17 +26,18 @@ export function useEventListener(
   }, [handler]);
 
   useEffect(() => {
-    const targetElement = element?.current || window;
+    const targetElement: T | Window = element?.current ?? window;
 
-    if (!(targetElement && targetElement.addEventListener)) {
-      return;
-    }
+    if (!(targetElement && targetElement.addEventListener)) return;
 
-    const eventListener = (event: Event) => savedHandler.current(event);
-    targetElement.addEventListener(eventName, eventListener);
+    const listener: typeof handler = (event) => {
+      savedHandler.current(event);
+    };
+
+    targetElement.addEventListener(eventName, listener, options);
 
     return () => {
-      targetElement.removeEventListener(eventName, eventListener);
+      targetElement.removeEventListener(eventName, listener, options);
     };
-  }, [eventName, element]);
+  }, [eventName, element, options]);
 }
