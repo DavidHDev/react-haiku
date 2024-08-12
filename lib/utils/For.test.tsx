@@ -1,4 +1,4 @@
-import { For } from '../For';
+import { For } from './For';
 import { render, screen } from '@testing-library/react';
 
 describe('For', () => {
