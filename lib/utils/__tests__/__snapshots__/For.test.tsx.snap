@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`For renders the For component 1`] = `
+<DocumentFragment>
+  <span>
+    0: foo
+  </span>
+  <span>
+    1: bar
+  </span>
+  <span>
+    2: baz
+  </span>
+</DocumentFragment>
+`;
