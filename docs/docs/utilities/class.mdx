@@ -1,0 +1,55 @@
+# Class
+
+The `Class` component is a utility component that conditionally applies a CSS class to a `div` element based on a boolean condition. It is useful for toggling styles dynamically.
+
+### Import
+
+```jsx
+import { Class } from 'react-haiku';
+```
+
+### Usage
+
+```jsx
+import { ClassDemo } from '../../demo/ClassDemo.jsx';
+
+<ClassDemo />
+```
+
+```jsx
+import React, { useState } from 'react';
+import { Class } from 'react-haiku';
+
+const ClassDemo = () => {
+  const [isActive, setIsActive] = React.useState(false);
+  const ref = React.useRef(null);
+
+  const toggleActive = () => {
+    setIsActive(!isActive);
+  };
+
+  return (
+    <div className="demo-container-center">
+      <button onClick={toggleActive} className="toggle-button" ref={ref}>
+        Toggle Active State
+      </button>
+      <Class
+        className="base-class"
+        condition={isActive}
+        toggleClass="active-class"
+      >
+        <p>This div will toggle between base-class and active-class.</p>
+      </Class>
+    </div>
+  );
+};
+```
+
+### API
+
+The component accepts the following props:
+
+- `className` - The initial class name for the `div` element. Defaults to an empty string.
+- `condition` - The condition to determine whether to apply the `toggleClass` or not. Defaults to `false`.
+- `toggleClass` - The class name to be toggled based on the condition. Defaults to an empty string.
+- `children` - The content to be rendered inside the `div` element.
