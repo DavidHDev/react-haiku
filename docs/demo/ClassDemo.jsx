@@ -1,18 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Class } from 'react-haiku';
 import './demo.css';
 
 export const ClassDemo = () => {
   const [isActive, setIsActive] = React.useState(false);
-  const ref = React.useRef(null);
 
-  const toggleActive = () => {
-    setIsActive(!isActive);
-  };
 
   return (
     <div className="demo-container-center">
-      <button onClick={toggleActive} className="toggle-button" ref={ref}>
+      <button className="demo-button" onClick={() => setIsActive(!isActive)}>
         Toggle Active State
       </button>
       <Class
