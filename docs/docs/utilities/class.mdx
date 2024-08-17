@@ -15,30 +15,35 @@ import { ClassDemo } from '../../demo/ClassDemo.jsx';
 <ClassDemo />
 
 ```jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { Class } from 'react-haiku';
-import './demo.css';
 
-export const ClassDemo = () => {
-  const [isActive, setIsActive] = React.useState(false);
-
+const Component = () => {
+  const [isActive, setIsActive] = useState(false);
+  
+  const toggleActive = () => {
+    setIsActive(!isActive);
+  };
 
   return (
-    <div className="demo-container-center">
-      <button className="demo-button" onClick={() => setIsActive(!isActive)}>
-        Toggle Active State
+    <div>
+      <button onClick={toggleActive}>
+        {isActive ? 'Deactivate' : 'Activate'}
       </button>
+
       <Class
-        className="base-class"
+        className="box"
         condition={isActive}
-        toggleClass="active-class"
+        toggleClass="active"
+        as="section"
       >
-        <p>This div will toggle between base-class and active-class.</p>
+        This is a box that will toggle its class based on the button click.
       </Class>
     </div>
   );
 };
 
+export default Component;
 ```
 
 ### API
@@ -49,3 +54,5 @@ The component accepts the following props:
 - `condition` - The condition to determine whether to apply the `toggleClass` or not. Defaults to `false`.
 - `toggleClass` - The class name to be toggled based on the condition. Defaults to an empty string.
 - `children` - The content to be rendered inside the `div` element.
+- `as (ElementType)`: The type of HTML element to render. Defaults to div. You can specify other elements like section, article, etc.
+- `[key: string]: any`: Any additional props to be passed to the element.

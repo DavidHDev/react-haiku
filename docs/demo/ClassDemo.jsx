@@ -5,18 +5,22 @@ import './demo.css';
 export const ClassDemo = () => {
   const [isActive, setIsActive] = React.useState(false);
 
-
   return (
     <div className="demo-container-center">
-      <button className="demo-button" onClick={() => setIsActive(!isActive)}>
-        Toggle Active State
+      <button
+        className="demo-button"
+        onClick={() => setIsActive(!isActive)}
+        style={{ marginBottom: '1em' }}
+      >
+        {isActive ? 'Remove Active class' : 'Add Active class'}
       </button>
       <Class
         className="base-class"
         condition={isActive}
         toggleClass="active-class"
+        as={'section'}
       >
-        <p>This div will toggle between base-class and active-class.</p>
+        This is a Class component
       </Class>
     </div>
   );
