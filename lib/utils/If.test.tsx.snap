@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`If renders the If component 1`] = `
+<DocumentFragment>
+  If Block
+</DocumentFragment>
+`;
