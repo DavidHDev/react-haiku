@@ -78,3 +78,7 @@ input:hover, input:focus {
     justify-content: center;
     border-radius: 1rem;
 }
+
+.active-class {
+    color: #e46b39 !important;
+}
