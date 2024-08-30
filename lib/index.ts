@@ -35,6 +35,7 @@ export { useTabNotification } from './hooks/useTabNotification';
 export { useOrientation } from './hooks/useOrientation';
 export { useWindowSize } from './hooks/useWindowSize';
 export { useIntersectionObserver } from './hooks/useIntersectionObserver';
+export { usePreventBodyScroll } from './hooks/usePreventBodyScroll';
 
 export { If } from './utils/If';
 export { Show } from './utils/Show';
