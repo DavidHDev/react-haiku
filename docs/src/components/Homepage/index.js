@@ -97,7 +97,7 @@ export default function Homepage() {
 
             <div className='pills'>
               <a className='landing-version' rel='noreferrer' aria-label="npm" target='_blank' href='https://www.npmjs.com/package/react-haiku'>
-                2.1.7
+                2.1.8
               </a>
               <div className={menuOpen ? 'menu-toggle inverted' : 'menu-toggle'} onClick={() => setMenuOpen(!menuOpen)}>
                 {menuOpen ? 'Close' : 'Menu'}
@@ -153,7 +153,7 @@ export default function Homepage() {
             <div className='haiku-stats'>
               <p><Link to="/docs/category/hooks"><span>34</span> Hooks</Link></p>
               <p><Link to="/docs/category/utilities"><span>5</span> Utilities</Link></p>
-              <p><a href="https://bundlephobia.com/package/react-haiku@2.1.7" rel="noreferrer" target='_blank'><span>&lt;5Kb</span> Bundle</a></p>
+              <p><a href="https://bundlephobia.com/package/react-haiku@2.1.8" rel="noreferrer" target='_blank'><span>&lt;5Kb</span> Bundle</a></p>
             </div>
           </div>
           <div className='landing-card card-demo'>
