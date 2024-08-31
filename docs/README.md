@@ -132,6 +132,7 @@ export default Component;
 - [`useBatteryStatus()`](https://reacthaiku.dev/docs/hooks/useBatteryStatus) - Provides real-time information about the device's battery level and charging status, automatically updating as these values change.
 - [`useSize()`](https://reacthaiku.dev/docs/hooks/useSize) - hook observes a referenced DOM element and returns its current width and height, updating the values whenever the element is resized. This is useful for dynamically tracking size changes of any resizable component.
 - [`useDeviceOS()`](https://reacthaiku.dev/docs/hooks/useDeviceOS) - Detects the user's operating system, including mobile emulators, and uses string manipulation for identifying unique or new OS versions.
+- [`usePreventBodyScroll()`](https://reacthaiku.dev/docs/hooks/usePreventBodyScroll) - Disables body scrolling when active and restores it upon deactivation or component unmounting. It provides a boolean state, a setter, and a toggle function for dynamic scroll control.
 
 ### Utilities
 

@@ -1,0 +1,30 @@
+# usePreventBodyScroll()
+
+The `usePreventBodyScroll()` hook disables body scrolling when active and restores it upon deactivation or component unmounting. It provides a boolean state, a setter, and a toggle function for dynamic scroll control.
+
+### Import
+
+```jsx
+import { usePreventBodyScroll } from 'react-haiku';
+```
+
+### Usage
+
+import { UsePreventBodyScrollDemo } from '../../demo/UsePreventBodyScrollDemo.jsx';
+
+<UsePreventBodyScrollDemo />
+
+```jsx
+import { usePreventBodyScroll } from 'react-haiku';
+
+export const Component = () => {
+    const { isScrollLocked, toggleScrollLock } = usePreventBodyScroll();
+
+    return (
+        <>
+            <b>Scroll: {isScrollLocked ? 'Disabled' : 'Enabled'}</b>
+            <button onClick={() => toggleScrollLock()}>Toggle Scroll!</button>
+        </>
+    );
+}
+```
