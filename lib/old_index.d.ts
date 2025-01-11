@@ -5,16 +5,16 @@ import {
   ImgHTMLAttributes,
   MouseEventHandler,
   MutableRefObject,
-  ReactNode,
-} from 'react';
-import { SwitchProps } from './utils/Switch';
+  ReactNode
+} from "react";
+import { SwitchComponent } from './utils/Switch';
 
 // hooks
 
 export declare const useClickOutside: (
   ref?: MutableRefObject<Element | null>,
   handler?: Function,
-  event?: string | string[],
+  event?: string | string[]
 ) => void;
 
 export declare const useClipboard: (options?: { timeout?: number }) => {
@@ -26,13 +26,13 @@ export declare const useClipboard: (options?: { timeout?: number }) => {
 
 export declare const useConfirmExit: (
   enabled: boolean | Function,
-  message?: string,
+  message?: string
 ) => void;
 
 export declare const useCookie: <T extends string | {}>(
   key: string,
   initialValue?: T,
-  expireDays?: number,
+  expireDays?: number
 ) => [value: T, setValue: (value: T) => void, deleteCookie: () => void];
 
 export declare const useCookieListener: <T extends string | {}>(
@@ -45,7 +45,7 @@ export declare const useDebounce: <T>(value: T, delay?: number) => T;
 export declare const useEventListener: (
   eventName: string,
   handler: Function,
-  element?: MutableRefObject<Element | null>,
+  element?: MutableRefObject<Element | null>
 ) => void;
 
 export declare const useFavicon: (href?: string) => {
@@ -59,7 +59,7 @@ export declare const useHold: (
   options?: {
     doPreventDefault?: boolean;
     delay?: number;
-  },
+  }
 ) => {
   onMouseDown: () => MouseEventHandler;
   onTouchStart: () => MouseEventHandler;
@@ -78,16 +78,16 @@ export declare const useIdle: (
   options?: {
     events?: string[];
     initialState?: boolean;
-  },
+  }
 ) => boolean;
 
 export declare const useInputValue: <T>(
-  initialState: T,
+  initialState: T
 ) => [value: T, setValue: (value: any) => void];
 
 export declare const useInterval: (
   callback: () => void,
-  initialDelay: number,
+  initialDelay: number
 ) => {
   start: (delay?: number) => void;
   stop: () => void;
@@ -95,21 +95,21 @@ export declare const useInterval: (
 
 export declare const useIsomorphicLayoutEffect: (
   effect: EffectCallback,
-  deps?: DependencyList,
+  deps?: DependencyList
 ) => void;
 
 export declare const useLeaveDetection: (
-  onLeave: (e?: MouseEvent) => void,
+  onLeave: (e?: MouseEvent) => void
 ) => void;
 
 export declare const useLocalStorage: <T extends string | {}>(
   key: string,
-  initialValue?: T,
+  initialValue?: T
 ) => [value: T, setValue: (value: T) => void];
 
 export declare const useMediaQuery: (
   query: string,
-  initialValue?: boolean,
+  initialValue?: boolean
 ) => boolean;
 
 export declare const useMousePosition: <T>() => {
@@ -119,8 +119,8 @@ export declare const useMousePosition: <T>() => {
 };
 
 export declare const usePrefersTheme: (
-  initialValue?: string,
-) => 'dark' | 'light';
+  initialValue?: string
+) => "dark" | "light";
 
 export declare const useScript: (src: string) => string;
 
@@ -129,30 +129,27 @@ export declare const useScrollPosition: () => [
     x: number;
     y: number;
   },
-  setPosition: (scroll: { x?: number; y?: number }) => void,
+  setPosition: (scroll: { x?: number; y?: number }) => void
 ];
 
 export declare const useSingleEffect: (effect: () => void) => void;
 
-export declare const useSize: (ref: MutableRefObject<Element | null>) => {
-  width: number;
-  height: number;
-};
+export declare const useSize: (ref: MutableRefObject<Element | null>) => { width: number, height: number }
 
 export declare const useTitle: (title: string) => void;
 
 export declare const useToggle: <T>(
   initialValue: T,
-  options: [T, T],
+  options: [T, T]
 ) => [T, (value?: T) => void];
 
 export declare const useBoolToggle: (
-  initialValue?: false,
+  initialValue?: false
 ) => [boolean, (value?: boolean) => void];
 
 export declare const useUpdateEffect: (
   effect: EffectCallback,
-  deps?: DependencyList,
+  deps?: DependencyList
 ) => void;
 
 export declare const useUrgentUpdate: () => () => void;
@@ -165,12 +162,10 @@ export declare const useDeviceOS: () => string;
 
 export declare const useNetwork: () => boolean;
 
-export declare const useFullscreen: (
-  targetRef: MutableRefObject<Element | null>,
-) => {
-  isFullscreen: boolean;
-  toggleFullscreen: () => void;
-};
+export declare const useFullscreen: (targetRef: MutableRefObject<Element | null>) => {
+  isFullscreen: boolean,
+  toggleFullscreen: () => void
+}
 
 // utils
 
@@ -202,13 +197,12 @@ export declare const Show: FC<{
   }>;
 };
 
-export declare const Switch: FC<SwitchProps>;
+export declare const Switch: SwitchComponent;
 
-export declare const Image: FC<
-  {
-    src: string;
-    loading?: 'eager' | 'lazy';
-    alt?: string;
-    fallback?: string;
-  } & ImgHTMLAttributes<HTMLImageElement>
+export declare const Image: FC<{
+  src: string;
+  loading?: "eager" | "lazy";
+  alt?: string;
+  fallback?: string;
+} & ImgHTMLAttributes<HTMLImageElement>
 >;
