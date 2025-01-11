@@ -7,7 +7,7 @@ import {
   MutableRefObject,
   ReactNode
 } from "react";
-import { SwitchComponent } from './utils/Switch';
+import { SwitchProps } from './utils/Switch';
 
 // hooks
 
@@ -197,7 +197,7 @@ export declare const Show: FC<{
   }>;
 };
 
-export declare const Switch: SwitchComponent;
+export declare const Switch: FC<SwitchProps>;
 
 export declare const Image: FC<{
   src: string;

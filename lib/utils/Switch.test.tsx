@@ -13,7 +13,7 @@ enum TestCases {
 
 const renderSwitch = (value: TestCases) => {
     return render(
-        <Switch<TestCases>
+        <Switch
             value={value}
             components={{
                 [TestCases.A]: ComponentA,
