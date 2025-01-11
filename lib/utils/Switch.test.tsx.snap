@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Switch Component should render the correct component based on value 1`] = `
+<DocumentFragment>
+  <div>
+    Component A
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Switch Component should render the default component if value does not match any case 1`] = `
+<DocumentFragment>
+  <div>
+    Default Component
+  </div>
+</DocumentFragment>
+`;

@@ -43,4 +43,5 @@ export { Show } from './utils/Show';
 export { For } from './utils/For';
 export { RenderAfter } from './utils/RenderAfter';
 export { Class } from './utils/Class';
+export { Switch } from './utils/Switch';
 export { Image } from './utils/Image';
