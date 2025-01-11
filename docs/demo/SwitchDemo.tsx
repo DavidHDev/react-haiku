@@ -39,8 +39,8 @@ export const SwitchDemo = () => {
         </div>
       </div>
 
-      <Switch<Reaction>
-        value={reaction as Reaction}
+      <Switch
+        value={reaction!}
         components={{
           [Reaction.LIKE]: CaseReactionLike,
           [Reaction.FIRE]: CaseReactionFire,
