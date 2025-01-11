@@ -1,84 +1,186 @@
 .demo-button {
-    cursor: pointer;
-    position: relative;
-    font-size: 18px;
-    padding: .5em 1.2em;
-    border-radius: 1rem;
-    display: flex;
-    font-weight: 500;
-    align-items: center;
-    color: #f5f5f5 !important;
-    border: 1px solid #555;
-    background-color: #222;
-    user-select: none;
-    transition: box-shadow .2s ease, border .2s ease;
+  cursor: pointer;
+  position: relative;
+  font-size: 18px;
+  padding: 0.5em 1.2em;
+  border-radius: 1rem;
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  color: #f5f5f5 !important;
+  border: 1px solid #555;
+  background-color: #222;
+  user-select: none;
+  transition: box-shadow 0.2s ease, border 0.2s ease;
 }
 
 .demo-button:hover {
-    border: 1px solid #ff8000a5;
-    box-shadow: 0 0 0 3px rgba(255, 0, 93, 0.25);
-    transition: box-shadow .2s ease, border .2s ease;
+  border: 1px solid #ff8000a5;
+  box-shadow: 0 0 0 3px rgba(255, 0, 93, 0.25);
+  transition: box-shadow 0.2s ease, border 0.2s ease;
 }
 
 .green-button {
-    margin-top: .5em;
-    border: 1px solid #3fef3f;
-    color: #3fef3f;
+  margin-top: 0.5em;
+  border: 1px solid #3fef3f;
+  color: #3fef3f;
 }
 
 .red-button {
-    margin-top: .5em;
-    border: 1px solid #E46B39;
-    color: #E46B39;
+  margin-top: 0.5em;
+  border: 1px solid #e46b39;
+  color: #e46b39;
 }
 
 input {
-    position: relative;
-    font-size: 16px;
-    color: #f5f5f5 !important;
-    caret-color: #E46B39;
-    padding: .7em 1em;
-    border-radius: 1rem;
-    font-weight: 500;
-    border: 1px solid #555;
-    background-color: #272828;
-    margin-bottom: .5em;
-    width: 100%;
-    transition: box-shadow .2s ease, border .2s ease;
+  position: relative;
+  font-size: 16px;
+  color: #f5f5f5 !important;
+  caret-color: #e46b39;
+  padding: 0.7em 1em;
+  border-radius: 1rem;
+  font-weight: 500;
+  border: 1px solid #555;
+  background-color: #272828;
+  margin-bottom: 0.5em;
+  width: 100%;
+  transition: box-shadow 0.2s ease, border 0.2s ease;
 }
 
-input:hover, input:focus {
-    outline: none !important;
-    border: 1px solid #ff7b00a5 !important;
-    box-shadow: 0 0 0 3px rgba(255, 0, 93, 0.25);
-    transition: box-shadow .2s ease, border .2s ease;
+input:hover,
+input:focus {
+  outline: none !important;
+  border: 1px solid #ff7b00a5 !important;
+  box-shadow: 0 0 0 3px rgba(255, 0, 93, 0.25);
+  transition: box-shadow 0.2s ease, border 0.2s ease;
 }
 
 .demo-container-center {
-    position: relative;
-    margin-bottom: 2em;
-    min-height: 150px;
-    border: 1px solid #555;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 1rem;
+  position: relative;
+  margin-bottom: 2em;
+  min-height: 150px;
+  border: 1px solid #555;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
 }
 
 .demo-container-start {
-    padding:1em;
-    position: relative;
-    margin-bottom: 2em;
-    min-height: 100px;
-    border: 1px solid #555;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    border-radius: 1rem;
+  padding: 1em;
+  position: relative;
+  margin-bottom: 2em;
+  min-height: 100px;
+  border: 1px solid #555;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border-radius: 1rem;
 }
 
 .active-class {
-    color: #e46b39 !important;
+  color: #e46b39 !important;
+}
+
+/* Custom Dropdown */
+.demo-dropdown {
+  --arrow-size: 12px;
+  --x-padding: 1.2em;
+  position: relative;
+
+  & > select {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+    font-size: 18px;
+    padding: 0.5em var(--x-padding);
+    background-color: #222222;
+    border: 1px solid #555555;
+    border-radius: 0.8rem;
+    color: #f5f5f5;
+    cursor: pointer;
+    outline: none;
+    margin-right: calc(var(--arrow-size) + 8px);
+
+    &:focus {
+      background: #222222;
+      border: 1px solid #ff7b00a5 !important;
+      box-shadow: 0 0 0 3px rgba(255, 0, 93, 0.25);
+    }
+  }
+
+  /* Dropdown Arrow */
+  &::after {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    right: var(--x-padding);
+    transform: translate(0, -50%);
+    width: var(--arrow-size);
+    height: var(--arrow-size);
+    background-color: #f5f5f5;
+    clip-path: polygon(
+      50% 0%,
+      100% 40%,
+      0% 60%,
+      17% 60%,
+      50% 83%,
+      83% 60%,
+      100% 60%,
+      50% 100%,
+      0% 60%,
+      100% 40%,
+      83% 40%,
+      50% 17%,
+      16.67% 40%,
+      0% 40%
+    );
+  }
+}
+
+/* Animations */
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.bounceIn {
+  animation-duration: calc(var(--animate-duration) * 0.75);
+  animation-name: bounceIn;
 }
