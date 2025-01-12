@@ -138,6 +138,7 @@ Haiku is always open to improvements and contributions, you can check the [Open 
 - [`useHold()`](https://reacthaiku.dev/docs/hooks/useHold) - Handle long presses on a target element and execute a handler after a set delay!
 - [`useIdle()`](https://reacthaiku.dev/docs/hooks/useIdle) - Detect user activity/inactivity on the page based on events!
 - [`useIsomorphicLayoutEffect()`](https://reacthaiku.dev/docs/hooks/useIsomorphicLayoutEffect) - Switch between useEffect and useLayoutEffect depending on the execution environment (SSR VS Browser)!
+- [`useKeyPress()`](https://reacthaiku.dev/docs/hooks/useKeyPress) - Listen for specific combination of keys and trigger a callback when all the keys are pressed simultaneously.
 - [`useLocalStorage()`](https://reacthaiku.dev/docs/hooks/useLocalStorage) - Manage localStorage values dynamically
 - [`useScrollPosition()`](https://reacthaiku.dev/docs/hooks/useScrollPosition) - Access the current scroll position on the page and modify it programatically.
 - [`useSingleEffect()`](https://reacthaiku.dev/docs/hooks/useSingleEffect) - Run the useEffect hook strictly only once when the component is mounted!
