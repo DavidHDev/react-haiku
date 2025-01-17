@@ -37,6 +37,7 @@ export { useWindowSize } from './hooks/useWindowSize';
 export { useIntersectionObserver } from './hooks/useIntersectionObserver';
 export { usePreventBodyScroll } from './hooks/usePreventBodyScroll';
 export { useKeyPress } from './hooks/useKeyPress';
+export { useScrollDevice } from './hooks/useScrollDevice';
 
 export { If } from './utils/If';
 export { Show } from './utils/Show';
