@@ -10,9 +10,12 @@ import { useNetwork } from 'react-haiku';
 
 ### Usage
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { UseNetworkDemo } from '../../demo/UseNetworkDemo.tsx';
 
-<UseNetworkDemo />
+<BrowserOnly fallback={<div>Loading...</div>}>
+  <UseNetworkDemo />
+</BrowserOnly>
 
 ```jsx
 import { useNetwork } from 'react-haiku';
