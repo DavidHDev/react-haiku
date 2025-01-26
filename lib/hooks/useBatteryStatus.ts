@@ -1,13 +1,21 @@
 import { useEffect, useState } from 'react';
 
-// https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getBattery, but because getBattery | BatteryManager is not on the Navigator type, we have to create our own type
-type NavigatorType = Navigator & {
-  getBattery: () => Promise<
-    {
-      charging: boolean;
-      level: number;
-    } & EventTarget
-  >;
+// Define BatteryManager type manually
+interface BatteryManager extends EventTarget {
+  charging: boolean;
+  level: number;
+  addEventListener(
+    type: 'chargingchange' | 'levelchange',
+    listener: (this: BatteryManager, ev: Event) => any
+  ): void;
+  removeEventListener(
+    type: 'chargingchange' | 'levelchange',
+    listener: (this: BatteryManager, ev: Event) => any
+  ): void;
+}
+
+type NavigatorWithBattery = Navigator & {
+  getBattery?: () => Promise<BatteryManager>;
 };
 
 export function useBatteryStatus() {
@@ -17,39 +25,37 @@ export function useBatteryStatus() {
   });
 
   useEffect(() => {
-    if ((navigator as NavigatorType).getBattery) {
-      (navigator as NavigatorType).getBattery().then((battery) => {
-        const batteryLevel = parseInt((battery.level * 100).toString());
-        const betteryCharging = battery.charging;
+    const navigatorWithBattery = navigator as NavigatorWithBattery;
 
-        setBatteryStatus({
-          level: batteryLevel,
-          isCharging: betteryCharging,
-        });
-      });
+    if (!navigatorWithBattery.getBattery) {
+      console.warn("Battery Status API is not supported in this browser.");
+      return;
     }
 
-    const handleBatteryLevelChange = () => {
-      (navigator as NavigatorType).getBattery().then((battery) => {
-        const batteryLevel = parseInt((battery.level * 100).toString());
-        const betteryCharging = battery.charging;
+    let battery: BatteryManager | null = null;
 
+    const updateBatteryStatus = () => {
+      if (battery) {
         setBatteryStatus({
-          level: batteryLevel,
-          isCharging: betteryCharging,
+          level: Math.round(battery.level * 100),
+          isCharging: battery.charging,
         });
-      });
+      }
     };
-    (navigator as NavigatorType).getBattery().then((battery) => {
-      battery.addEventListener('chargingchange', handleBatteryLevelChange);
-      battery.addEventListener('levelchange', handleBatteryLevelChange);
+
+    navigatorWithBattery.getBattery().then((bat) => {
+      battery = bat;
+      updateBatteryStatus();
+
+      battery.addEventListener('chargingchange', updateBatteryStatus);
+      battery.addEventListener('levelchange', updateBatteryStatus);
     });
 
     return () => {
-      (navigator as NavigatorType).getBattery().then((battery) => {
-        battery.removeEventListener('chargingchange', handleBatteryLevelChange);
-        battery.removeEventListener('levelchange', handleBatteryLevelChange);
-      });
+      if (battery) {
+        battery.removeEventListener('chargingchange', updateBatteryStatus);
+        battery.removeEventListener('levelchange', updateBatteryStatus);
+      }
     };
   }, []);
 
