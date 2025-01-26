@@ -1,0 +1,67 @@
+# useTabNotification()
+
+The useTabNotification() hook manages browser tab notifications through title modifications and favicon indicators. Use this to alert users of background activity or new notifications when they're in another tab.
+
+### Import
+
+```jsx
+import { useTabNotification } from 'react-haiku';
+```
+
+### Usage
+
+import { UseTabNotificationDemo } from '../../demo/UseTabNotificationDemo.tsx';
+
+<UseTabNotificationDemo />
+
+```jsx
+import { useTabNotification } from 'react-haiku';
+
+export const Component = () => {
+  const {
+    setTitlePrefix,
+    setFlashMessage,
+    setIsShown,
+    setCustomTitle,
+    setShowFaviconDot,
+    setFaviconDotColor,
+  } = useTabNotification();
+
+  return (
+    <>
+      <button onClick={() => setIsShown(true)}>Show Notification</button>
+
+      <input
+        type="text"
+        placeholder="Custom title"
+        onChange={(e) => setCustomTitle(e.target.value)}
+      />
+
+      <button
+        onClick={() => {
+          setTitlePrefix('[ALERT]');
+          setFlashMessage('New message!');
+          setShowFaviconDot(true);
+        }}
+      >
+        Trigger Alert
+      </button>
+    </>
+  );
+};
+```
+
+### API
+
+#### Arguments
+
+- `flashDelayInSeconds` - Alternate interval for title flashing (optional, default 2)
+
+#### Returns
+
+- `setTitlePrefix` - Adds persistent prefix to page title
+- `setFlashMessage` - Sets message to alternate with original title
+- `setIsShown` - Toggles notification visibility
+- `setCustomTitle` - Overrides default page title
+- `setShowFaviconDot` - Toggles favicon indicator
+- `setFaviconDotColor` - Sets favicon dot color (hex format)

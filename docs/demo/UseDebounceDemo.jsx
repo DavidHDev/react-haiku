@@ -1,7 +1,7 @@
 
 import { useDebounce } from "react-haiku"
 import React from 'react';
-import './demo.css';
+import './styling/demo.css';
 
 export const UseDebounceDemo = () => {
     const [value, setValue] = React.useState('')

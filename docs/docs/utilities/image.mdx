@@ -1,0 +1,37 @@
+# Image
+
+The Image component provides automatic fallback handling for broken images. Use this for robust media display with graceful degradation.
+
+### Import
+
+```jsx
+import { Image } from 'react-haiku';
+```
+
+### Usage
+
+import { UseImageDemo } from '../../demo/ImageDemo.tsx';
+
+<UseImageDemo />
+
+```jsx
+import { Image } from 'react-haiku';
+
+export const Component = () => {
+  return (
+    <Image
+      src="https://example.com/potentially-broken.jpg"
+      alt="Descriptive text"
+      fallback="/fallback-image.jpg"
+      className="custom-image-style"
+    />
+  );
+};
+```
+
+### API
+
+This component extends img HTML attributes and adds:
+
+- `fallback` - Required string for fallback image URL
+- All standard img props (src, alt, loading, etc.)

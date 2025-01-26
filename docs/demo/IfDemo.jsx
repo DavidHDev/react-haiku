@@ -1,6 +1,6 @@
 import { If } from "react-haiku"
 import React from 'react';
-import './demo.css';
+import './styling/demo.css';
 
 export const IfDemo = () => {
     const [number, setNumber] = React.useState(6);

@@ -1,0 +1,44 @@
+# useOrientation()
+
+The useOrientation() hook detects and tracks device screen orientation changes. Use this when you need to adapt your UI layout based on portrait/landscape modes.
+
+### Import
+
+```jsx
+import { useOrientation } from 'react-haiku';
+```
+
+### Usage
+
+import { UseOrientationDemo } from '../../demo/UseOrientationDemo.tsx';
+
+<UseOrientationDemo />
+
+```jsx
+import { useOrientation } from 'react-haiku';
+
+export const Component = () => {
+  const orientation = useOrientation();
+
+  return (
+    <>
+      <h3>Current Orientation:</h3>
+      <div
+        className={orientation === 'portrait' ? 'green-button' : 'red-button'}
+      >
+        {orientation.toUpperCase()}
+      </div>
+    </>
+  );
+};
+```
+
+### API
+
+#### Arguments
+
+- This hook requires no arguments
+
+#### Returns
+
+- orientation - A string type union of either "portrait" or "landscape"

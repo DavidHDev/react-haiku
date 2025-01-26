@@ -1,0 +1,55 @@
+# useInterval()
+
+The useInterval() hook provides managed interval execution with start/stop controls. Use this for recurring tasks like polls, animations, or delayed state updates.
+
+### Import
+
+```jsx
+import { useInterval } from 'react-haiku';
+```
+
+### Usage
+
+import { UseIntervalDemo } from '../../demo/UseIntervalDemo.tsx';
+
+<UseIntervalDemo />
+
+```jsx
+import { useState } from 'react';
+import { useInterval } from 'react-haiku';
+
+export const Component = () => {
+  const [count, setCount] = useState(0);
+  const { start, stop } = useInterval(() => {
+    setCount((c) => c + 1);
+  }, 1000);
+
+  const handleRestart = () => {
+    stop();
+    setTimeout(() => {
+      setCount(0);
+      start(1000);
+    }, 50);
+  };
+
+  return (
+    <>
+      <p>Count: {count}</p>
+      <button onClick={stop}>Stop Counter</button>
+      <button onClick={() => handleRestart()}>Restart Counter</button>
+    </>
+  );
+};
+```
+
+### API
+
+#### Arguments
+
+- `callback` - Function to execute at each interval (required)
+- `initialDelay` - Starting interval duration in milliseconds (required)
+
+#### Returns
+
+- `start` - Function that (re)starts the interval, accepts optional delay parameter
+- `stop` - Function that cancels the current interval

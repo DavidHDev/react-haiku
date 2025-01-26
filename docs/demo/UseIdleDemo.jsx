@@ -1,6 +1,6 @@
 import { useIdle } from "react-haiku";
 import React from 'react';
-import './demo.css';
+import './styling/demo.css';
 
 export const UseIdleDemo = () => {
     const idle = useIdle(3000);

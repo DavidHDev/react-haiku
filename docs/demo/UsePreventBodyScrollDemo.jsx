@@ -1,6 +1,6 @@
 import React from 'react';
 import { usePreventBodyScroll } from 'react-haiku';
-import './demo.css';
+import './styling/demo.css';
 
 export const UsePreventBodyScrollDemo = () => {
   const { isScrollLocked, toggleScrollLock } = usePreventBodyScroll();

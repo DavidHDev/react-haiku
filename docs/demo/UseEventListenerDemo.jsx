@@ -1,7 +1,7 @@
 
 import { useEventListener } from "react-haiku";
 import React from 'react';
-import './demo.css';
+import './styling/demo.css';
 
 export const UseEventListenerDemo = () => {
     const [countWindow, setCountWindow] = React.useState(0);

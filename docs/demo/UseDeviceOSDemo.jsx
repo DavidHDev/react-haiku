@@ -1,6 +1,6 @@
 import { useDeviceOS } from 'react-haiku';
 import React from 'react';
-import './demo.css';
+import './styling/demo.css';
 
 export const UseDeviceOSDemo = () => {
   const deviceOS = useDeviceOS();

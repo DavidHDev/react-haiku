@@ -21,13 +21,11 @@
 }
 
 .green-button {
-  margin-top: 0.5em;
   border: 1px solid #3fef3f;
   color: #3fef3f;
 }
 
 .red-button {
-  margin-top: 0.5em;
   border: 1px solid #e46b39;
   color: #e46b39;
 }
@@ -58,6 +56,7 @@ input:focus {
 .demo-container-center {
   position: relative;
   margin-bottom: 2em;
+  padding: 2em 0;
   min-height: 150px;
   border: 1px solid #555;
   display: flex;
@@ -90,7 +89,7 @@ input:focus {
   --x-padding: 1.2em;
   position: relative;
 
-  & > select {
+  &>select {
     appearance: none;
     -webkit-appearance: none;
     width: 100%;
@@ -122,27 +121,112 @@ input:focus {
     width: var(--arrow-size);
     height: var(--arrow-size);
     background-color: #f5f5f5;
-    clip-path: polygon(
-      50% 0%,
-      100% 40%,
-      0% 60%,
-      17% 60%,
-      50% 83%,
-      83% 60%,
-      100% 60%,
-      50% 100%,
-      0% 60%,
-      100% 40%,
-      83% 40%,
-      50% 17%,
-      16.67% 40%,
-      0% 40%
-    );
+    clip-path: polygon(50% 0%,
+        100% 40%,
+        0% 60%,
+        17% 60%,
+        50% 83%,
+        83% 60%,
+        100% 60%,
+        50% 100%,
+        0% 60%,
+        100% 40%,
+        83% 40%,
+        50% 17%,
+        16.67% 40%,
+        0% 40%);
   }
+}
+
+.demo-control-group {
+  display: flex;
+  gap: 1em;
+  margin: 1em 0;
+  flex-wrap: wrap;
+}
+
+.purple-button {
+  border-color: #8000ff;
+  color: #8000ff;
+}
+
+.demo-input {
+  max-width: 200px;
+}
+
+.image-demo-grid {
+  display: grid;
+  padding: 0 4em;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+  margin: 2em 0;
+  width: 100%;
+}
+
+.image-demo-item {
+  border: 1px solid #444;
+  border-radius: 0.8rem;
+  padding: 1em;
+  text-align: center;
+}
+
+.demo-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin: 1em auto;
+  background: #1a1a1a;
+}
+
+h4 {
+  margin: 0.5em 0;
+  color: #ff8000;
+}
+
+.demo-device-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  padding: 1em;
+  border: 1px solid #444;
+  border-radius: 0.8rem;
+}
+
+.device-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #333;
+  transition: all 0.3s ease;
+}
+
+.device-dot.active {
+  background: #ff8000;
+  box-shadow: 0 0 0 3px rgba(255, 128, 0, 0.2);
+}
+
+.demo-log-container {
+  border: 1px solid #444;
+  border-radius: 0.8rem;
+  padding: 1em;
+  margin: 1em 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.demo-log-entry {
+  padding: 0.5em;
+  margin: 0.3em 0;
+  background: #1a1a1a;
+  border-radius: 0.5rem;
+  font-family: monospace;
+  font-size: 0.9em;
 }
 
 /* Animations */
 @keyframes bounceIn {
+
   from,
   20%,
   40%,

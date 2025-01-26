@@ -1,0 +1,50 @@
+# useCookie()
+
+The useCookie() hook provides reactive cookie management with automatic synchronization across browser tabs. Use this for persistent storage of simple data that needs to survive page reloads.
+
+### Import
+
+```jsx
+import { useCookie } from 'react-haiku';
+```
+
+### Usage
+
+import { UseCookieDemo } from '../../demo/UseCookieDemo.tsx';
+
+<UseCookieDemo />
+
+```jsx
+import { useCookie } from 'react-haiku';
+
+export const Component = () => {
+  const [userPref, setUserPref, deleteUserPref] = useCookie(
+    'theme_preference',
+    'light',
+    30,
+  );
+
+  return (
+    <>
+      <p>Current theme: {userPref}</p>
+      <button onClick={() => setUserPref('light')}>Set Light</button>
+      <button onClick={() => setUserPref('dark')}>Set Dark</button>
+      <button onClick={deleteUserPref}>Reset</button>
+    </>
+  );
+};
+```
+
+### API
+
+#### Arguments
+
+- `key` - Cookie identifier (required)
+- `initialValue` - Default value if cookie doesn't exist (required)
+- `expireDays` - Cookie expiration in days (optional, default 365)
+
+#### Returns
+
+- `cookieValue` - Current cookie value
+- `setValue` - Setter function (accepts new value)
+- `deleteValue` - Delete function (removes cookie)

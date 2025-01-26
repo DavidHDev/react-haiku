@@ -1,0 +1,47 @@
+# useCookieListener()
+
+The useCookieListener() hook monitors cookie changes and executes callbacks when specified cookies update. Use this to synchronize state across tabs/windows or react to authentication changes.
+
+### Import
+
+```jsx
+import { useCookieListener } from 'react-haiku';
+```
+
+### Usage
+
+import { UseCookieListenerDemo } from '../../demo/UseCookieListenerDemo.tsx';
+
+<UseCookieListenerDemo />
+
+```jsx
+import { useState } from 'react';
+import { useCookieListener } from 'react-haiku';
+
+export const Component = () => {
+  const [lastChange, setLastChange] = useState('');
+
+  useCookieListener(
+    (value, key) => {
+      setLastChange(`${key} changed to: ${value}`);
+    },
+    ['important_cookie'],
+  );
+
+  return (
+    <>
+      <p>Last change: {lastChange || 'None'}</p>
+      <button onClick={() => (document.cookie = 'important_cookie=updated')}>
+        Simulate Change
+      </button>
+    </>
+  );
+};
+```
+
+### API
+
+#### Arguments
+
+- `effect` - Callback function receiving (newValue, cookieKey)
+- `cookies` - Array of cookie names to monitor

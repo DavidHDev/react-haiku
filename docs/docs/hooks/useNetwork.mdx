@@ -1,0 +1,46 @@
+# useNetwork()
+
+The useNetwork() hook tracks network connectivity status. Use this to show offline/online indicators or handle connection changes in your application.
+
+### Import
+
+```jsx
+import { useNetwork } from 'react-haiku';
+```
+
+### Usage
+
+import { UseNetworkDemo } from '../../demo/UseNetworkDemo.tsx';
+
+<UseNetworkDemo />
+
+```jsx
+import { useNetwork } from 'react-haiku';
+
+export const Component = () => {
+  const isOnline = useNetwork();
+
+  return (
+    <div className="demo-container-center">
+      <h3 style={{ marginBottom: '1em' }}>Network Status:</h3>
+      <div className={`${isOnline ? 'green-button' : 'red-button'} bounceIn`}>
+        {isOnline ? 'ONLINE' : 'OFFLINE'}
+      </div>
+      <p>
+        Toggle network status in Chrome DevTools (Application → Service Workers
+        → Offline)
+      </p>
+    </div>
+  );
+};
+```
+
+### API
+
+#### Arguments
+
+- This hook requires no arguments
+
+#### Returns
+
+- `isOnline` - Boolean indicating network connectivity status (true = online, false = offline)

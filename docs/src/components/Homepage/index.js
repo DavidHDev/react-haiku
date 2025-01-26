@@ -151,9 +151,9 @@ export default function Homepage() {
             </div>
 
             <div className='haiku-stats'>
-              <p><Link to="/docs/category/hooks"><span>34</span> Hooks</Link></p>
-              <p><Link to="/docs/category/utilities"><span>5</span> Utilities</Link></p>
-              <p><a href="https://bundlephobia.com/package/react-haiku@2.1.9" rel="noreferrer" target='_blank'><span>&lt;5Kb</span> Bundle</a></p>
+              <p><Link to="/docs/category/hooks"><span>39</span> Hooks</Link></p>
+              <p><Link to="/docs/category/utilities"><span>7</span> Utilities</Link></p>
+              <p><a href="https://bundlephobia.com/package/react-haiku@2.1.9" rel="noreferrer" target='_blank'><span>&lt;6Kb</span> Bundle</a></p>
             </div>
           </div>
           <div className='landing-card card-demo'>

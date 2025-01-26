@@ -1,6 +1,6 @@
 import { Switch } from 'react-haiku';
 import React from 'react';
-import './demo.css';
+import './styling/demo.css';
 
 enum Reaction {
   LIKE = 'like',
@@ -27,7 +27,7 @@ export const SwitchDemo = () => {
 
   return (
     <div className="demo-container-center">
-      <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '1em' }}>
+      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column', gap: '12px', marginBottom: '1em' }}>
         <label>React to this component:</label>
         <div className="demo-dropdown">
           <select value={reaction} onChange={handleReact}>

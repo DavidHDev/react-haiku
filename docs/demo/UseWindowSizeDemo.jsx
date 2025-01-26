@@ -1,6 +1,6 @@
 import { useWindowSize } from 'react-haiku';
 import React from 'react';
-import './demo.css';
+import './styling/demo.css';
 
 export const UseWindowSizeDemo = () => {
   const {height, width} = useWindowSize();

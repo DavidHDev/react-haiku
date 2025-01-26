@@ -325,6 +325,14 @@ a {
   transition: .3s ease;
 }
 
+.pagination-nav__label::after {
+  display: none;
+}
+
+.pagination-nav__label::before {
+  display: none;
+}
+
 @media only screen and (max-width: 1000px) {
   .landing-logo {
     min-width: 80px;

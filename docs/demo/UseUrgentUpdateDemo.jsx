@@ -1,6 +1,6 @@
 import { useUrgentUpdate } from "react-haiku"
 import React from 'react';
-import './demo.css';
+import './styling/demo.css';
 
 export const UseUrgentUpdateDemo = () => {
     const update = useUrgentUpdate();

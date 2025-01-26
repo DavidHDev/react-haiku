@@ -1,0 +1,31 @@
+# useScrollDevice()
+
+The useScrollDevice() hook detects whether the user is scrolling with a mouse wheel or trackpad. Use this to adapt scroll behaviors or animations based on input device.
+
+### Import
+
+```jsx
+import { useScrollDevice } from 'react-haiku';
+```
+
+### Usage
+
+import { UseScrollDeviceDemo } from '../../demo/UseScrollDeviceDemo.tsx';
+
+<UseScrollDeviceDemo />
+
+```jsx
+import { useScrollDevice } from 'react-haiku';
+
+export const Component = () => {
+  const device = useScrollDevice();
+
+  return <p>Detected scroll device: {device || 'unknown'}</p>;
+};
+```
+
+### API
+
+#### Returns
+
+- `scrollDevice` - Detected device type: "mouse", "trackpad", or null
