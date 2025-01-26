@@ -14,7 +14,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import { UseOrientationDemo } from '../../demo/UseOrientationDemo.tsx';
 
 <BrowserOnly fallback={<div>Loading...</div>}>
-  <UseOrientationDemo />
+  {() => <UseOrientationDemo />}
 </BrowserOnly>
 
 ```jsx

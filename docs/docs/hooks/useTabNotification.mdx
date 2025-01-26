@@ -14,7 +14,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import { UseTabNotificationDemo } from '../../demo/UseTabNotificationDemo.tsx';
 
 <BrowserOnly fallback={<div>Loading...</div>}>
-  <UseTabNotificationDemo />
+  {() => <UseTabNotificationDemo />}
 </BrowserOnly>
 
 ```jsx

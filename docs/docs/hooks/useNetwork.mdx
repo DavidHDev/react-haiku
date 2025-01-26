@@ -14,7 +14,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import { UseNetworkDemo } from '../../demo/UseNetworkDemo.tsx';
 
 <BrowserOnly fallback={<div>Loading...</div>}>
-  <UseNetworkDemo />
+  {() => <UseNetworkDemo />}
 </BrowserOnly>
 
 ```jsx

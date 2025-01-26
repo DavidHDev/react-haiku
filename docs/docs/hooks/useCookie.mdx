@@ -14,7 +14,7 @@ import BrowserOnly from '@docusaurus/BrowserOnly';
 import { UseCookieDemo } from '../../demo/UseCookieDemo.tsx';
 
 <BrowserOnly fallback={<div>Loading...</div>}>
-  <UseCookieDemo />
+  {() => <UseCookieDemo />}
 </BrowserOnly>
 
 ```jsx
