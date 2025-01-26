@@ -139,10 +139,10 @@ input:focus {
 }
 
 .demo-control-group {
-  display: flex;
-  gap: 1em;
-  margin: 1em 0;
-  flex-wrap: wrap;
+  display: flex !important;
+  gap: 1em !important;
+  margin: 1em 0 !important;
+  flex-wrap: wrap !important;
 }
 
 .purple-button {
