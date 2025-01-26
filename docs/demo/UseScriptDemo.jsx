@@ -1,6 +1,5 @@
 import { useScript } from "react-haiku"
 import React from 'react';
-import './styling/demo.css';
 
 export const UseScriptDemo = () => {
     const script = useScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js');

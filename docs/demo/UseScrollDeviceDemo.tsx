@@ -1,6 +1,5 @@
 import { useScrollDevice } from 'react-haiku';
 import React from 'react';
-import './styling/demo.css';
 
 export const UseScrollDeviceDemo = () => {
   const device = useScrollDevice();

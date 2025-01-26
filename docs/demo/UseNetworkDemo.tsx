@@ -1,6 +1,5 @@
 import { useNetwork } from 'react-haiku';
 import React from 'react';
-import './styling/demo.css';
 
 export const UseNetworkDemo = () => {
   const isOnline = useNetwork();

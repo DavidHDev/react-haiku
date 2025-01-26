@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useInterval } from 'react-haiku';
 import React from 'react';
-import './styling/demo.css';
 
 export const UseIntervalDemo = () => {
   const [count, setCount] = useState(0);

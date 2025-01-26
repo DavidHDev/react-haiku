@@ -1,6 +1,5 @@
 import { useCookie } from 'react-haiku';
 import React, { useState } from 'react';
-import './styling/demo.css';
 
 export const UseCookieDemo = () => {
   const [newValue, setNewValue] = useState('');

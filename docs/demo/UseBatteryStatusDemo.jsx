@@ -1,6 +1,5 @@
 import { useBatteryStatus } from 'react-haiku';
 import React from 'react';
-import './styling/demo.css';
 
 export const UseBatteryStatusDemo = () => {
   const {level, isCharging} = useBatteryStatus();

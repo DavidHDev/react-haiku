@@ -1,6 +1,5 @@
 import { Show } from "react-haiku"
 import React from 'react';
-import './styling/demo.css';
 
 export const ShowDemo = () => {
     const [number, setNumber] = React.useState(6);

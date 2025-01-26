@@ -1,6 +1,5 @@
 import { Image } from 'react-haiku';
 import React, { useState } from 'react';
-import './styling/demo.css';
 
 export const UseImageDemo = () => {
   const [customSrc, setCustomSrc] = useState('');

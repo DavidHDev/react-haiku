@@ -1,6 +1,5 @@
 import { useLeaveDetection } from "react-haiku"
 import React from 'react';
-import './styling/demo.css';
 
 export const UseLeaveDetectionDemo = () => {
     const [leaveCount, setLeaveCount] = React.useState(0);

@@ -1,6 +1,5 @@
 import { Switch } from 'react-haiku';
 import React from 'react';
-import './styling/demo.css';
 
 enum Reaction {
   LIKE = 'like',

@@ -1,6 +1,5 @@
 import { useFullscreen } from 'react-haiku'
 import React from 'react'
-import './styling/demo.css';
 
 export const UseFullscreenDemo = () => {
   const documentRef = React.useRef(null);

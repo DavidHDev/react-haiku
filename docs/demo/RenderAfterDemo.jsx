@@ -1,6 +1,5 @@
 import { RenderAfter } from "react-haiku"
 import React from 'react';
-import './styling/demo.css';
 
 export const RenderAfterDemo = () => {
     return (

@@ -1,7 +1,6 @@
 
 import { useHold } from "react-haiku"
 import React from 'react';
-import './styling/demo.css';
 
 export const UseHoldDemo = () => {
     const [count, setCount] = React.useState(0)

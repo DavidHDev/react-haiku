@@ -1,6 +1,5 @@
 import React from 'react';
 import { Class } from 'react-haiku';
-import './styling/demo.css';
 
 export const ClassDemo = () => {
   const [isActive, setIsActive] = React.useState(false);

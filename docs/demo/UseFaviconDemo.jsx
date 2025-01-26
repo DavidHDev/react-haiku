@@ -1,7 +1,6 @@
 
 import { useFavicon } from "react-haiku";
 import React from 'react';
-import './styling/demo.css';
 
 export const UseFaviconDemo = () => {
     const { setFavicon } = useFavicon();

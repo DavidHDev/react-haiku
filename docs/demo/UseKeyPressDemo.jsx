@@ -1,6 +1,5 @@
 import { useKeyPress } from 'react-haiku';
 import React, { useState } from 'react';
-import './styling/demo.css';
 
 export const UseKeyPressDemo = () => {
   const [didKeyPress, setDidKeyPress] = useState(false);

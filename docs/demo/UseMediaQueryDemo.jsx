@@ -1,6 +1,5 @@
 import { useMediaQuery } from "react-haiku"
 import React from 'react';
-import './styling/demo.css';
 
 export const UseMediaQueryDemo = () => {
     const breakpoint = useMediaQuery('(max-width: 1200px)');

@@ -1,6 +1,5 @@
 import { useToggle } from "react-haiku"
 import React from 'react';
-import './styling/demo.css';
 
 export const UseToggleDemo = () => {
     const [theme, toggleTheme] = useToggle('dark', ['dark', 'light']);

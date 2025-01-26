@@ -1,6 +1,5 @@
 import { useUpdateEffect } from "react-haiku";
 import React from 'react';
-import './styling/demo.css';
 
 export const UseUpdateEffectDemo = () => {
     const [count, setCount] = React.useState(0);

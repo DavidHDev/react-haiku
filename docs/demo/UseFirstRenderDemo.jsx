@@ -1,6 +1,5 @@
 
 import React from 'react';
-import './styling/demo.css';
 
 /* The functionality in this demo had to be emulated due to Docusaurus re-rendering 
 my Demo component multiple times and not allowing the showcase of the hook */

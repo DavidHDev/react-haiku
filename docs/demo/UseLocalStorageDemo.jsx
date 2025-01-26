@@ -1,7 +1,6 @@
 
 import { useLocalStorage } from "react-haiku";
 import React from 'react';
-import './styling/demo.css';
 
 export const UseLocalStorageDemo = () => {
     const [value, setValue] = useLocalStorage('message');

@@ -1,6 +1,5 @@
 import { useTabNotification } from 'react-haiku';
 import React, { useState } from 'react';
-import './styling/demo.css';
 
 export const UseTabNotificationDemo = () => {
   const [customTitle, setCustomTitle] = useState('');

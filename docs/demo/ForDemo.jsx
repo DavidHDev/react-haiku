@@ -1,6 +1,5 @@
 import { For } from "react-haiku"
 import React from 'react';
-import './styling/demo.css';
 
 export const ForDemo = () => {
     const data = [{name: 'React'}, {name: 'Haiku'}];

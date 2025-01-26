@@ -1,6 +1,5 @@
 import { useSingleEffect } from "react-haiku";
 import React from 'react';
-import './styling/demo.css';
 
 export const UseSingleEffectDemo = () => {
     const [renderCount, setRenderCount] = React.useState(0);

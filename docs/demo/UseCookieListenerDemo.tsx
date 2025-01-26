@@ -1,6 +1,5 @@
 import { useCookieListener } from 'react-haiku';
 import React, { useState } from 'react';
-import './styling/demo.css';
 
 export const UseCookieListenerDemo = () => {
   const [changes, setChanges] = useState<string[]>([]);
