@@ -21,10 +21,10 @@ html {
 
 a {
   text-decoration: none !important;
+}
 
-  &:hover {
-    text-decoration: none !important;
-  }
+a:hover {
+  text-decoration: none !important;
 }
 
 :root {
@@ -224,12 +224,12 @@ a {
   font-weight: 500;
   color: var(--landing-text-color);
   transition: opacity .3s ease;
+}
 
-  &:hover {
-    opacity: 0.5;
-    transition: opacity .3s ease;
-    text-decoration: none;
-  }
+.landing-links a:hover {
+  opacity: 0.5;
+  transition: opacity .3s ease;
+  text-decoration: none;
 }
 
 .landing-menu a {
@@ -238,12 +238,12 @@ a {
   padding: .5em 0;
   font-size: 2rem;
   transition: opacity .3s ease;
+}
 
-  &:hover {
-    text-decoration: none;
-    opacity: 0.5;
-    transition: opacity .3s ease;
-  }
+.landing-menu a:hover {
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity .3s ease;
 }
 
 .pills {
@@ -268,13 +268,13 @@ a {
 .landing-version {
   transition: transform .3s ease;
   background-color: var(--ifm-color-primary);
+}
 
-  &:hover {
-    color: #F6F6F6;
-    text-decoration: none;
-    transform: scale(0.9);
-    transition: transform .3s ease;
-  }
+.landing-version:hover {
+  color: #F6F6F6;
+  text-decoration: none;
+  transform: scale(0.9);
+  transition: transform .3s ease;
 }
 
 .menu-toggle {
@@ -632,10 +632,11 @@ a {
   flex-direction: column;
   justify-content: space-between;
   min-width: 310px;
+}
 
-  &:hover {
-    text-decoration: none;
-  }
+.card-open-source:hover {
+  text-decoration: none;
+
 }
 
 .open-source-top {
@@ -720,11 +721,11 @@ a {
   font-size: 1.2rem;
   cursor: pointer;
   transition: transform .3s ease;
+}
 
-  &:hover {
-    transform: scale(1.05);
-    transition: transform .3s ease;
-  }
+.npm-install:hover {
+  transform: scale(1.05);
+  transition: transform .3s ease;
 }
 
 .haiku-stats p {
@@ -734,10 +735,10 @@ a {
   font-weight: bolder;
   color: #272828;
   letter-spacing: -2px;
+}
 
-  &:last-child {
-    margin-bottom: -15px;
-  }
+.haiku-stats p:last-child {
+  margin-bottom: -15px;
 }
 
 .haiku-stats p span {
@@ -749,10 +750,10 @@ a {
 .haiku-stats p a {
   color: #272828;
   font-size: 2.2rem;
+}
 
-  &:hover {
-    text-decoration: none;
-  }
+.haiku-stats p a:hover {
+  text-decoration: none;
 }
 
 .card-demo {
@@ -800,13 +801,13 @@ a {
   transition: .3s ease;
   display: none;
   margin-bottom: 2em;
+}
 
-  &:hover {
-    text-decoration: none;
-    color: var(--ifm-color-primary);
-    background-color: #F6F6F6;
-    transition: .3s ease;
-  }
+.read-the-docs:hover {
+  text-decoration: none;
+  color: var(--ifm-color-primary);
+  background-color: #F6F6F6;
+  transition: .3s ease;
 }
 
 .hook-title {
@@ -951,10 +952,10 @@ a {
   .haiku-stats p a {
     color: #272828;
     font-size: 2.2rem;
+  }
 
-    &:hover {
-      text-decoration: none;
-    }
+  .haiku-stats p a:hover {
+    text-decoration: none;
   }
 
   .read-the-docs {
@@ -969,11 +970,11 @@ a {
   bottom: 1em;
   opacity: 0.6;
   transition: opacity .3s ease;
+}
 
-  &:hover {
-    opacity: 1;
-    transition: opacity .3s ease;
-  }
+.product-hunt-badge:hover {
+  opacity: 1;
+  transition: opacity .3s ease;
 }
 
 /* END LANDING PAGE CARDS */
