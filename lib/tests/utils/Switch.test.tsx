@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { Switch } from '../utils/Switch';
+import { Switch } from '../../utils/Switch';
 
 const ComponentA       = () => <div>Component A</div>;
 const ComponentB       = () => <div>Component B</div>;

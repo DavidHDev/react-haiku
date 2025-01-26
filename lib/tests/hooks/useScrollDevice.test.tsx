@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import { useScrollDevice } from '../hooks/useScrollDevice';
+import { useScrollDevice } from '../../hooks/useScrollDevice';
 
 describe('useScrollDevice Hook (with debounce)', () => {
   beforeEach(() => {

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import { If } from '../utils/If';
+import { If } from '../../utils/If';
 
 describe('If', () => {
   const text = 'If Block';
