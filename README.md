@@ -1,4 +1,4 @@
-# React Haiku
+# Haiku
 
 <div align="center">
 	<br>
