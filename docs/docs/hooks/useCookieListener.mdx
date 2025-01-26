@@ -10,9 +10,12 @@ import { useCookieListener } from 'react-haiku';
 
 ### Usage
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { UseCookieListenerDemo } from '../../demo/UseCookieListenerDemo.tsx';
 
-<UseCookieListenerDemo />
+<BrowserOnly fallback={<div>Loading...</div>}>
+  <UseCookieListenerDemo />
+</BrowserOnly>
 
 ```jsx
 import { useState } from 'react';

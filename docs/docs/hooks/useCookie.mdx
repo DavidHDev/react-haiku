@@ -10,9 +10,12 @@ import { useCookie } from 'react-haiku';
 
 ### Usage
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { UseCookieDemo } from '../../demo/UseCookieDemo.tsx';
 
-<UseCookieDemo />
+<BrowserOnly fallback={<div>Loading...</div>}>
+  <UseCookieDemo />
+</BrowserOnly>
 
 ```jsx
 import { useCookie } from 'react-haiku';

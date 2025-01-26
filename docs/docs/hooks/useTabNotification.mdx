@@ -10,9 +10,12 @@ import { useTabNotification } from 'react-haiku';
 
 ### Usage
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { UseTabNotificationDemo } from '../../demo/UseTabNotificationDemo.tsx';
 
-<UseTabNotificationDemo />
+<BrowserOnly fallback={<div>Loading...</div>}>
+  <UseTabNotificationDemo />
+</BrowserOnly>
 
 ```jsx
 import { useTabNotification } from 'react-haiku';

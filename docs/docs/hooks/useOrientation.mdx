@@ -10,9 +10,12 @@ import { useOrientation } from 'react-haiku';
 
 ### Usage
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
 import { UseOrientationDemo } from '../../demo/UseOrientationDemo.tsx';
 
-<UseOrientationDemo />
+<BrowserOnly fallback={<div>Loading...</div>}>
+  <UseOrientationDemo />
+</BrowserOnly>
 
 ```jsx
 import { useOrientation } from 'react-haiku';
