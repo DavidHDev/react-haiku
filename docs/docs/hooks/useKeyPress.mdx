@@ -1,0 +1,44 @@
+# useKeyPress()
+
+The `useKeyPress()` hook listens for a specific combination of keys and runs a callback when they are all pressed. It normalizes keys for case-insensitive matching and handles cases like key holding or focus loss to ensure smooth behavior.
+
+### Import
+
+
+```jsx
+import { useKeyPress } from 'react-haiku';
+```
+
+### Usage
+
+import { UseKeyPressDemo } from '../../demo/UseKeyPressDemo.jsx';
+
+<UseKeyPressDemo />
+
+```jsx
+import { useKeyPress } from 'react-haiku';
+
+const Component = () => {
+  const [didKeyPress, setDidKeyPress] = useState(false);
+  useKeyPress(['Control', 'Shift', 'A'], (e) => {
+    setDidKeyPress(true);
+  });
+
+  return (
+    <div>
+      <p>Press Control + Shift + A</p>
+      {didKeyPress && <p>{`You pressed : Control + Shift + A`}</p>}
+    </div>
+  );
+};
+
+export default App;
+```
+
+### API
+This hook accepts the following arguments:
+- `keys` - An array of key names (case-insensitive) that should be pressed to trigger the callback
+- `callback` - The function to be executed when specified keys are pressed.
+
+### Returns
+- `void` - This hook does not return anything.
