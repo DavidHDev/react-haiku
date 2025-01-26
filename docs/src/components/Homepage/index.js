@@ -135,7 +135,6 @@ export default function Homepage() {
                 <img src={useBaseUrl('/img/open-source.svg')} alt="git branching open source glyph" />
                 <p>Open Source</p>
               </div>
-              <p className='open-source-est'>/ 2022</p>
             </div>
 
             <div className='open-source-bottom'>
