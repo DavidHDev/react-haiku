@@ -80,7 +80,7 @@ export const useWebSocket = (
   };
 
   const sendMessage = (message: string) => {
-    if (wsRef.current?.readyState === WebSocket.OPEN) {
+    if (wsRef.current && wsRef.current.readyState === WebSocket.OPEN) {
       wsRef.current.send(message);
     } else {
       console.warn('WebSocket is not open.');
