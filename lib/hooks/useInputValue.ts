@@ -22,5 +22,5 @@ export function handleChange<T>(setValue: React.Dispatch<any>) {
 export function useInputValue<T>(initialState: T) {
   const [value, setValue] = useState<T>(initialState);
 
-  return [value, handleChange<T>(setValue)];
+  return [value, handleChange<T>(setValue)] as const;
 }
