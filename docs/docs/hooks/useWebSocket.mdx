@@ -10,8 +10,15 @@ import { useWebSocket } from 'react-haiku';
 
 ### Usage
 
+import BrowserOnly from '@docusaurus/BrowserOnly';
+import { UseWebSocketDemo } from '../../demo/UseWebSocketDemo.jsx';
+
+<BrowserOnly fallback={<div>Loading...</div>}>
+  {() => <UseWebSocketDemo />}
+</BrowserOnly>
+
 ```jsx
-import { useWebSocket } from './path-to-your-hook';
+import { useWebSocket } from 'react-haiku';
 
 export const WebSocketComponent = () => {
   const { lastMessage, status, sendMessage } = useWebSocket(
@@ -38,13 +45,15 @@ export const WebSocketComponent = () => {
 };
 ```
 
-### Parameters
+### WebSocket Hook Parameters
 
-- url (string) – The WebSocket URL to connect to.
-- options (object) – Optional configuration options:
-  - `maxReconnectAttempts` (number) – Max attempts for reconnection. Default is 5.
-  - `reconnectDelay` (function) – A function to calculate the delay between reconnection attempts. Default is exponential backoff.
-  - `onOpen` (function) – Callback function triggered when the WebSocket connection is opened.
-  - `onMessage` (function) – Callback function triggered when a message is received.
-  - `onError` (function) – Callback function triggered when an error occurs.
-  - `onClose` (function) – Callback function triggered when the WebSocket connection is closed.
+| Name                       | Type       | Description                                                                                   | Required |
+| -------------------------- | ---------- | --------------------------------------------------------------------------------------------- | -------- |
+| `url`                      | `string`   | The WebSocket URL to connect to.                                                              | ✅ Yes   |
+| **Options (Object)**       |            | **Optional Configuration Parameters:**                                                        | ❌ No    |
+| **`maxReconnectAttempts`** | `number`   | Max attempts for reconnection. Default: **5**.                                                | ❌ No    |
+| **`reconnectDelay`**       | `function` | Function to calculate the delay between reconnection attempts (Default: Exponential backoff). | ❌ No    |
+| **`onOpen`**               | `function` | Callback triggered when the WebSocket connection opens.                                       | ❌ No    |
+| **`onMessage`**            | `function` | Callback triggered when a message is received.                                                | ❌ No    |
+| **`onError`**              | `function` | Callback triggered when an error occurs.                                                      | ❌ No    |
+| **`onClose`**              | `function` | Callback triggered when the WebSocket connection closes.                                      | ❌ No    |
