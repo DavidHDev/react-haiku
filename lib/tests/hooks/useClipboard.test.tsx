@@ -1,5 +1,5 @@
 import { renderHook, act, waitFor } from '@testing-library/react';
-import { useClipboard } from '../../hooks/useClipboard'; // Adjust the import path as needed
+import { useClipboard } from '../../hooks/useClipboard'; 
 
 describe('useClipboard', () => {
   beforeEach(() => {
