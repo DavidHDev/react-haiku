@@ -25,7 +25,7 @@ type Permission =
 /**
  * Represents the state of a requested permission, combining the standard `PermissionState` with additional internal states.
  *
- * - `checking`: The permission status is being verified.
+ * - `checking`: The permission state is being verified.
  * - `not-supported`: The permission check is not supported or an error occurred during verification.
  *
  * @link [`PermissionState`](https://developer.mozilla.org/en-US/docs/Web/API/PermissionStatus/state)
@@ -33,7 +33,7 @@ type Permission =
 export type UsePermissionState = PermissionState | 'checking' | 'not-supported';
 
 /**
- * Check browser permissions for querying status for various browser APIs
+ * Check browser permissions for querying state for various browser APIs
  *
  * @param {Permission} permission The name of the permission to query.
  * @return {UsePermissionState} The state of a requested permission

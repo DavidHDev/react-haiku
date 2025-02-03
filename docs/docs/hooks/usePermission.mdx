@@ -1,6 +1,6 @@
 # usePermission()
 
-The `usePermission()` check browser permissions for querying status for various browser APIs
+The `usePermission()` check browser permissions for querying state for various browser APIs
 
 ### Import
 
@@ -32,7 +32,7 @@ export const Component = () => {
 
   return (
     <div>
-      <h3>Permission state: {status}</h3>
+      <h3>Permission state: {state}</h3>
 
       <pre>
         {JSON.stringify(location ?? {}, null, 2)}
@@ -57,5 +57,5 @@ export const Component = () => {
 #### Returns
 
 The the state of a requested permission, combining the standard `PermissionState` with additional internal states.
-  - `checking`: The permission status is being verified.
+  - `checking`: The permission state is being verified.
   - `not-supported`: The permission check is not supported or an error occurred during verification.
